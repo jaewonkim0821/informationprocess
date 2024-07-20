@@ -1,0 +1,344 @@
+
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>[2020년 1회] 정보처리기사 기출문제</title>
+  <style>
+    body { /* */
+      font-family: Arial, sans-serif;
+      display: flex;
+      height: 50vh;
+      margin: 100;
+      background-color: #ffffff;
+    }
+    #main-content { /*내용부분*/
+        margin-top:800px;
+      flex-grow: 1;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      
+    }
+    #menu {
+      margin-top: 50px;
+      top: 10px;
+      left: 10px;
+      width: 250px;
+      background-color: #f0f0f0;
+      padding: 20px;
+      box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+      display: flex;
+      flex-direction: column;
+      z-index: 1000;
+    }
+    #menu a {
+      text-decoration: none;
+      color: #000;
+      padding: 10px;
+      border-radius: 5px;
+      margin-bottom: 10px;
+      transition: background-color 0.3s ease;
+    }
+    #menu a:hover {
+      background-color: #007BFF;
+      color: #fff;
+    }
+    #menu a.active {
+      background-color: #0056b3;
+      color: #fff;
+    }
+    h1 {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+    .rounded-rectangle-box {
+      width: 330px;
+      height: 120px;
+      border-radius: 20px;
+      background-color: #f0f0f0;
+      padding: 20px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      margin-bottom: 20px;
+    }
+    #question1, #question2, #question3, #question4 {
+      margin-bottom: 20px;
+    }
+    textarea {
+      width: 100%;
+      height: 70px;
+      font-size: 16px;
+      padding: 10px;
+      margin-bottom: 10px;
+    }
+    button {
+      padding: 10px 20px;
+      font-size: 16px;
+      cursor: pointer;
+      border: none;
+      border-radius: 5px;
+      background-color: #f0f0f0;
+      color: black;
+      margin-right: 10px;
+      margin-bottom: 20px;
+    }
+    #menuButton {
+      position: absolute;
+      left: 10px;
+      top: 10px;
+      padding: 10px 20px;
+      font-size: 16px;
+      cursor: pointer;
+      border: none;
+      border-radius: 5px;
+      background-color: #7fb9f8;
+      color: black;
+    }
+    #printScore {
+      margin-top: 20px;
+      font-size: 18px;
+    }
+    .page{
+      display:none;
+
+    }
+    .active{
+      display:block;
+    }
+    
+
+  </style>
+</head>
+<body>
+  <div id="menu">
+    <button id="menuButton">메뉴</button>
+    <a href="#page1" id="menu1">정보처리기사 회차별 기출 문제 풀이</a>
+    <a href="#page2" id="menu2">정보처리기사 과목별 기출 문제 풀이</a>
+  </div>
+    
+
+  <div id="main-content">
+    <h1>[2020년 1회] 정보처리기사 기출문제</h1>
+    <div id="page1" class="page active">
+      <div id="question1">
+        <p>문제 1: 살충제 패러독스의 개념에 관해 서술하시오.</p>
+        <textarea id="answer1" rows="3" cols="50"></textarea>
+      </div>
+      <button id="checkAnswer1">정답 확인</button>
+      <button id="eraseAnswer1">정답 지우기</button>
+      <div id="answerResult1">
+        <p id="correctAnswer1"></p>
+      </div>
+  
+      <div id="question2">
+        <p>문제 2: 데이터 마이닝의 개념에 관해서 서술하시오.</p>
+        <textarea id="answer2" rows="3" cols="50"></textarea>
+      </div>
+      <button id="checkAnswer2">정답 확인</button>
+      <button id="eraseAnswer2">정답 지우기</button>
+      <div id="answerResult2">
+        <p id="correctAnswer2"></p>
+      </div>
+  
+      <div id="question3">
+        <p>문제 3: 프로토콜의 기본 요소 3가지를 쓰시오.</p>
+        <textarea id="answer3" rows="3" cols="50"></textarea>
+      </div>
+      <button id="checkAnswer3">정답 확인</button>
+      <button id="eraseAnswer3">정답 지우기</button>
+      <div id="answerResult3">
+        <p id="correctAnswer3"></p>
+      </div>
+  
+      <div id="question4">
+        <p>문제 4: 다음이 설명하는 용어는 무엇인지 쓰시오.</p>
+        <div class="rounded-rectangle-box">
+          <p>W3C(world wide web consortium)에서 개발되었고, 웹 브라우저 간 호환이 되지 않는 문제와 SMGL의 복잡함을 해결하기 위해 개발된 다목적 마크업 언어이다.</p>
+        </div>
+        <textarea id="answer4" rows="3" cols="50"></textarea>
+      </div>
+      <button id="checkAnswer4">정답 확인</button>
+      <button id="eraseAnswer4">정답 지우기</button>
+      <div id="answerResult4">
+        <p id="correctAnswer4"></p>
+      </div>
+  
+      <button id="nextPage">다음</button>
+    </div>
+  
+    <div id="page2" class="page">
+      <div id="question5">
+        <p>문제 5: (문제 내용을 여기에 추가하세요)</p>
+        <textarea id="answer5" rows="3" cols="50"></textarea>
+      </div>
+      <button id="checkAnswer5">정답 확인</button>
+      <button id="eraseAnswer5">정답 지우기</button>
+      <div id="answerResult5">
+        <p id="correctAnswer5"></p>
+      </div>
+  
+      <div id="question6">
+        <p>문제 6: (문제 내용을 여기에 추가하세요)</p>
+        <textarea id="answer6" rows="3" cols="50"></textarea>
+      </div>
+      <button id="checkAnswer6">정답 확인</button>
+      <button id="eraseAnswer6">정답 지우기</button>
+      <div id="answerResult6">
+        <p id="correctAnswer6"></p>
+      </div>
+  
+      <div id="question7">
+        <p>문제 7: (문제 내용을 여기에 추가하세요)</p>
+        <textarea id="answer7" rows="3" cols="50"></textarea>
+      </div>
+      <button id="checkAnswer7">정답 확인</button>
+      <button id="eraseAnswer7">정답 지우기</button>
+      <div id="answerResult7">
+        <p id="correctAnswer7"></p>
+      </div>
+  
+      <div id="question8">
+        <p>문제 8: (문제 내용을 여기에 추가하세요)</p>
+        <textarea id="answer8" rows="3" cols="50"></textarea>
+      </div>
+      <button id="checkAnswer8">정답 확인</button>
+      <button id="eraseAnswer8">정답 지우기</button>
+      <div id="answerResult8">
+        <p id="correctAnswer8"></p>
+      </div>
+  
+      <button id="prevPage">이전</button>
+      <button id="checkScore">점수 확인</button>
+    <div id="printScore">
+    <p id="printScoreText"></p>
+    </div>
+
+    </div>
+  
+
+  
+
+  
+  </div>
+
+  <script>
+    let count = 0; // 전역 변수로 선언하여 두 스크립트에서 공유
+
+    const pages = document.querySelectorAll('.page');
+    let currentPage = 0;
+
+    document.getElementById('nextPage').addEventListener('click', () => {
+      if (currentPage < pages.length - 1) {
+        pages[currentPage].classList.remove('active');
+        currentPage++;
+        pages[currentPage].classList.add('active');
+      }
+    });
+
+    document.getElementById('prevPage').addEventListener('click', () => {
+      if (currentPage > 0) {
+        pages[currentPage].classList.remove('active');
+        currentPage--;
+        pages[currentPage].classList.add('active');
+      }
+    });
+
+    function checkAnswer(questionNumber, correctAnswerText, keywords) {
+      const userAnswer = document.getElementById('answer' + questionNumber).value;
+      const correctAnswerElement = document.getElementById('correctAnswer' + questionNumber);
+      const answerResultElement = document.getElementById('answerResult' + questionNumber);
+      let correct = false;
+
+      if (userAnswer) {
+        for (const keyword of keywords) {
+          if (userAnswer.toLowerCase().includes(keyword)) {
+            correct = true;
+            break;
+          }
+        }
+        if (correct) {
+          correctAnswerElement.innerHTML = correctAnswerText + '<br/> (키워드 포함: "' + keywords.join(', ') + '")';
+          count++;
+        } else {
+          correctAnswerElement.innerHTML = '오답입니다. ' + questionNumber + '번 정답은 <br/>' + correctAnswerText;
+        }
+        answerResultElement.style.display = 'block';
+      }
+    }
+
+    function eraseAnswer(questionNumber) {
+      document.getElementById('correctAnswer' + questionNumber).textContent = '';
+      document.getElementById('answerResult' + questionNumber).style.display = 'none';
+    }
+
+    document.getElementById('checkAnswer1').addEventListener('click', function() {
+      checkAnswer(1, '정답: 1. 살충제 패러독스는 동일한 테스트 케이스에 의한 반복적 테스트는 새로운 버그를 찾지 못한다는 테스트의 원리이다', ['동일', '테스트', '반복', '버그']);
+    });
+    document.getElementById('eraseAnswer1').addEventListener('click', function() {
+      eraseAnswer(1);
+    });
+
+    document.getElementById('checkAnswer2').addEventListener('click', function() {
+      checkAnswer(2, '정답: 2. 데이터 마이닝은 대규모로 저장된 데이터 안에서 체계적이고 자동적으로 통계적 규칙이나 패턴을 찾아내는 기술이다.', ['통계적', '규칙', '패턴']);
+    });
+    document.getElementById('eraseAnswer2').addEventListener('click', function() {
+      eraseAnswer(2);
+    });
+
+    document.getElementById('checkAnswer3').addEventListener('click', function() {
+      checkAnswer(3, '정답: 3. 구문, 의미, 타이밍', ['구문', '의미', '타이밍']);
+    });
+    document.getElementById('eraseAnswer3').addEventListener('click', function() {
+      eraseAnswer(3);
+    });
+
+    document.getElementById('checkAnswer4').addEventListener('click', function() {
+      checkAnswer(4, '정답: 4. XML(eXtensible Markup Language)', ['xml', 'extensible markup language']);
+    });
+    document.getElementById('eraseAnswer4').addEventListener('click', function() {
+      eraseAnswer(4);
+    });
+
+    document.getElementById('checkAnswer5').addEventListener('click', function() {
+      checkAnswer(5, '정답: 5. ㄴㅇㄹ', ['동일', '테스트', '반복', '버그']);
+    });
+    document.getElementById('eraseAnswer5').addEventListener('click', function() {
+      eraseAnswer(5);
+    });
+
+    document.getElementById('checkAnswer6').addEventListener('click', function() {
+      checkAnswer(6, '정답: 6. ㅇㅀ', ['통계적', '규칙', '패턴']);
+    });
+    document.getElementById('eraseAnswer6').addEventListener('click', function() {
+      eraseAnswer(6);
+    });
+
+    document.getElementById('checkAnswer7').addEventListener('click', function() {
+      checkAnswer(7, '정답: 7. 호ㅓ', ['구문', '의미', '타이밍']);
+    });
+    document.getElementById('eraseAnswer7').addEventListener('click', function() {
+      eraseAnswer(7);
+    });
+
+    document.getElementById('checkAnswer8').addEventListener('click', function() {
+      checkAnswer(8, '정답: 8. ㄹ허', ['xml', 'extensible markup language']);
+    });
+    document.getElementById('eraseAnswer8').addEventListener('click', function() {
+      eraseAnswer(8);
+    });
+
+    document.getElementById('checkScore').addEventListener('click', function() {
+      const score = count * 5;
+      const printScoreElement = document.getElementById('printScoreText');
+      printScoreElement.textContent = '총 점수는 ' + score + '점입니다. ' + (score >= 60 ? '합격입니다.' : '탈락입니다.');
+    });
+
+    document.getElementById('menuButton').addEventListener('click', function() {
+      const menu = document.getElementById('menu');
+      menu.style.display = menu.style.display === 'none' ? 'flex' : 'none';
+    });
+  </script>
+</body>
+</html>

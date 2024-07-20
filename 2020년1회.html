@@ -148,6 +148,7 @@
 
   <div id="main-content">
     <h1>[2020년 1회] 정보처리기사 기출문제</h1>
+    <button onclick="changePageToMain()">메인 메뉴로 돌아가기</button>
     <div id="page1" class="page active">
       
       <div id="question1">
@@ -664,6 +665,11 @@
       const menu = document.getElementById('menu');
       menu.style.display = menu.style.display === 'none' ? 'flex' : 'none';
     });
+
+
+    function changePageToMain() {
+    location.href = 'project.html';
+  }
   </script>
 </body>
 </html>

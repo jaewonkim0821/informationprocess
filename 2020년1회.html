@@ -13,28 +13,49 @@
       margin: 100;
       background-color: #ffffff;
     }
+    .code-slider {
+       position: relative;
+       overflow: hidden;
+       width: 800px; /* 슬라이더 너비 */
+       height: 400px; /* 슬라이더 높이 */
+       margin: 0 auto; /* 슬라이더를 가운데 정렬 */
+    }
+
+    .code-slide {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      
+    }
+
     #main-content { /*내용부분*/
-        margin-top:800px;
-      flex-grow: 1;
+      
       display: flex;
-      justify-content: center;
-      align-items: center;
       flex-direction: column;
+      align-items: center; /* 수정됨 */
+      padding: 20px;
+      margin-left: 270px;
       
     }
     #menu {
-      margin-top: 50px;
+      
+      position: fixed;
+      
       top: 10px;
       left: 10px;
-      width: 250px;
+      width: 220px;
       background-color: #f0f0f0;
       padding: 20px;
-      box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+      box-shadow: 3px 0 5px rgba(0, 0, 0, 0.1);
       display: flex;
       flex-direction: column;
       z-index: 1000;
+      height: 2000px;
     }
     #menu a {
+      margin-top: 30px;
       text-decoration: none;
       color: #000;
       padding: 10px;
@@ -55,13 +76,14 @@
       margin-bottom: 20px;
     }
     .rounded-rectangle-box {
-      width: 330px;
-      height: 120px;
-      border-radius: 20px;
-      background-color: #f0f0f0;
-      padding: 20px;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-      margin-bottom: 20px;
+      display: inline-block; /* 상자가 내용에 맞게 크기가 조절되도록 합니다. */
+    max-width: 330px; /* 최대 너비를 설정하여 상자가 너무 넓어지지 않도록 합니다. */
+    padding: 20px; /* 내부 여백을 추가합니다. */
+    border-radius: 20px; /* 모서리를 둥글게 합니다. */
+    background-color: #f0f0f0; /* 배경색 설정 */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* 그림자 설정 */
+    margin-bottom: 20px; /* 하단 여백 설정 */
+    box-sizing: border-box; /* padding과 border를 width에 포함시킵니다. */
     }
     #question1, #question2, #question3, #question4 {
       margin-bottom: 20px;
@@ -72,6 +94,7 @@
       font-size: 16px;
       padding: 10px;
       margin-bottom: 10px;
+      box-sizing: border-box;
     }
     button {
       padding: 10px 20px;
@@ -114,14 +137,19 @@
 <body>
   <div id="menu">
     <button id="menuButton">메뉴</button>
-    <a href="#page1" id="menu1">정보처리기사 회차별 기출 문제 풀이</a>
-    <a href="#page2" id="menu2">정보처리기사 과목별 기출 문제 풀이</a>
+    <p><br></p>
+    <a href="#question1" id="menu1">문제 1번 ~ 문제4번</a>
+    <a href="#question5" id="menu2">문제 5번 ~ 문제8번</a>
+    <a href="#question9" id="menu3">문제 9번 ~ 문제12번</a>
+    <a href="#question13" id="menu4">문제 13번 ~ 문제16번</a>
+    <a href="#question17" id="menu5">문제 17번 ~ 문제20번</a>
   </div>
     
 
   <div id="main-content">
     <h1>[2020년 1회] 정보처리기사 기출문제</h1>
     <div id="page1" class="page active">
+      
       <div id="question1">
         <p>문제 1: 살충제 패러독스의 개념에 관해 서술하시오.</p>
         <textarea id="answer1" rows="3" cols="50"></textarea>
@@ -164,13 +192,14 @@
       <div id="answerResult4">
         <p id="correctAnswer4"></p>
       </div>
+      <button id="prevPage1" style="display: none;">이전</button>
   
-      <button id="nextPage">다음</button>
+      <button id="nextPage1">다음</button>
     </div>
   
     <div id="page2" class="page">
       <div id="question5">
-        <p>문제 5: (문제 내용을 여기에 추가하세요)</p>
+        <p>문제 5: 속성 값으로 이루어진 데이터 오브젝트를 전달하기 위해 사용하는 개방형 표준 포맷이다. <br>ajax에서 많이 사용하고 xml을 대체하는 주요 데이터 포맷이다. 언어 독립형 데이터 포맷으로 다양한 데이터 프로그래밍 언어에서 사용하고 있는 기술은 무엇인가?</p>
         <textarea id="answer5" rows="3" cols="50"></textarea>
       </div>
       <button id="checkAnswer5">정답 확인</button>
@@ -180,8 +209,16 @@
       </div>
   
       <div id="question6">
-        <p>문제 6: (문제 내용을 여기에 추가하세요)</p>
-        <textarea id="answer6" rows="3" cols="50"></textarea>
+        <p>문제 6: STUDENT 테이블에 컴퓨터과 학생 50명, 인터넷과 학생 100명, 사무자동화과 학생 50명의 정보가 저장되어있을 때, 다음 SQL문의 실행 결과에 따른 튜플 수는?</p>
+        <div class="rounded-rectangle-box">
+          <p>1. SELECT DEPT FROM STUDENT</p>
+          <P>2. SELECT DISTINCE DEPT FROM STUDENT</P>
+          <P>3. SELECT COUN(DISTINCT DEPT) FROM STUDENT WHERE DEPT='컴퓨터과'</P>
+        </div>
+
+        <textarea id="answer6_1" rows="1" cols="50"></textarea>
+        <textarea id="answer6_2" rows="1" cols="50"></textarea>
+        <textarea id="answer6_3" rows="1" cols="50"></textarea>
       </div>
       <button id="checkAnswer6">정답 확인</button>
       <button id="eraseAnswer6">정답 지우기</button>
@@ -190,7 +227,7 @@
       </div>
   
       <div id="question7">
-        <p>문제 7: (문제 내용을 여기에 추가하세요)</p>
+        <p>문제 7: 스케쥴링 방식에서 HRN우선순위 게산식을 쓰시오.</p>
         <textarea id="answer7" rows="3" cols="50"></textarea>
       </div>
       <button id="checkAnswer7">정답 확인</button>
@@ -200,7 +237,7 @@
       </div>
   
       <div id="question8">
-        <p>문제 8: (문제 내용을 여기에 추가하세요)</p>
+        <p>문제 8: 트랜잭션의 특성 중 일관성, 지속성 외 2개의 특성을 쓰시오.</p>
         <textarea id="answer8" rows="3" cols="50"></textarea>
       </div>
       <button id="checkAnswer8">정답 확인</button>
@@ -208,11 +245,224 @@
       <div id="answerResult8">
         <p id="correctAnswer8"></p>
       </div>
+
+      <button id="nextPage2">다음</button>
+      <button id="prevPage2">이전</button>
+    </div>
+
+    <div id="page3" class="page">
+      <div id="question9">
+          <p>문제 9: 공격자가 패킷의 출발지 주소나 포트를 임의로 변경해 출발지와 목적지 주소를 동일하게 함으로써 공격 대상 컴퓨터의 실행속도를 느리게 하거나 동작을 마비시켜 서비스 거부 상태에 빠지도록 하는 공격 방법은 무엇인가?
+          </p>
+          <textarea id="answer9" rows="3" cols="50"></textarea>
+      </div>
+        <button id="checkAnswer9">정답 확인</button>
+        <button id="eraseAnswer9">정답 지우기</button>
+      <div id="answerResult9">
+          <p id="correctAnswer9"></p>
+      </div>
+    
+      <div id="question10">
+          <p>문제 10: RFC 1321로 지정되어 있으며, 주로 프로그램이나 파일이 원본 그대로인지를 확인하는 무결성 검사 등에 사용된다. 1991년 로널드 라이베스트가 예전에 쓰이던 MD4를 대체하기 위해 고안된 128비트 암호화 해시 함수는 무엇인가?</p>
   
-      <button id="prevPage">이전</button>
+          <textarea id="answer10" rows="3" cols="50"></textarea>
+          
+      </div>
+        <button id="checkAnswer10">정답 확인</button>
+        <button id="eraseAnswer10">정답 지우기</button>
+      <div id="answerResult10">
+          <p id="correctAnswer10"></p>
+      </div>
+    
+      <div id="question11">
+          <p>문제 11. 다음은 공통 모듈 구현의 개념에 대한 설명이다. 괄호 안에 알맞은 용어를 쓰시오.</p>
+        <div class="rounded-rectangle-box">
+            <p>모듈화를 중심으로 하는 소프트웨어 설계 방법에서는 모듈의 독립성을 높게 해주는 것이 좋은 설계 방향이다. 모듈의 독립성을 높여주기 위해서는 각 모듈 간의 관련성을 나타내는 (1)(은)는 낮추고, 모듈 안의 요소들이 서로 관련되어 있는 정도를 나타내는 (2)(은)는 높이는 것이 가장 바람직하다.</p>
+            
+        </div>
+          <textarea id="answer11_1" rows="1" cols="50"></textarea>
+          <textarea id="answer11_2" rows="1" cols="50"></textarea>
+        </div>
+      <button id="checkAnswer11">정답 확인</button>
+        <button id="eraseAnswer11">정답 지우기</button>
+      <div id="answerResult11">
+          <p id="correctAnswer11"></p>
+      </div>
+      
+      <div id="question12">
+          <p>문제 12: 출력결과를 쓰시오.</p>
+          <div class="code-slider">
+            <div class="code-slide">
+              
+                <pre><code>
+                  #include &lt;stdio.h&gt;
+                  #define SIZE 5
+        
+                  int main(void) {
+                  int arr[SIZE] = {75, 100, 95, 50, 85};
+                  int i, j, temp;
+                     for(i = 1; i &lt; SIZE; i++) {
+                      for(j = 0; j &lt; SIZE - i; j++) {
+                       if(arr[j] > arr[j + 1]) {
+                        temp = arr[j];
+                        arr[j] = arr[j + 1];
+                        arr[j + 1] = temp;
+                      }
+                    }
+                  }
+                  for(i = 0; i &lt; SIZE; i++) {
+                      printf("%d ", arr[i]);
+                  }
+                  return 0;
+                  }
+                    
+                </code></pre>
+            </div></div>
+        
+          
+      
+          <textarea id="answer12" rows="3" cols="50"></textarea>
+      </div>
+        <button id="checkAnswer12">정답 확인</button>
+        <button id="eraseAnswer12">정답 지우기</button>
+        <div id="answerResult12">
+          <p id="correctAnswer12"></p>
+        </div>
+  
+        <button id="nextPage3">다음</button>
+        <button id="prevPage3">이전</button>
+    </div>
+
+
+
+    <div id="page4" class="page">
+      <div id="question13">
+            <p>문제 13: 다음 출력 결과를 쓰시오. </p>
+            <div class="code-slider">
+              <div class="code-slide">
+                <pre><code>
+                  public class Exam {
+                    public static int[] makeArray(int n ){
+                    
+                      int[] i = new int[n];
+                        for(int i=0; i&lt;n ;i++){
+                          t[i] = i;
+                        }
+                     }
+                    
+                    public static void main(String[] args){
+                      int[] a = makeArray(4);
+                        for(int i=0; i&lt;a.length; i++)
+                          System.out.print(a[i]+&quot;&quot;);
+                      }
+                    
+                  }
+                </code>
+                </pre>
+              </div></div>
+              
+            
+      
+            <textarea id="answer13" rows="3" cols="50"></textarea>
+      </div>
+          <button id="checkAnswer13">정답 확인</button>
+          <button id="eraseAnswer13">정답 지우기</button>
+          <div id="answerResult13">
+            <p id="correctAnswer13"></p>
+          </div>
+      
+        <div id="question14">
+            <p>문제 14: 수는?</p>
+    
+            <textarea id="answer14" rows="1" cols="50"></textarea>
+
+          </div>
+          <button id="checkAnswer14">정답 확인</button>
+          <button id="eraseAnswer14">정답 지우기</button>
+          <div id="answerResult14">
+            <p id="correctAnswer14"></p>
+          </div>
+      
+          <div id="question15">
+            <p>문제 15: 시오.</p>
+            <textarea id="answer15" rows="3" cols="50"></textarea>
+          </div>
+          <button id="checkAnswer15">정답 확인</button>
+          <button id="eraseAnswer15">정답 지우기</button>
+          <div id="answerResult15">
+            <p id="correctAnswer15"></p>
+          </div>
+      
+          <div id="question16">
+            <p>문제 16: 오.</p>
+            <textarea id="answer16" rows="3" cols="50"></textarea>
+          </div>
+          <button id="checkAnswer16">정답 확인</button>
+          <button id="eraseAnswer16">정답 지우기</button>
+          <div id="answerResult16">
+            <p id="correctAnswer16"></p>
+          </div>
+    
+          <button id="nextPage4">다음</button>
+          <button id="prevPage4">이전</button>
+    </div>
+
+
+
+    <div id="page5" class="page">
+            <div id="question17">
+              <p>문제 17: . ?</p>
+              <textarea id="answer17" rows="3" cols="50"></textarea>
+            </div>
+            <button id="checkAnswer17">정답 확인</button>
+            <button id="eraseAnswer17">정답 지우기</button>
+            <div id="answerResult17">
+              <p id="correctAnswer17"></p>
+            </div>
+        
+            <div id="question18">
+              <p>문제 18:  는?</p>
+      
+              <textarea id="answer18" rows="1" cols="50"></textarea>
+             
+            </div>
+            <button id="checkAnswer18">정답 확인</button>
+            <button id="eraseAnswer18">정답 지우기</button>
+            <div id="answerResult18">
+              <p id="correctAnswer18"></p>
+            </div>
+        
+            <div id="question19">
+              <p>문제 19: .</p>
+              <textarea id="answer19" rows="3" cols="50"></textarea>
+            </div>
+            <button id="checkAnswer19">정답 확인</button>
+            <button id="eraseAnswer19">정답 지우기</button>
+            <div id="answerResult19">
+              <p id="correctAnswer19"></p>
+            </div>
+        
+            <div id="question20">
+              <p>문제 20: .</p>
+              <textarea id="answer20" rows="3" cols="50"></textarea>
+            </div>
+            <button id="checkAnswer20">정답 확인</button>
+            <button id="eraseAnswer20">정답 지우기</button>
+            <div id="answerResult20">
+              <p id="correctAnswer20"></p>
+            </div>
+      
+            
+            <button id="prevPage5">이전</button>
+            <button id="nextPage5" style="display: none;">다음</button>
+    </div>
+
+
+
+
       <button id="checkScore">점수 확인</button>
     <div id="printScore">
-    <p id="printScoreText"></p>
+      <p id="printScoreText"></p>
     </div>
 
     </div>
@@ -224,26 +474,101 @@
   </div>
 
   <script>
-    let count = 0; // 전역 변수로 선언하여 두 스크립트에서 공유
+    
 
     const pages = document.querySelectorAll('.page');
     let currentPage = 0;
+    
 
-    document.getElementById('nextPage').addEventListener('click', () => {
-      if (currentPage < pages.length - 1) {
+    document.getElementById('nextPage1').addEventListener('click', () => {
+      if (currentPage < pages.length -1 ) {
         pages[currentPage].classList.remove('active');
         currentPage++;
         pages[currentPage].classList.add('active');
+     
       }
     });
 
-    document.getElementById('prevPage').addEventListener('click', () => {
+    document.getElementById('prevPage1').addEventListener('click', () => {
       if (currentPage > 0) {
         pages[currentPage].classList.remove('active');
         currentPage--;
         pages[currentPage].classList.add('active');
+       
       }
     });
+
+    document.getElementById('nextPage2').addEventListener('click', () => {
+      if (currentPage < pages.length -1 ) {
+        pages[currentPage].classList.remove('active');
+        currentPage++;
+        pages[currentPage].classList.add('active');
+        
+      }
+    });
+
+    document.getElementById('prevPage2').addEventListener('click', () => {
+      if (currentPage > 0) {
+        pages[currentPage].classList.remove('active');
+        currentPage--;
+        pages[currentPage].classList.add('active');
+        
+      }
+    });
+
+    document.getElementById('nextPage3').addEventListener('click', () => {
+      if (currentPage < pages.length -1 ) {
+        pages[currentPage].classList.remove('active');
+        currentPage++;
+        pages[currentPage].classList.add('active');
+        
+      }
+    });
+
+    document.getElementById('prevPage3').addEventListener('click', () => {
+      if (currentPage > 0) {
+        pages[currentPage].classList.remove('active');
+        currentPage--;
+        pages[currentPage].classList.add('active');
+        
+      }
+    });
+    document.getElementById('nextPage4').addEventListener('click', () => {
+      if (currentPage < pages.length -1 ) {
+        pages[currentPage].classList.remove('active');
+        currentPage++;
+        pages[currentPage].classList.add('active');
+        
+      }
+    });
+
+    document.getElementById('prevPage4').addEventListener('click', () => {
+      if (currentPage > 0) {
+        pages[currentPage].classList.remove('active');
+        currentPage--;
+        pages[currentPage].classList.add('active');
+        
+      }
+    });
+    document.getElementById('nextPage5').addEventListener('click', () => {
+      if (currentPage < pages.length -1 ) {
+        pages[currentPage].classList.remove('active');
+        currentPage++;
+        pages[currentPage].classList.add('active');
+        
+      }
+    });
+
+    document.getElementById('prevPage5').addEventListener('click', () => {
+      if (currentPage > 0) {
+        pages[currentPage].classList.remove('active');
+        currentPage--;
+        pages[currentPage].classList.add('active');
+        
+      }
+    });
+
+    let count = 0; // 전역 변수로 선언하여 두 스크립트에서 공유
 
     function checkAnswer(questionNumber, correctAnswerText, keywords) {
       const userAnswer = document.getElementById('answer' + questionNumber).value;

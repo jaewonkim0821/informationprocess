@@ -210,16 +210,15 @@
       </div>
   
       <div id="question6">
-        <p>문제 6: STUDENT 테이블에 컴퓨터과 학생 50명, 인터넷과 학생 100명, 사무자동화과 학생 50명의 정보가 저장되어있을 때, 다음 SQL문의 실행 결과에 따른 튜플 수는?</p>
+        <p>문제 6: STUDENT 테이블에 컴퓨터과 학생 50명, 인터넷과 학생 100명, 사무자동화과 학생 50명의 정보가 저장되어있을 때, 다음 SQL문의 실행 결과에 따른 튜플 수는?(스페이스파로 구분해주세요)</p>
         <div class="rounded-rectangle-box">
           <p>1. SELECT DEPT FROM STUDENT</p>
           <P>2. SELECT DISTINCE DEPT FROM STUDENT</P>
           <P>3. SELECT COUN(DISTINCT DEPT) FROM STUDENT WHERE DEPT='컴퓨터과'</P>
         </div>
 
-        <textarea id="answer6_1" rows="1" cols="50"></textarea>
-        <textarea id="answer6_2" rows="1" cols="50"></textarea>
-        <textarea id="answer6_3" rows="1" cols="50"></textarea>
+        <textarea id="answer6" rows="1" cols="50"></textarea>
+        
       </div>
       <button id="checkAnswer6">정답 확인</button>
       <button id="eraseAnswer6">정답 지우기</button>
@@ -281,8 +280,8 @@
             <p>모듈화를 중심으로 하는 소프트웨어 설계 방법에서는 모듈의 독립성을 높게 해주는 것이 좋은 설계 방향이다. 모듈의 독립성을 높여주기 위해서는 각 모듈 간의 관련성을 나타내는 (1)(은)는 낮추고, 모듈 안의 요소들이 서로 관련되어 있는 정도를 나타내는 (2)(은)는 높이는 것이 가장 바람직하다.</p>
             
         </div>
-          <textarea id="answer11_1" rows="1" cols="50"></textarea>
-          <textarea id="answer11_2" rows="1" cols="50"></textarea>
+          <textarea id="answer11" rows="2" cols="50"></textarea>
+          
         </div>
       <button id="checkAnswer11">정답 확인</button>
         <button id="eraseAnswer11">정답 지우기</button>
@@ -373,7 +372,33 @@
           </div>
       
         <div id="question14">
-            <p>문제 14: 수는?</p>
+          <p>문제 14: 다음 출력 결과를 쓰시오. </p>
+          <div class="code-slider">
+            <div class="code-slide">
+              <pre><code>
+                public class Test {
+
+                  public static void main(String[] args) {
+                    
+                    int i=3, k=1;
+                    
+                        switch(i){
+                      case 0: 
+                      case 1: 
+                      case 2: 
+                      case 3: k=0;
+                      case 4: k+=3;
+                      case 5: k-=10;
+                      default: k--;
+                    }
+                        
+                    System.out.println(k);
+                  }
+                    
+                }
+              </code>
+              </pre>
+            </div></div>
     
             <textarea id="answer14" rows="1" cols="50"></textarea>
 
@@ -385,7 +410,14 @@
           </div>
       
           <div id="question15">
-            <p>문제 15: 시오.</p>
+            <p>문제 15: 다음이 설명하는 제품 패키지 릴리스 노트의 작성 항목은 무엇인가?</p>
+            <div class="rounded-rectangle-box">
+              <p>
+                릴리즈 노트(Release Note)는 고객 편의성을 고려하여 조직의 최종 사용자인 고객과 잘 정리된 릴리즈 정보를 공유하는 문서이다. <br> 릴리즈 노트의 내용으로는 보통 특정 소프트웨어 릴리즈의 최근 변경 사항, 개선 사항 및 버그 수정을 간결히 요약되어 있다. <br>릴리즈 노트 작성 항목 중 문서 이름(릴리즈 노트 이름), 제품 이름, 버전 번호, 릴리즈 날짜, 참고 날짜, 노트 버전 등을 기술하는 작성항목이 무엇인지 쓰시오.
+
+              </p>
+              </div>
+
             <textarea id="answer15" rows="3" cols="50"></textarea>
           </div>
           <button id="checkAnswer15">정답 확인</button>
@@ -395,7 +427,7 @@
           </div>
       
           <div id="question16">
-            <p>문제 16: 오.</p>
+            <p>문제 16: LoC 기법 개발 기간 계산식과 답 입력 (총라인 30000, 개발자 5명 월평균 300라인).</p>
             <textarea id="answer16" rows="3" cols="50"></textarea>
           </div>
           <button id="checkAnswer16">정답 확인</button>
@@ -412,7 +444,7 @@
 
     <div id="page5" class="page">
             <div id="question17">
-              <p>문제 17: . ?</p>
+              <p>문제 17: 비정규화(Denormalization)의 개념 : 반정규화에 대한 문제 (약술형)</p>
               <textarea id="answer17" rows="3" cols="50"></textarea>
             </div>
             <button id="checkAnswer17">정답 확인</button>
@@ -422,7 +454,7 @@
             </div>
         
             <div id="question18">
-              <p>문제 18:  는?</p>
+              <p>문제 18: OSI  7 참조 모델 중 두 장비 간의 전송을 위한 연결이나 전달 등의 인터페이스의 기계적, 전기적, 절차적 특성을 정의하여 비트를 물리적인 매체를 통해 전송하는 계층을 쓰시오.</p>
       
               <textarea id="answer18" rows="1" cols="50"></textarea>
              
@@ -434,8 +466,14 @@
             </div>
         
             <div id="question19">
-              <p>문제 19: .</p>
+              <p>문제 19: 다음 설명 중 빈 칸 ( 1 ~ 3 )에 가장 부합하는 애플리케이션 성능 측정을 위한 지표를 쓰시오.</p>
+              <div class="rounded-rectangle-box">
+                <p>
+                  애플리케이션 성능이란 사용자의 요구 기능을 해당 애플리케이션이 최소의 자원을 사용하면서 얼마나 빨리, 많은 기능을 수행하는가를 육안 또는 도구를 통하여 점검하는 것을 말한다. 이를 측정하기 위한 지표는 (  1  ), (   2  ), (  3  ), 자원 사용율이 있다.
+                </p>
+              </div>
               <textarea id="answer19" rows="3" cols="50"></textarea>
+              
             </div>
             <button id="checkAnswer19">정답 확인</button>
             <button id="eraseAnswer19">정답 지우기</button>
@@ -444,7 +482,8 @@
             </div>
         
             <div id="question20">
-              <p>문제 20: .</p>
+              <p>문제 20: 다음은 어떤 프로그램의 구조를 나타낸다. Fan-in의 수가 가 2 이상인 모듈의 이름을 쓰시오.</p>
+              <img src="20년1회20번.png">
               <textarea id="answer20" rows="3" cols="50"></textarea>
             </div>
             <button id="checkAnswer20">정답 확인</button>
@@ -594,6 +633,29 @@
       }
     }
 
+    function checkAnswer_and(questionNumber, correctAnswerText, keywords) {
+            const userAnswer = document.getElementById('answer' + questionNumber).value;
+            const correctAnswerElement = document.getElementById('correctAnswer' + questionNumber);
+            const answerResultElement = document.getElementById('answerResult' + questionNumber);
+            let correct = true;
+
+            if (userAnswer) {
+                for (const keyword of keywords) {
+                    if (!userAnswer.toLowerCase().includes(keyword.toLowerCase())) {
+                        correct = false;
+                        break;
+                    }
+                }
+                if (correct) {
+                    correctAnswerElement.innerHTML = correctAnswerText + '<br/> (키워드 포함: "' + keywords.join(', ') + '")';
+                    count++;
+                } else {
+                    correctAnswerElement.innerHTML = '오답입니다. ' + questionNumber + '번 정답은 <br/>' + correctAnswerText;
+                }
+                answerResultElement.style.display = 'block';
+            }
+        }
+
     function eraseAnswer(questionNumber) {
       document.getElementById('correctAnswer' + questionNumber).textContent = '';
       document.getElementById('answerResult' + questionNumber).style.display = 'none';
@@ -628,31 +690,115 @@
     });
 
     document.getElementById('checkAnswer5').addEventListener('click', function() {
-      checkAnswer(5, '정답: 5. ㄴㅇㄹ', ['동일', '테스트', '반복', '버그']);
+      checkAnswer(5, '정답: 5. json', ['json', 'javascript object notation']);
     });
     document.getElementById('eraseAnswer5').addEventListener('click', function() {
       eraseAnswer(5);
     });
 
     document.getElementById('checkAnswer6').addEventListener('click', function() {
-      checkAnswer(6, '정답: 6. ㅇㅀ', ['통계적', '규칙', '패턴']);
+      checkAnswer(6, '정답: 6. 200 3 1', ['200 3 1']);
     });
     document.getElementById('eraseAnswer6').addEventListener('click', function() {
       eraseAnswer(6);
     });
 
     document.getElementById('checkAnswer7').addEventListener('click', function() {
-      checkAnswer(7, '정답: 7. 호ㅓ', ['구문', '의미', '타이밍']);
+      checkAnswer(7, '정답: 7. (대기시간+서비스시간)/서비스시간', ['(대기시간+서비스시간)/서비스시간']);
     });
     document.getElementById('eraseAnswer7').addEventListener('click', function() {
       eraseAnswer(7);
     });
 
     document.getElementById('checkAnswer8').addEventListener('click', function() {
-      checkAnswer(8, '정답: 8. ㄹ허', ['xml', 'extensible markup language']);
+      checkAnswer(8, '정답: 8. 원자성, 고립성', ['원자성', '고립성', 'atomicity','isolation']);
     });
     document.getElementById('eraseAnswer8').addEventListener('click', function() {
       eraseAnswer(8);
+    });
+
+    document.getElementById('checkAnswer9').addEventListener('click', function() {
+      checkAnswer_and(9, '정답: 9. 랜드어택', ['랜드', '어택']);
+    });
+    document.getElementById('eraseAnswer9').addEventListener('click', function() {
+      eraseAnswer(9);
+    });
+
+    document.getElementById('checkAnswer10').addEventListener('click', function() {
+      checkAnswer(10, '정답: 10. MD5', ['md5']);
+    });
+    document.getElementById('eraseAnswer10').addEventListener('click', function() {
+      eraseAnswer(10);
+    });
+
+    document.getElementById('checkAnswer11').addEventListener('click', function() {
+      checkAnswer_and(11, '정답: 11. 결합도 응집도', ['결합도','응집도']);
+    });
+    document.getElementById('eraseAnswer11').addEventListener('click', function() {
+      eraseAnswer(11);
+    });
+
+    document.getElementById('checkAnswer12').addEventListener('click', function() {
+      checkAnswer(12, '정답: 12. 50 75 85 95 100', ['50 75 85 95 100']);
+    });
+    document.getElementById('eraseAnswer12').addEventListener('click', function() {
+      eraseAnswer(12);
+    });
+
+    document.getElementById('checkAnswer13').addEventListener('click', function() {
+      checkAnswer(13, '정답: 13. 0 1 2 3', ['0 1 2 3']);
+    });
+    document.getElementById('eraseAnswer13').addEventListener('click', function() {
+      eraseAnswer(13);
+    });
+
+    document.getElementById('checkAnswer14').addEventListener('click', function() {
+      checkAnswer(14, '정답: 14. -8', ['-8']);
+    });
+    document.getElementById('eraseAnswer14').addEventListener('click', function() {
+      eraseAnswer(14);
+    });
+
+    document.getElementById('checkAnswer15').addEventListener('click', function() {
+      checkAnswer(15, '정답: 15. 헤더', ['헤더']);
+    });
+    document.getElementById('eraseAnswer15').addEventListener('click', function() {
+      eraseAnswer(15);
+    });
+
+    document.getElementById('checkAnswer16').addEventListener('click', function() {
+      checkAnswer(16, '정답: 16. 20', ['20']);
+    });
+    document.getElementById('eraseAnswer16').addEventListener('click', function() {
+      eraseAnswer(16);
+    });
+
+    document.getElementById('checkAnswer17').addEventListener('click', function() {
+      checkAnswer(17, '정답: 17. 정규화된 엔티티, 속성, 관계에 대해 성능 향상과 개발 문명의 간순화를 위해 중복, 통합, 분리 등을 수행하는 데이터 모델링 기법이다', ['중복','데이터 모델링']);
+    });
+    document.getElementById('eraseAnswer17').addEventListener('click', function() {
+      eraseAnswer(17);
+    });
+
+    document.getElementById('checkAnswer18').addEventListener('click', function() {
+      checkAnswer(18, '정답: 18. 물리 계층', ['물리']);
+    });
+    document.getElementById('eraseAnswer18').addEventListener('click', function() {
+      eraseAnswer(18);
+    });
+
+    document.getElementById('checkAnswer19').addEventListener('click', function() {
+      checkAnswer(19, '정답: 19. 처리량, 응답 시간, 경과 시간', ['처리량 응답 시간 경과 시간']);
+    });
+    document.getElementById('eraseAnswer19').addEventListener('click', function() {
+      eraseAnswer(19);
+    });
+
+    document.getElementById('checkAnswer20').addEventListener('click', function() {
+      checkAnswer_and(20, '정답: 20. F, H', ['F','H']);
+    });
+    document.getElementById('eraseAnswer20').addEventListener('click', function() {
+      eraseAnswer(20);
     });
 
     document.getElementById('checkScore').addEventListener('click', function() {

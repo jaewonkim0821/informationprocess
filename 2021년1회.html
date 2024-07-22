@@ -1,0 +1,1059 @@
+
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>[2020년 1회] 정보처리기사 기출문제</title>
+  <style>
+    body { /* */
+      font-family: Arial, sans-serif;
+      display: flex;
+      height: 50vh;
+      margin: 100;
+      background-color: #ffffff;
+    }
+    .code-slider {
+       position: relative;
+       overflow: hidden;
+       width: 800px; /* 슬라이더 너비 */
+       height: 400px; /* 슬라이더 높이 */
+       margin: 0 auto; /* 슬라이더를 가운데 정렬 */
+    }
+
+    .code-slide {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      
+    }
+
+    #main-content { /*내용부분*/
+      
+      display: flex;
+      flex-direction: column;
+      align-items: center; /* 수정됨 */
+      padding: 20px;
+      margin-left: 270px;
+      
+    }
+    #menu {
+      
+      position: fixed;
+      
+      top: 10px;
+      left: 10px;
+      width: 220px;
+      background-color: #f0f0f0;
+      padding: 20px;
+      box-shadow: 3px 0 5px rgba(0, 0, 0, 0.1);
+      display: flex;
+      flex-direction: column;
+      z-index: 1000;
+      height: 1000px;
+      overflow-y: scroll;
+      
+      
+
+    }
+    #menu a {
+      margin-top: 10px;
+      text-decoration: none;
+      color: #000;
+      padding: 10px;
+      border-radius: 5px;
+      margin-bottom: 10px;
+      transition: background-color 0.3s ease;
+      
+    }
+    .submenu {
+            display: block;
+            margin-left: 20px;
+        }
+    .submenu a {
+            display: block;
+            margin: 5px 0;
+        }
+    #menu a.active + a.submenu {
+            display: block;
+        }
+    #menu a:hover {
+      background-color: #007BFF;
+      color: #fff;
+    }
+    #mainmenu {
+            
+            color: black; /* 시각적으로 비활성화 표시 */
+            font-size: 20px;
+            font-weight: bold;
+
+        }
+    #menu a.active {
+      background-color: #0056b3;
+      color: #fff;
+    }
+    h1 {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+    .rounded-rectangle-box {
+      display: inline-block; /* 상자가 내용에 맞게 크기가 조절되도록 합니다. */
+    width : 1200px; /* 고정된 너비를 설정합니다. */
+    padding: 20px; /* 내부 여백을 추가합니다. */
+    border-radius: 20px; /* 모서리를 둥글게 합니다. */
+    background-color: #f0f0f0; /* 배경색 설정 */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* 그림자 설정 */
+    margin-bottom: 20px; /* 하단 여백 설정 */
+    box-sizing: border-box; /* padding과 border를 width에 포함시킵니다. */
+    }
+    #question1, #question2, #question3, #question4 {
+      margin-bottom: 20px;
+    }
+    textarea {
+      width: 1200px;
+      height: 70px;
+      font-size: 16px;
+      padding: 10px;
+      margin-bottom: 10px;
+      box-sizing: border-box;
+    }
+    button {
+      padding: 10px 20px;
+      font-size: 16px;
+      cursor: pointer;
+      border: none;
+      border-radius: 5px;
+      background-color: #f0f0f0;
+      color: black;
+      margin-right: 10px;
+      margin-bottom: 20px;
+    }
+    #menuButton {
+      position: absolute;
+      left: 10px;
+      top: 10px;
+      padding: 10px 20px;
+      font-size: 16px;
+      cursor: pointer;
+      border: none;
+      border-radius: 5px;
+      background-color: #7fb9f8;
+      color: black;
+    }
+    #printScore {
+      margin-top: 20px;
+      font-size: 18px;
+    }
+    .page{
+      display:none;
+
+    }
+    .active{
+      display:block;
+    }
+
+    .hidden {
+    display: none;
+}
+#timer {
+    position: fixed;
+    top: 10px;
+    right: 10px;
+    font-size: 20px;
+    background-color: #ffdddd;
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+}
+#submit {
+    
+    margin-right: 10px;
+    margin-bottom: 20px;
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #000000;
+    color: red;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+
+  </style>
+</head>
+<body>
+  <div id="timer">02:30:00</div>
+    <div id="menu">
+        <button id="menuButton">메뉴</button>
+        <p><br></p>
+        <a class = disabled id="2020년 1회">2020년 1회</a>
+        <a href="#question1" id="menu1">문제 1번 ~ 문제4번</a>
+        <a href="#question5" id="menu2">문제 5번 ~ 문제8번</a>
+        <a href="#question9" id="menu3">문제 9번 ~ 문제12번</a>
+        <a href="#question13" id="menu4">문제 13번 ~ 문제16번</a>
+        <a href="#question17" id="menu5">문제 17번 ~ 문제20번</a>
+        <a class = disabled id="2020년 2회">2020년 2회</a>
+        <a href="#question1" id="menu6">문제 1번 ~ 문제4번</a>
+        <a href="#question5" id="menu7">문제 5번 ~ 문제8번</a>
+        <a href="#question9" id="menu8">문제 9번 ~ 문제12번</a>
+        <a href="#question13" id="menu9">문제 13번 ~ 문제16번</a>
+        <a href="#question17" id="menu10">문제 17번 ~ 문제20번</a>
+        
+      </div>
+    
+
+  <div id="main-content">
+    <h1>[2021년 1회] 정보처리기사 기출문제</h1>
+    <button onclick="changePageToMain()">메인 메뉴로 돌아가기</button>
+    <div id="page1" class="page active">
+      
+      <div id="question1">
+        <p>문제 1: 물리주소(MAC 주소)로 IP주소를 찾는 프로토콜을 작성하시오.  ( 부분점수 없음 ).</p>
+        <textarea id="answer1" rows="3" cols="50"></textarea>
+      </div>
+      <button id="checkAnswer1">정답 확인</button>
+      <button id="eraseAnswer1">정답 지우기</button>
+      <div id="answerResult1">
+        <p id="correctAnswer1"></p>
+      </div>
+  
+      <div id="question2">
+        <p>문제 2: [ 보기 ] 구현 / 개념적 설계 / 논리적 설계 / 요구사항 / 물리적 설계 보기를 토대로 (1) ~ (3)에 알맞은 답안을 쓰시오.</p>
+        </p>
+        <div class="rounded-rectangle-box">
+            <p>(1) ~ 결과로 테이블 정의서, 명세서 등이 있음</p>
+            (2)결과로 E-R 다이어그램이 나옴</P>
+            (3)과정에서 정규화 과정 수행함</P>
+        </P>
+        </div>
+        <textarea id="answer2" rows="3" cols="50"></textarea>
+      </div>
+      <button id="checkAnswer2">정답 확인</button>
+      <button id="eraseAnswer2">정답 지우기</button>
+      <div id="answerResult2">
+        <p id="correctAnswer2"></p>
+      </div>
+  
+      <div id="question3">
+        <p>문제 3: 웹 서비스명, 제공 위치, 메시지 포맷, 프로토콜 정보 등 웹 서비스에 대한 상세 정보가 기술된 XML 형식으로 구현되어 있는 언어는 무엇인가?.</p>
+        <textarea id="answer3" rows="3" cols="50"></textarea>
+      </div>
+      <button id="checkAnswer3">정답 확인</button>
+      <button id="eraseAnswer3">정답 지우기</button>
+      <div id="answerResult3">
+        <p id="correctAnswer3"></p>
+      </div>
+  
+      <div id="question4">
+        <p>문제 4: 다음 (1), (2)에 알맞은 답안을 쓰시오.</p>
+      </P>
+      <div class="rounded-rectangle-box">
+           <P> (1) (    ) 요구사항은 시스템이 제공하는 기능 또는 서비스에 대해 상세하게 기술된 요구사항이다.</P>
+            (2) (    ) 요구사항은 시스템 속성이나 시스템에 의해 제공되는 서비스나 기능에 대한 제약사항에 대해 기술되어 있다.</P>
+        </p>
+        </div>
+        <textarea id="answer4" rows="3" cols="50"></textarea>
+      </div>
+      <button id="checkAnswer4">정답 확인</button>
+      <button id="eraseAnswer4">정답 지우기</button>
+      <div id="answerResult4">
+        <p id="correctAnswer4"></p>
+      </div>
+      <button id="prevPage1" style="display: none;">이전</button>
+  
+      <button id="nextPage1">다음</button>
+    </div>
+  
+    <div id="page2" class="page">
+      <div id="question5">
+        <p>문제 5: 파이썬 문제 ( 부분점수 없음 )
+        </p>
+        <div class="rounded-rectangle-box">
+            <p>class arr:</p>
+                a = ["Seoul","Kyeonggi","inchon","Daejoen","Deagu","Pusan"]</p>
+                str01=' '</p>
+                for i in arr.a:</p>
+                str01 = str01 + i[0]</p>
+                print(str01)</p>
+            </p>
+        </div>
+
+        <textarea id="answer5" rows="3" cols="50"></textarea>
+      </div>
+      <button id="checkAnswer5">정답 확인</button>
+      <button id="eraseAnswer5">정답 지우기</button>
+      <div id="answerResult5">
+        <p id="correctAnswer5"></p>
+      </div>
+  
+      <div id="question6">
+        <p>문제 6: SQL 문제 ( 부분점수 없음 )</p>
+        <div class="rounded-rectangle-box">
+          SELECT COUNT(*)FROM [TABLE] WHERE EMPNO > 100 AND SAL >= 3000 OR ENPNO = 200[TABLE]
+        </div>
+          <table>
+            <thead>
+                <tr>
+                    <th>EMPNO</th>
+                    <th>SAL</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>100</td>
+                    <td>1000</td>
+                </tr>
+            </tbody>
+            <tbody>
+                <tr>
+                    <td>200</td>
+                    <td>3000</td>
+                </tr>
+            </tbody>
+            <tbody>
+                <tr>
+                    <td>300</td>
+                    <td>1500</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <textarea id="answer6" rows="1" cols="50"></textarea>
+        
+      </div>
+      <button id="checkAnswer6">정답 확인</button>
+      <button id="eraseAnswer6">정답 지우기</button>
+      <div id="answerResult6">
+        <p id="correctAnswer6"></p>
+      </div>
+  
+      <div id="question7">
+        <p>문제 7: JAVA 문제  ( 부분점수 없음 ).</p>
+    </P>
+    <div class="rounded-rectangle-box">
+        <P>public class ssoTest{</P>
+        public static void main(String []args){</P>
+            int a[][] = {{45, 50, 75}, {89}};</P>
+            System.out.println(a[0].length);</P>
+            System.out.println(a[1].length);</P>
+            System.out.println(a[0][0]);</P>
+            System.out.println(a[0][1]);</P>
+            System.out.println(a[0][0]);</P>
+        }</P>
+    }</P>
+</div>
+        <textarea id="answer7" rows="3" cols="50"></textarea>
+      </div>
+      <button id="checkAnswer7">정답 확인</button>
+      <button id="eraseAnswer7">정답 지우기</button>
+      <div id="answerResult7">
+        <p id="correctAnswer7"></p>
+      </div>
+  
+      <div id="question8">
+        <p>문제 8: 이것은 시스템의 성능 향상, 개발 과정의 편의성 등을 위해 정규화된 데이터 모델을 분할, 통합,</p>
+        
+         추가하는 과정으로, 의도적으로 정규화를 위배하는 행위이다. 이것은 무엇인가?.</p>
+        <textarea id="answer8" rows="3" cols="50"></textarea>
+      </div>
+      <button id="checkAnswer8">정답 확인</button>
+      <button id="eraseAnswer8">정답 지우기</button>
+      <div id="answerResult8">
+        <p id="correctAnswer8"></p>
+      </div>
+
+      <button id="nextPage2">다음</button>
+      <button id="prevPage2">이전</button>
+    </div>
+
+    <div id="page3" class="page">
+      <div id="question9">
+          <p>문제 9: 다음은 블랙박스 테스트의 예시이다. (1), (2)에 알맞은 테스트를 작성하시오.</p>
+          <div class="rounded-rectangle-box">
+            (1) 0 &lt;= x &lt;= 10일 때 -1 0 10 11인 경우 사용하는 테스트</p>
+            
+            (2) 유효값과 그렇지 않은 범위(무효값)를 나눠야할 경우 사용하는 테스트</div>
+          
+          <textarea id="answer9" rows="3" cols="50"></textarea>
+      </div>
+        <button id="checkAnswer9">정답 확인</button>
+        <button id="eraseAnswer9">정답 지우기</button>
+      <div id="answerResult9">
+          <p id="correctAnswer9"></p>
+      </div>
+    
+      <div id="question10">
+          <p>문제 10: 다음 [ 보기 ] ㄱ~ㅂ 에서 (1), (2)에 알맞은 기호를 작성하시오.  </p>
+            <div class="rounded-rectangle-box">
+            (1) 이것은 모듈 테스트라고도 불리며 사용자 요구사항에 대한 단위 모듈, 서브루틴 등을 테스트한다.</p>
+            (2) 이것은 인터페이스 간 시스템이 정상적으로 실행되는지 확인하는 테스트이다.</p>
+            
+            [ 보기 ] ㄱ. 시스템 테스트 ㄴ. 인수 테스트 ㄷ.알파 테스트 ㄹ. 단위 테스트 ㅁ. 통합 테스트 ㅂ. 회귀 테스트</div>
+  
+          <textarea id="answer10" rows="3" cols="50"></textarea>
+          
+      </div>
+        <button id="checkAnswer10">정답 확인</button>
+        <button id="eraseAnswer10">정답 지우기</button>
+      <div id="answerResult10">
+          <p id="correctAnswer10"></p>
+      </div>
+    
+      <div id="question11">
+          <p>문제 11: 다음 (1) ,(2)에 알맞은 답안을 작성하시오.</p>
+            <div class="rounded-rectangle-box">
+            1. IPv6는 (1) 비트 길이를 가진다.</p>
+            2. IPv4는 길이 32비트이며, (2) 비트씩 4분할한다.
+            </div>
+        </div>
+        
+          <textarea id="answer11" rows="2" cols="50"></textarea>
+          
+        
+      <button id="checkAnswer11">정답 확인</button>
+        <button id="eraseAnswer11">정답 지우기</button>
+      <div id="answerResult11">
+          <p id="correctAnswer11"></p>
+      </div>
+      
+      <div id="question12">
+          <p>문제 12: 프로세스간 인터페이스, 공유 메모리(Shared Memory) 소켓(Socket) 세마포어(Semaphores)</p>
+          <textarea id="answer12" rows="3" cols="50"></textarea>
+      </div>
+        <button id="checkAnswer12">정답 확인</button>
+        <button id="eraseAnswer12">정답 지우기</button>
+        <div id="answerResult12">
+          <p id="correctAnswer12"></p>
+        </div>
+  
+        <button id="nextPage3">다음</button>
+        <button id="prevPage3">이전</button>
+    </div>
+
+    
+
+
+
+    <div id="page4" class="page">
+      <div id="question13">
+            <p>문제 13: 서로 다른 플랫폼 간의 연계, 통합, Point to Point, Hub&Spoke, Message Bus 등이 있는 것은 무엇인가? </p>
+            <textarea id="answer13" rows="3" cols="50"></textarea>
+      </div>
+          <button id="checkAnswer13">정답 확인</button>
+          <button id="eraseAnswer13">정답 지우기</button>
+          <div id="answerResult13">
+            <p id="correctAnswer13"></p>
+          </div>
+      
+        <div id="question14">
+          <p>문제 14: [변형문제] 다음 테이블의 카디널리티와 차수의 갯수를 구하시오. (단, 학번, 학년은 숫자형, 이름과 학과는 문자형이다) </p>
+          <div class="rounded-rectangle-box">
+            STUDENT테이블
+          </div>
+            <table>
+              <thead>
+                  <tr>
+                      <th>학번</th>
+                      <th>이름</th>
+                      <th>학번</th>
+                      <th>학년</th>
+                  </tr>
+              </thead>
+              <tbody>
+                  <tr>
+                      <td>20191001</td>
+                      <td>강은미</td>
+                      <td>컴퓨터학과</td>
+                      <td>2</td>
+                  </tr>
+              </tbody>
+              <tbody>
+                  <tr>
+                      <td>20192002</td>
+                      <td>김정미</td>
+                      <td>정보통신학과</td>
+                      <td>2</td>
+                  </tr>
+              </tbody>
+              <tbody>
+                  <tr>
+                      <td>20183003</td>
+                      <td>홍길동</td>
+                      <td>정보보호학과</td>
+                      <td>3</td>
+                 </tr>
+              </tbody>
+              <tbody>
+                  <tr>
+                      <td>20183003</td>
+                      <td>홍길동</td>
+                      <td>정보보호학과</td>
+                      <td>3</td>
+                 </tr>
+              </tbody>
+              <tbody>
+                  <tr>
+                     <td>20201002</td>
+                     <td>김철수</td>
+                     <td>정보보호학과</td>
+                     <td>2</td>
+                 </tr>
+              </tbody>
+              <tbody>
+                  <tr>
+                     <td>20211003</td>
+                     <td>김영희</td>
+                     <td>정보통신학과</td>
+                     <td>3</td>
+                  </tr>
+              </tbody>
+          </table>
+
+
+            <textarea id="answer14" rows="1" cols="50"></textarea>
+
+          </div>
+          <button id="checkAnswer14">정답 확인</button>
+          <button id="eraseAnswer14">정답 지우기</button>
+          <div id="answerResult14">
+            <p id="correctAnswer14"></p>
+          </div>
+      
+          <div id="question15">
+            <p>문제 15: C언어</p>
+            <div class="rounded-rectangle-box">
+              <p>
+               int main() {</p>
+                struct insa {</p>
+                    char name[10];</p>
+                    int age;</p>
+                } a[] = {"Kim", 28, "Lee", 38, "Park", 41, "Choi", 30};</p>
+                struch insa +p;</p>
+                p = a;</p>
+                p++;</p>
+                printf("%s ", p->name);</p>
+                printf("%d ", p->age);</p>
+               }</p>
+
+              </p>
+              </div>
+
+            <textarea id="answer15" rows="3" cols="50"></textarea>
+          </div>
+          <button id="checkAnswer15">정답 확인</button>
+          <button id="eraseAnswer15">정답 지우기</button>
+          <div id="answerResult15">
+            <p id="correctAnswer15"></p>
+          </div>
+      
+          <div id="question16">
+            <p>문제 16: 다음은 데이터 모델 구성 요소 3가지에 대한 설명이다. 다음에 알맞는 답안을 작성하시오. ( 문제 완전하지 않음 )</p>
+                <div class="rounded-rectangle-box">
+                (1) 데이터베이스에 저장된 실제 데이터를 처리하는 작업에 대한 명세로서 데이터 베이스를 조작하는 기본 도구이다.</p>
+                
+                (2) 개체 모델에서는 (①)을/를 ~ 나타내는데 논리 데이터 모델에서는 (②)을/를 어떻게 나타낼 것인지 ~</p>
+                
+                (3) 제약조건 명시되어 있음</p>
+                </div>
+            <textarea id="answer16" rows="3" cols="50"></textarea>
+          </div>
+          <button id="checkAnswer16">정답 확인</button>
+          <button id="eraseAnswer16">정답 지우기</button>
+          <div id="answerResult16">
+            <p id="correctAnswer16"></p>
+          </div>
+    
+          <button id="nextPage4">다음</button>
+          <button id="prevPage4">이전</button>
+    </div>
+
+
+
+    <div id="page5" class="page">
+            <div id="question17">
+              <p>문제 17: 시스템 객체의 접근을 개인 또는 그룹의 식별자에 기반한 방법으로 이떤 종류의 접근 권한을 가진</p>
+              
+              사용자가 다른 사용자에게 자신의 판단에 따라 권한을 허용하는 접근제어 방식은? ( 부분점수 없음 )</p>
+              <textarea id="answer17" rows="3" cols="50"></textarea>
+            </div>
+            <button id="checkAnswer17">정답 확인</button>
+            <button id="eraseAnswer17">정답 지우기</button>
+            <div id="answerResult17">
+              <p id="correctAnswer17"></p>
+            </div>
+        
+            <div id="question18">
+              <p>문제 18: JAVA 문제 ( 부분점수 없음 )</p>
+              <div class="code-slider">
+                <div class="code-slide">
+                  <pre><code>
+                    public class ssoTest {
+                        public static void main(String[] args) {
+                            int j, i;
+                            for (j = 0, i = 0; i &lt;= 5; i++) {
+                                j += i;
+                                System.out.print(i);
+                                if (i == 5) {
+                                    System.out.print("=");
+                                    System.out.print(j);
+                                } else {
+                                    System.out.print("+");
+                                }
+                            }
+                        }
+                    }
+                  </code>
+                  </pre>
+                </div></div>
+            
+      
+              <textarea id="answer18" rows="1" cols="50"></textarea>
+             
+            </div>
+            <button id="checkAnswer18">정답 확인</button>
+            <button id="eraseAnswer18">정답 지우기</button>
+            <div id="answerResult18">
+              <p id="correctAnswer18"></p>
+            </div>
+        
+            <div id="question19">
+              <p>문제 19: 다음 [ 보기 ] ㄱ~ㅂ 에서 (1), (3)에 알맞은 기호를 작성하시오.  
+                <div class="rounded-rectangle-box">
+                (1) 모듈간 데이터, 지역변수를 직접 참조하는 경우의 결합도</p>
+                
+                (2) 모듈간의 인터페이스로 배열이나 객체 등 자료구조가 전달되는 경우의 결합도</p>
+                
+                (3) 파라미터가 아닌 모듈 밖에 선언되어 있는 전역 변수를 참조하고 전역변소를 갱신하는 식으로 상호 작용을 하는 경우의 결합도</p>
+                
+                [ 보기 ] ㄱ. 자료 결합도 ㄴ. 스탬프 결합도 ㄷ. 제어 결합도 ㄹ. 공통 결합도 ㅁ. 내용 결합도 ㅂ. 외부 결합도</p>
+                </div>
+              
+              
+              <textarea id="answer19" rows="3" cols="50"></textarea>
+              
+            </div>
+            <button id="checkAnswer19">정답 확인</button>
+            <button id="eraseAnswer19">정답 지우기</button>
+            <div id="answerResult19">
+              <p id="correctAnswer19"></p>
+            </div>
+        
+            <div id="question20">
+              <p>문제 20: 괄호안에 공통적으로 들어갈 공격 기법을 적으시오 ( 부분점수 없음 )</p>
+                <div class="rounded-rectangle-box">
+                1. ( ) 은/는 '세션을 가로채다'라는 의미로, 정상적 연결을 RST 패킷을 통해 종료시킨 후 재연결 시 희생자가 아닌 공격자에게 연결한다.</p>
+                
+                2. TCP ()은 ~ [TCP 하이재킹의 원리에 대한 설명]
+                </div>
+             
+              <textarea id="answer20" rows="3" cols="50"></textarea>
+            </div>
+            <button id="checkAnswer20">정답 확인</button>
+            <button id="eraseAnswer20">정답 지우기</button>
+            <div id="answerResult20">
+              <p id="correctAnswer20"></p>
+            </div>
+      
+            
+            <button id="prevPage5">이전</button>
+            <button color = red id="submit">제출</button>
+            <button id="nextPage5" style="display: none;">다음</button>
+    </div>
+
+
+
+
+      <button id="checkScore">점수 확인</button>
+    <div id="printScore">
+      <p id="printScoreText"></p>
+    </div>
+
+    
+
+  <script>
+    
+
+    document.querySelectorAll('#menu a').forEach(link => { //메뉴이동 스크립트
+            link.addEventListener('click', function(event) {
+                event.preventDefault();
+                const targetId = this.getAttribute('href').substring(1);
+                document.querySelectorAll('.page').forEach(page => {
+                    page.classList.remove('active');
+                });
+                const targetPage = document.getElementById(targetId).closest('.page');
+                targetPage.classList.add('active');
+                window.location.hash = this.getAttribute('href');
+                window.scrollTo(0, 0); // 페이지 전환 시 맨 위로 스크롤
+
+            });
+        });
+    
+
+    const pages = document.querySelectorAll('.page');
+    let currentPage = 0;
+    
+
+    document.getElementById('nextPage1').addEventListener('click', () => {
+      if (currentPage < pages.length -1 ) {
+        pages[currentPage].classList.remove('active');
+        currentPage++;
+        pages[currentPage].classList.add('active');
+        window.scrollTo(0, 0); // 페이지 전환 시 맨 위로 스크롤
+     
+      }
+    });
+
+    document.getElementById('prevPage1').addEventListener('click', () => {
+      if (currentPage > 0) {
+        pages[currentPage].classList.remove('active');
+        currentPage--;
+        pages[currentPage].classList.add('active');
+        window.scrollTo(0, 0); // 페이지 전환 시 맨 위로 스크롤
+       
+      }
+    });
+
+    document.getElementById('nextPage2').addEventListener('click', () => {
+      if (currentPage < pages.length -1 ) {
+        pages[currentPage].classList.remove('active');
+        currentPage++;
+        pages[currentPage].classList.add('active');
+        window.scrollTo(0, 0); // 페이지 전환 시 맨 위로 스크롤
+        
+      }
+    });
+
+    document.getElementById('prevPage2').addEventListener('click', () => {
+      if (currentPage > 0) {
+        pages[currentPage].classList.remove('active');
+        currentPage--;
+        pages[currentPage].classList.add('active');
+        window.scrollTo(0, 0); // 페이지 전환 시 맨 위로 스크롤
+        
+      }
+    });
+
+    document.getElementById('nextPage3').addEventListener('click', () => {
+      if (currentPage < pages.length -1 ) {
+        pages[currentPage].classList.remove('active');
+        currentPage++;
+        pages[currentPage].classList.add('active');
+        window.scrollTo(0, 0); // 페이지 전환 시 맨 위로 스크롤
+        
+      }
+    });
+
+    document.getElementById('prevPage3').addEventListener('click', () => {
+      if (currentPage > 0) {
+        pages[currentPage].classList.remove('active');
+        currentPage--;
+        pages[currentPage].classList.add('active');
+        window.scrollTo(0, 0); // 페이지 전환 시 맨 위로 스크롤
+        
+      }
+    });
+    document.getElementById('nextPage4').addEventListener('click', () => {
+      if (currentPage < pages.length -1 ) {
+        pages[currentPage].classList.remove('active');
+        currentPage++;
+        pages[currentPage].classList.add('active');
+        window.scrollTo(0, 0); // 페이지 전환 시 맨 위로 스크롤
+        
+      }
+    });
+
+    document.getElementById('prevPage4').addEventListener('click', () => {
+      if (currentPage > 0) {
+        pages[currentPage].classList.remove('active');
+        currentPage--;
+        pages[currentPage].classList.add('active');
+        window.scrollTo(0, 0); // 페이지 전환 시 맨 위로 스크롤
+        
+      }
+    });
+    document.getElementById('nextPage5').addEventListener('click', () => {
+      if (currentPage < pages.length -1 ) {
+        pages[currentPage].classList.remove('active');
+        currentPage++;
+        pages[currentPage].classList.add('active');
+        window.scrollTo(0, 0); // 페이지 전환 시 맨 위로 스크롤
+        
+      }
+    });
+
+    document.getElementById('prevPage5').addEventListener('click', () => {
+      if (currentPage > 0) {
+        pages[currentPage].classList.remove('active');
+        currentPage--;
+        pages[currentPage].classList.add('active');
+        window.scrollTo(0, 0); // 페이지 전환 시 맨 위로 스크롤
+        
+      }
+    });
+
+    let count = 0; // 전역 변수로 선언하여 두 스크립트에서 공유
+
+    function checkAnswer(questionNumber, correctAnswerText, keywords) {
+      const userAnswer = document.getElementById('answer' + questionNumber).value;
+      const correctAnswerElement = document.getElementById('correctAnswer' + questionNumber);
+      const answerResultElement = document.getElementById('answerResult' + questionNumber);
+      let correct = false;
+
+      if (userAnswer) {
+        for (const keyword of keywords) {
+          if (userAnswer.toLowerCase().includes(keyword)) {
+            correct = true;
+            break;
+          }
+        }
+        if (correct) {
+          correctAnswerElement.innerHTML = correctAnswerText + '<br/> (키워드 포함: "' + keywords.join(', ') + '")';
+          count++;
+        } else {
+          correctAnswerElement.innerHTML = '오답입니다. ' + questionNumber + '번 정답은 <br/>' + correctAnswerText;
+        }
+        answerResultElement.style.display = 'block';
+      }
+    }
+
+    function checkAnswer_and(questionNumber, correctAnswerText, keywords) {
+            const userAnswer = document.getElementById('answer' + questionNumber).value;
+            const correctAnswerElement = document.getElementById('correctAnswer' + questionNumber);
+            const answerResultElement = document.getElementById('answerResult' + questionNumber);
+            let correct = true;
+
+            if (userAnswer) {
+                for (const keyword of keywords) {
+                    if (!userAnswer.toLowerCase().includes(keyword.toLowerCase())) {
+                        correct = false;
+                        break;
+                    }
+                }
+                if (correct) {
+                    correctAnswerElement.innerHTML = correctAnswerText + '<br/> (키워드 포함: "' + keywords.join(', ') + '")';
+                    count++;
+                } else {
+                    correctAnswerElement.innerHTML = '오답입니다. ' + questionNumber + '번 정답은 <br/>' + correctAnswerText;
+                }
+                answerResultElement.style.display = 'block';
+            }
+        }
+
+    function eraseAnswer(questionNumber) {
+      document.getElementById('correctAnswer' + questionNumber).textContent = '';
+      document.getElementById('answerResult' + questionNumber).style.display = 'none';
+    }
+
+    document.getElementById('checkAnswer1').addEventListener('click', function() {
+      checkAnswer(1, '정답: RARP', ['RARP']);
+    });
+    document.getElementById('eraseAnswer1').addEventListener('click', function() {
+      eraseAnswer(1);
+    });
+
+    document.getElementById('checkAnswer2').addEventListener('click', function() {
+        checkAnswer_and(2, '정답: 물리적 설계(물리),개념적 설계(개념),논리적 설계(논리)', ['통계적', '규칙', '패턴']);
+    });
+    document.getElementById('eraseAnswer2').addEventListener('click', function() {
+      eraseAnswer(2);
+    });
+
+    document.getElementById('checkAnswer3').addEventListener('click', function() {
+      checkAnswer(3, '정답: WSDL', ['WSDL']);
+    });
+    document.getElementById('eraseAnswer3').addEventListener('click', function() {
+      eraseAnswer(3);
+    });
+
+    document.getElementById('checkAnswer4').addEventListener('click', function() {
+        checkAnswer_and(4, '정답: 기능(적), 비기능(적)', ['기능(적)', '비기능(적)']);
+    });
+    document.getElementById('eraseAnswer4').addEventListener('click', function() {
+      eraseAnswer(4);
+    });
+
+    document.getElementById('checkAnswer5').addEventListener('click', function() {
+      checkAnswer(5, '정답: SKIDDP', ['SKIDDP']);
+    });
+    document.getElementById('eraseAnswer5').addEventListener('click', function() {
+      eraseAnswer(5);
+    });
+
+    document.getElementById('checkAnswer6').addEventListener('click', function() {
+      checkAnswer(6, '정답: 1[테이블 그림 상태로] OR 1', ['1[테이블 그림 상태로] OR 1']);
+    });
+    document.getElementById('eraseAnswer6').addEventListener('click', function() {
+      eraseAnswer(6);
+    });
+
+    document.getElementById('checkAnswer7').addEventListener('click', function() {
+      checkAnswer(7, '정답: 3,1,45,50,89', ['3,1,45,50,89']);
+    });
+    document.getElementById('eraseAnswer7').addEventListener('click', function() {
+      eraseAnswer(7);
+    });
+
+    document.getElementById('checkAnswer8').addEventListener('click', function() {
+      checkAnswer(8, '정답: 반정규화(역정규화,비정규화)', ['반정규화 (역정규화,비정규화)']);
+    });
+    document.getElementById('eraseAnswer8').addEventListener('click', function() {
+      eraseAnswer(8);
+    });
+
+    document.getElementById('checkAnswer9').addEventListener('click', function() {
+      checkAnswer_and(9, '정답: (1)경계값 분석 테스트(한계값 분석 테스트),(2)동등분활 테스트(동치분할 테스트, 균등분활 테스트, 동치 클래스 분해 테스트)', ['(1)경계값 분석 테스트,(2)동등분활 테스트']);
+    });
+    document.getElementById('eraseAnswer9').addEventListener('click', function() {
+      eraseAnswer(9);
+    });
+
+    document.getElementById('checkAnswer10').addEventListener('click', function() {
+      checkAnswer_and(10, '정답: (1)ㄹ,(2)ㅁ', ['(1)ㄹ,(2)ㅁ']);
+    });
+    document.getElementById('eraseAnswer10').addEventListener('click', function() {
+      eraseAnswer(10);
+    });
+
+    document.getElementById('checkAnswer11').addEventListener('click', function() {
+      checkAnswer_and(11, '정답: (1)128,(2)8', ['(1)128,(2)8']);
+    });
+    document.getElementById('eraseAnswer11').addEventListener('click', function() {
+      eraseAnswer(11);
+    });
+
+    document.getElementById('checkAnswer12').addEventListener('click', function() {
+      checkAnswer(12, '정답: IPC메소드(Inter-Process Communication)', ['IPC메소드(Inter-Process Communication)']);
+    });
+    document.getElementById('eraseAnswer12').addEventListener('click', function() {
+      eraseAnswer(12);
+    });
+
+    document.getElementById('checkAnswer13').addEventListener('click', function() {
+      checkAnswer(13, '정답: EAI', ['EAI']);
+    });
+    document.getElementById('eraseAnswer13').addEventListener('click', function() {
+      eraseAnswer(13);
+    });
+
+    document.getElementById('checkAnswer14').addEventListener('click', function() {
+      checkAnswer_and(14, '정답: ① 5 ② 4', ['① 5 ② 4']);
+    });
+    document.getElementById('eraseAnswer14').addEventListener('click', function() {
+      eraseAnswer(14);
+    });
+
+    document.getElementById('checkAnswer15').addEventListener('click', function() {
+      checkAnswer(15, '정답: Lee 38', ['Lee 38']);
+    });
+    document.getElementById('eraseAnswer15').addEventListener('click', function() {
+      eraseAnswer(15);
+    });
+
+    document.getElementById('checkAnswer16').addEventListener('click', function() {
+      checkAnswer_and(16, '정답: ① 연산, ② 구조', ['① 연산, ② 구조']);
+    });
+    document.getElementById('eraseAnswer16').addEventListener('click', function() {
+      eraseAnswer(16);
+    });
+
+    document.getElementById('checkAnswer17').addEventListener('click', function() {
+      checkAnswer(17, '정답: DAC(임의적 접근 통제)', ['DAC(임의적 접근 통제)']);
+    });
+    document.getElementById('eraseAnswer17').addEventListener('click', function() {
+      eraseAnswer(17);
+    });
+
+    document.getElementById('checkAnswer18').addEventListener('click', function() {
+      checkAnswer(18, '정답: 0+1+2+3+4+5=15', ['0+1+2+3+4+5=15']);
+    });
+    document.getElementById('eraseAnswer18').addEventListener('click', function() {
+      eraseAnswer(18);
+    });
+
+    document.getElementById('checkAnswer19').addEventListener('click', function() {
+      checkAnswer_and(19, '정답: (1)ㅁ,(2)ㄴ,(3)ㄹ', ['(1)ㅁ,(2)ㄴ(3)ㄹ']);
+    });
+    document.getElementById('eraseAnswer19').addEventListener('click', function() {
+      eraseAnswer(19);
+    });
+
+    document.getElementById('checkAnswer20').addEventListener('click', function() {
+      checkAnswer(20, '정답: 세션 하이재킹 OR TCP 세션 하이재킹', ['세션 하이재킹 OR TCP세션 하이재킹']);
+    });
+    document.getElementById('eraseAnswer20').addEventListener('click', function() {
+      eraseAnswer(20);
+    });
+
+    document.getElementById('checkScore').addEventListener('click', function() {
+      const score = count * 5;
+      const printScoreElement = document.getElementById('printScoreText');
+      printScoreElement.textContent = '총 점수는 ' + score + '점입니다. ' + (score >= 60 ? '합격입니다.' : '탈락입니다.');
+    });
+    document.addEventListener('DOMContentLoaded', function () {
+    // 타이머 설정
+    let totalTime = 0; // 0시간 0분을 초로 환산
+    
+
+    function updateTimer() {
+      
+        const timerElement = document.getElementById('timer'); //타이머
+        const hours = Math.floor(totalTime / 3600); //시간
+        const minutes = Math.floor((totalTime % 3600) / 60);
+        const seconds = totalTime % 60;
+
+        timerElement.textContent = 
+            `남은시간:${hours.toString().padStart(2, '0')}:${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
+
+        if (totalTime < 2 * 60 * 60 + 30 * 60) { //제한시간 2시간 반
+            totalTime++;
+            setTimeout(updateTimer, 1000); //1초씩 흘러감
+        } else {
+            alert(`제한시간이 경과되었습니다 ${count * 5}점 입니다.`);
+        }
+    }
+
+    updateTimer();
+
+    document.getElementById('submit').addEventListener('click', function() {
+        sessionStorage.setItem('totalTime', totalTime);
+        alert('제출 완료! 남은 시간이 저장되었습니다.');
+    });
+
+
+    
+
+      document.querySelectorAll('#menu a').forEach(link => { //메뉴이동 스크립트
+            link.addEventListener('click', function(event) {
+                event.preventDefault();
+                const targetId = this.getAttribute('href').substring(1);
+                document.querySelectorAll('.page').forEach(page => {
+                    page.classList.remove('active');
+                });
+                const targetPage = document.getElementById(targetId).closest('.page');
+                targetPage.classList.add('active');
+                window.location.hash = this.getAttribute('href');
+                window.scrollTo(0, 0); // 페이지 전환 시 맨 위로 스크롤
+
+            });
+        });
+
+        document.getElementById('menuButton').addEventListener('click', function() {
+      const menu = document.getElementById('menu');
+      
+      menu.style.display = menu.style.display === 'none' ? 'flex' : 'none';
+      menu.display='flex';
+    });
+  });
+
+    
+
+
+    function changePageToMain() {
+    location.href = 'project.html';
+  }
+  </script>
+</body>
+</html>

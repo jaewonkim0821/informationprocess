@@ -1,0 +1,1114 @@
+
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>[2020년 1회] 정보처리기사 기출문제</title>
+  <style>
+    body { /* */
+      font-family: Arial, sans-serif;
+      display: flex;
+      height: 50vh;
+      margin: 100;
+      background-color: #ffffff;
+    }
+    .code-slider {
+       position: relative;
+       overflow: hidden;
+       width: 800px; /* 슬라이더 너비 */
+       height: 400px; /* 슬라이더 높이 */
+       margin: 0 auto; /* 슬라이더를 가운데 정렬 */
+    }
+
+    .code-slide {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      
+    }
+
+    #main-content { /*내용부분*/
+      
+      display: flex;
+      flex-direction: column;
+      align-items: center; /* 수정됨 */
+      padding: 20px;
+      margin-left: 270px;
+      
+    }
+    #menu {
+      
+      position: fixed;
+      
+      top: 10px;
+      left: 10px;
+      width: 220px;
+      background-color: #f0f0f0;
+      padding: 20px;
+      box-shadow: 3px 0 5px rgba(0, 0, 0, 0.1);
+      display: flex;
+      flex-direction: column;
+      z-index: 1000;
+      height: 1000px;
+      overflow-y: scroll;
+      
+      
+
+    }
+    #menu a {
+      margin-top: 10px;
+      text-decoration: none;
+      color: #000;
+      padding: 10px;
+      border-radius: 5px;
+      margin-bottom: 10px;
+      transition: background-color 0.3s ease;
+      
+    }
+    .submenu {
+            display: block;
+            margin-left: 20px;
+        }
+    .submenu a {
+            display: block;
+            margin: 5px 0;
+        }
+    #menu a.active + a.submenu {
+            display: block;
+        }
+    #menu a:hover {
+      background-color: #007BFF;
+      color: #fff;
+    }
+    #mainmenu {
+            
+            color: black; /* 시각적으로 비활성화 표시 */
+            font-size: 20px;
+            font-weight: bold;
+
+        }
+    #menu a.active {
+      background-color: #0056b3;
+      color: #fff;
+    }
+    h1 {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+    .rounded-rectangle-box {
+      display: inline-block; /* 상자가 내용에 맞게 크기가 조절되도록 합니다. */
+    width : 1200px; /* 고정된 너비를 설정합니다. */
+    padding: 20px; /* 내부 여백을 추가합니다. */
+    border-radius: 20px; /* 모서리를 둥글게 합니다. */
+    background-color: #f0f0f0; /* 배경색 설정 */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* 그림자 설정 */
+    margin-bottom: 20px; /* 하단 여백 설정 */
+    box-sizing: border-box; /* padding과 border를 width에 포함시킵니다. */
+    }
+    #question1, #question2, #question3, #question4 {
+      margin-bottom: 20px;
+    }
+    textarea {
+      width: 1200px;
+      height: 70px;
+      font-size: 16px;
+      padding: 10px;
+      margin-bottom: 10px;
+      box-sizing: border-box;
+    }
+    button {
+      padding: 10px 20px;
+      font-size: 16px;
+      cursor: pointer;
+      border: none;
+      border-radius: 5px;
+      background-color: #f0f0f0;
+      color: black;
+      margin-right: 10px;
+      margin-bottom: 20px;
+    }
+    #menuButton {
+      position: absolute;
+      left: 10px;
+      top: 10px;
+      padding: 10px 20px;
+      font-size: 16px;
+      cursor: pointer;
+      border: none;
+      border-radius: 5px;
+      background-color: #7fb9f8;
+      color: black;
+    }
+    #printScore {
+      margin-top: 20px;
+      font-size: 18px;
+    }
+    .page{
+      display:none;
+
+    }
+    .active{
+      display:block;
+    }
+
+    .hidden {
+    display: none;
+}
+#timer {
+    position: fixed;
+    top: 10px;
+    right: 10px;
+    font-size: 20px;
+    background-color: #ffdddd;
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+}
+#submit {
+    
+    margin-right: 10px;
+    margin-bottom: 20px;
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #000000;
+    color: red;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+
+  </style>
+</head>
+<body>
+  <div id="timer">02:30:00</div>
+    <div id="menu">
+        <button id="menuButton">메뉴</button>
+        <p><br></p>
+        <div id="menu">
+            <button id="menuButton">메뉴</button>
+            <p><br></p>
+            <a href="2020년1회.html"class = mainmenu id="2020년 1회">2020년 1회</a>
+              <div class="submenu">
+                <a href="#question1" id="menu1">문제 1번 ~ 문제4번</a>
+                <a href="#question5" id="menu2">문제 5번 ~ 문제8번</a>
+                <a href="#question9" id="menu3">문제 9번 ~ 문제12번</a>
+                <a href="#question13" id="menu4">문제 13번 ~ 문제16번</a>
+                <a href="#question17" id="menu5">문제 17번 ~ 문제20번</a>
+        
+              </div>
+            
+            <a href="2020년2회.html"class = mainmenu id="2020년 2회">2020년 2회</a>
+            <div class="submenu">
+              <a href="#question1" id="menu6">문제 1번 ~ 문제4번</a>
+              <a href="#question5" id="menu7">문제 5번 ~ 문제8번</a>
+              <a href="#question9" id="menu8">문제 9번 ~ 문제12번</a>
+              <a href="#question13" id="menu9">문제 13번 ~ 문제16번</a>
+              <a href="#question17" id="menu10">문제 17번 ~ 문제20번</a>
+        
+        
+            </div>
+        </div>
+    
+    
+    </div>
+    
+
+  <div id="main-content">
+    <h1>[2020년 2회] 정보처리기사 기출문제</h1>
+    <button onclick="changePageToMain()">메인 메뉴로 돌아가기</button>
+    <div id="page1" class="page active">
+      
+      <div id="question1">
+        <p>문제 1: 한국아이티 보안관제실에서 근무한다. 정보시스템 운영 중 서버가 다운되거나 자연 재해나 시스템 장애 등의 이유로 대고객 서비스가 불가능한 경우가 종종 발생한다. 이와 같은 상황에서의 “비상사태 또는 업무중단 시점부터 업무가 복구되어 다시 정상가동 될 때까지의 시간” 을 의미하는 용어를 쓰시오. (한글 또는 영어)</p>
+        <textarea id="answer1" rows="3" cols="50"></textarea>
+      </div>
+      <button id="checkAnswer1">정답 확인</button>
+      <button id="eraseAnswer1">정답 지우기</button>
+      <div id="answerResult1">
+        <p id="correctAnswer1"></p>
+      </div>
+  
+      <div id="question2">
+        <p>문제 2: 출력결과를 쓰시오.</p>
+        <div class="code-slider">
+          <div class="code-slide">
+              <pre><code>
+                a={'일본', '중국', '한국'}
+                a.add('베트남')
+                a.add('중국')
+                a.remove('일본')
+                a.update({'홍콩','한국','태국'})
+                print(a)
+              </code></pre>
+          </div></div>
+        <textarea id="answer2" rows="3" cols="50"></textarea>
+      </div>
+      <button id="checkAnswer2">정답 확인</button>
+      <button id="eraseAnswer2">정답 지우기</button>
+      <div id="answerResult2">
+        <p id="correctAnswer2"></p>
+      </div>
+  
+      <div id="question3">
+        <p>문제 3: 비동기식 자바스크립트 XML 통신 기법</p>
+        <textarea id="answer3" rows="3" cols="50"></textarea>
+      </div>
+      <button id="checkAnswer3">정답 확인</button>
+      <button id="eraseAnswer3">정답 지우기</button>
+      <div id="answerResult3">
+        <p id="correctAnswer3"></p>
+      </div>
+  
+      <div id="question4">
+        <p>문제 4: 고객의 요구사항 변화에 유연하게 대응하기 위해 일정한 주기를 반복하면서 개발하는 방법론, 워터폴에 대비되는 방법론으로 최근 회사에서 각광받는 방법론 (시제품)</p>
+        
+        <textarea id="answer4" rows="3" cols="50"></textarea>
+      </div>
+      <button id="checkAnswer4">정답 확인</button>
+      <button id="eraseAnswer4">정답 지우기</button>
+      <div id="answerResult4">
+        <p id="correctAnswer4"></p>
+      </div>
+      <button id="prevPage1" style="display: none;">이전</button>
+  
+      <button id="nextPage1">다음</button>
+    </div>
+  
+    <div id="page2" class="page">
+      <div id="question5">
+        <p>문제 5: 자바 객체 생성 (   ) 채우기</p>
+        <div class="code-slider">
+            <div class="code-slide">
+              
+                <pre><code>
+                    class Parent{
+                        void show(){
+                            System.out.println(""Parent"");
+                        }
+                    }
+                    
+                    class Child extends Parent{
+                        void show(){
+                            System.out.println(""Child"");
+                        }
+                    }
+                    
+                    public class Main{
+                        public static void main(String[] args) {
+                            Parent pa = (       ) Child();
+                            pa.show();
+                        }
+                    }
+                    
+                </code></pre>
+            </div></div>
+        <textarea id="answer5" rows="3" cols="50"></textarea>
+      </div>
+      <button id="checkAnswer5">정답 확인</button>
+      <button id="eraseAnswer5">정답 지우기</button>
+      <div id="answerResult5">
+        <p id="correctAnswer5"></p>
+      </div>
+  
+      <div id="question6">
+        <p>문제 6:  SQL SELECT 작성 ( in 사용 ) </p>
+        <div class="rounded-rectangle-box">
+          <p>1. 학번, 이름을 학생 테이블에서 3, 4학년인 학생을 검색</p>
+          <P>2. IN 함수 사용</P>
+        </div>
+          <table>
+            <thead>
+                <tr>
+                    <th>학번</th>
+                    <th>이름</th>
+                    <th>학년</th>
+                    <th>수강과목</th>
+                    <th>점수</th>
+                    <th>연락처</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>1000</td>
+                    <td>김정미</td>
+                    <td>1</td>
+                    <td>알고리즘</td>
+                    <td>90</td>
+                    <td>010-1111-2222</td>
+                </tr>
+            </tbody>
+            <tbody>
+                <tr>
+                    <td>2000</td>
+                    <td>강은미</td>
+                    <td>2</td>
+                    <td>데이터베이스</td>
+                    <td>95</td>
+                    <td>010-2222-2222</td>
+                </tr>
+            </tbody>
+            <tbody>
+                <tr>
+                    <td>3000</td>
+                    <td>홍길동</td>
+                    <td>3</td>
+                    <td>전산수학</td>
+                    <td>90</td>
+                    <td>010-3333-3333</td>
+                </tr>
+            </tbody>
+            <tbody>
+                <tr>
+                    <td>4000</td>
+                    <td>장길산</td>
+                    <td>4</td>
+                    <td>운영체제</td>
+                    <td>95</td>
+                    <td>010-4444-4444</td>
+                </tr>
+            </tbody>
+        </table>
+          
+        
+
+        <textarea id="answer6" rows="1" cols="50"></textarea>
+        
+      </div>
+      <button id="checkAnswer6">정답 확인</button>
+      <button id="eraseAnswer6">정답 지우기</button>
+      <div id="answerResult6">
+        <p id="correctAnswer6"></p>
+      </div>
+  
+      <div id="question7">
+        <p>문제 7: 트랜잭션 Rollback에 대해 설명하시오.</p>
+        <textarea id="answer7" rows="3" cols="50"></textarea>
+      </div>
+      <button id="checkAnswer7">정답 확인</button>
+      <button id="eraseAnswer7">정답 지우기</button>
+      <div id="answerResult7">
+        <p id="correctAnswer7"></p>
+      </div>
+  
+      <div id="question8">
+        <p>문제 8: 무결성과 인증을 보장하는 인증헤더(AH)와 기밀성을 보장하는 암호화(ESP)를 이용한 IP 보안 프로토콜, 망 계층(network layer, 3계층)인 인터넷 프로토콜(IP)에서 보안성을 제공해주는 표준화 기술</p>
+        <textarea id="answer8" rows="3" cols="50"></textarea>
+      </div>
+      <button id="checkAnswer8">정답 확인</button>
+      <button id="eraseAnswer8">정답 지우기</button>
+      <div id="answerResult8">
+        <p id="correctAnswer8"></p>
+      </div>
+
+      <button id="nextPage2">다음</button>
+      <button id="prevPage2">이전</button>
+    </div>
+
+    <div id="page3" class="page">
+      <div id="question9">
+          <p>문제 9: 애플리케이션을 실행하지 않고, 소스 코드에 대한 코딩 표준, 코딩 스타일, 코드 복잡도 및 남은 결함을 발견하기 위하여 사용 ( 테스트 자동화 도구 유형 )
+          </p>
+          <textarea id="answer9" rows="3" cols="50"></textarea>
+      </div>
+        <button id="checkAnswer9">정답 확인</button>
+        <button id="eraseAnswer9">정답 지우기</button>
+      <div id="answerResult9">
+          <p id="correctAnswer9"></p>
+      </div>
+    
+      <div id="question10">
+          <p>문제 10: 다음 보기가 설명하는 패턴을 쓰시오(영문 full name)으로 쓰시오.</p>
+          <div class="rounded-rectangle-box">
+            <p>한 객체의 상태가 바뀌면 그 객체에 의존하는 다른 객체들한테 연락이 가고 자동으로 내용이 갱신되는 방식으로 일대다 (one-to-many) 의존성을 가지는 디자인 패턴. 서로 상호작용을 하는 객체 사이에서는 가능하면 느슨하게 결합(Loose coupling)하는 디자인을 사용해야 한다.(영문)</p>
+
+
+          </div>
+
+  
+          <textarea id="answer10" rows="3" cols="50"></textarea>
+          
+      </div>
+        <button id="checkAnswer10">정답 확인</button>
+        <button id="eraseAnswer10">정답 지우기</button>
+      <div id="answerResult10">
+          <p id="correctAnswer10"></p>
+      </div>
+    
+      <div id="question11">
+          <p>문제 11. 휴대 전화를 비롯한 휴대용 장치를 위한 운영 체제와 미들웨어, 사용자 인터페이스 그리고 표준 응용 프로그램(웹 브라우저, 이메일 클라이언트, 단문 메시지 서비스(SMS), MMS 등을 포함하고 있는 소프트웨어 스택이자 리눅스 모바일 운영 체제이다. 개발자들이 자바와 코틀린 언어로 응용 프로그램을 작성할 수 있게 하였으며, 컴파일된 바이트코드를 구동할 수 있는 런타임 라이브러리를 제공한다.</p>
+        
+          <textarea id="answer11" rows="2" cols="50"></textarea>
+          
+        </div>
+      <button id="checkAnswer11">정답 확인</button>
+        <button id="eraseAnswer11">정답 지우기</button>
+      <div id="answerResult11">
+          <p id="correctAnswer11"></p>
+      </div>
+      
+      <div id="question12">
+          <p>문제 12: STUDENT 테이블의 name 속성에 idx_name 이름으로 인덱스 생성하는 sql문을 작성하시오.</p>
+          <table>
+            <thead>
+                <tr>
+                    <th>STID</th>
+                    <th>NAME</th>
+                    <th>SCORE</th>
+                    <th>DEPTID</th>
+                    
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>1000</td>
+                    <td>김정미</td>
+                    
+                    <td>90</td>
+                    <td>1</td>
+                </tr>
+            </tbody>
+            <tbody>
+                <tr>
+                    <td>2000</td>
+                    <td>강은미</td>
+                    
+                    <td>95</td>
+                    <td>2</td>
+                </tr>
+            </tbody>
+            <tbody>
+                <tr>
+                    <td>3000</td>
+                    <td>홍길동</td>
+                    
+                    <td>90</td>
+                    <td>3</td>
+                </tr>
+            </tbody>
+            <tbody>
+                <tr>
+                    <td>4000</td>
+                    <td>장길산</td>
+                    
+                    <td>95</td>
+                    <td>4</td>
+                </tr>
+            </tbody>
+        </table>
+        
+          
+      
+          <textarea id="answer12" rows="3" cols="50"></textarea>
+      </div>
+        <button id="checkAnswer12">정답 확인</button>
+        <button id="eraseAnswer12">정답 지우기</button>
+        <div id="answerResult12">
+          <p id="correctAnswer12"></p>
+        </div>
+  
+        <button id="nextPage3">다음</button>
+        <button id="prevPage3">이전</button>
+    </div>
+
+
+
+    <div id="page4" class="page">
+      <div id="question13">
+            <p>문제 13: 다음 출력 결과를 쓰시오. </p>
+            <div class="rounded-rectangle-box">
+                <p>HTTP, HTTPS, SMTP를 통해서 XML 기반의 데이터를 주고 받는 프로토콜 Envelop, Header, Body로 구성 됨 /
+
+                    웹 서비스(Web Service) 방식에서 파일 전송은 HTTP 기반의 (     )을 사용하여 송수신한다. (    ) 대신 레스트 풀(RESTful) 프로토콜(Protocol)로 대체할 수 있다.</p>
+
+            </div>
+              
+            
+      
+            <textarea id="answer13" rows="3" cols="50"></textarea>
+      </div>
+          <button id="checkAnswer13">정답 확인</button>
+          <button id="eraseAnswer13">정답 지우기</button>
+          <div id="answerResult13">
+            <p id="correctAnswer13"></p>
+          </div>
+      
+        <div id="question14">
+          <p>문제 14: SQL Injection을 설명하시오(약술형) </p>
+          <div class="code-slider">
+            <div class="code-slide">
+              <pre><code>
+                public class Test {
+
+                  public static void main(String[] args) {
+                    
+                    int i=3, k=1;
+                    
+                        switch(i){
+                      case 0: 
+                      case 1: 
+                      case 2: 
+                      case 3: k=0;
+                      case 4: k+=3;
+                      case 5: k-=10;
+                      default: k--;
+                    }
+                        
+                    System.out.println(k);
+                  }
+                    
+                }
+              </code>
+              </pre>
+            </div></div>
+    
+            <textarea id="answer14" rows="1" cols="50"></textarea>
+
+          </div>
+          <button id="checkAnswer14">정답 확인</button>
+          <button id="eraseAnswer14">정답 지우기</button>
+          <div id="answerResult14">
+            <p id="correctAnswer14"></p>
+          </div>
+      
+          <div id="question15">
+            <p>문제 15: 다음이 설명하는 제품 패키지 릴리스 노트의 작성 항목은 무엇인가?</p>
+            <div class="rounded-rectangle-box">
+              <p>
+                릴리즈 노트(Release Note)는 고객 편의성을 고려하여 조직의 최종 사용자인 고객과 잘 정리된 릴리즈 정보를 공유하는 문서이다. <br> 릴리즈 노트의 내용으로는 보통 특정 소프트웨어 릴리즈의 최근 변경 사항, 개선 사항 및 버그 수정을 간결히 요약되어 있다. <br>릴리즈 노트 작성 항목 중 문서 이름(릴리즈 노트 이름), 제품 이름, 버전 번호, 릴리즈 날짜, 참고 날짜, 노트 버전 등을 기술하는 작성항목이 무엇인지 쓰시오.
+
+              </p>
+              </div>
+
+            <textarea id="answer15" rows="3" cols="50"></textarea>
+          </div>
+          <button id="checkAnswer15">정답 확인</button>
+          <button id="eraseAnswer15">정답 지우기</button>
+          <div id="answerResult15">
+            <p id="correctAnswer15"></p>
+          </div>
+      
+          <div id="question16">
+            <p>문제 16:  a.txt 에 대해 권한 부여 (8진법 표현)</p>
+            <div class="rounded-rectangle-box">
+                <p>
+                    - 사용자에게 읽기,쓰기 실행 권한 부여
+                    - 그룹에게 읽기, 실행 권한 부여
+                    - 그 외에게 실행 권한 부여
+                </p>
+            </div>
+            <textarea id="answer16" rows="3" cols="50"></textarea>
+          </div>
+          <button id="checkAnswer16">정답 확인</button>
+          <button id="eraseAnswer16">정답 지우기</button>
+          <div id="answerResult16">
+            <p id="correctAnswer16"></p>
+          </div>
+    
+          <button id="nextPage4">다음</button>
+          <button id="prevPage4">이전</button>
+    </div>
+
+
+
+    <div id="page5" class="page">
+            <div id="question17">
+              <p>문제 17: 전세계 오픈된 정보를 하나로 묶는 방식. linked data와 open data의 합성어 (영문 풀네임)</p>
+              <textarea id="answer17" rows="3" cols="50"></textarea>
+            </div>
+            <button id="checkAnswer17">정답 확인</button>
+            <button id="eraseAnswer17">정답 지우기</button>
+            <div id="answerResult17">
+              <p id="correctAnswer17"></p>
+            </div>
+        
+            <div id="question18">
+              <p>문제 18: 데이터 모델링 절차에 보기를 찾아 채우시오.(a,b,c 알파벳 띄어쓰기로 입력해주세요)</p>
+              <div class="rounded-rectangle-box">
+                <p> a: 물리적 데이터 모델링
+                    b: 개념적 데이터 모델링
+                    c: 논리적 데이터 모델링
+                </p>
+              </div>
+              <p> 요구사항 분석 -> (1)->(2)->(3)</p>
+      
+              <textarea id="answer18" rows="1" cols="50"></textarea>
+             
+            </div>
+            <button id="checkAnswer18">정답 확인</button>
+            <button id="eraseAnswer18">정답 지우기</button>
+            <div id="answerResult18">
+              <p id="correctAnswer18"></p>
+            </div>
+        
+            <div id="question19">
+              <p>문제 19: 다음 자바코드의 출력 결과를 쓰시오.</p>
+              <div class="code-slider">
+                <div class="code-slide">
+                  
+                    <pre><code>
+                        class A {
+                            int a;
+                        
+                            A(int a) {
+                                this.a = a;
+                            }
+                        
+                            void display() {
+                                System.out.println(""a=""+a);
+                            }
+                        }
+                        class B extends A {
+                            B(int a) {
+                                super(a);
+                                super.display();
+                            }
+                        }
+                        public class Main {
+                            public static void main(String[] args){
+                                B obj = new B(10);
+                            }
+                        }
+                        
+                    </code></pre>
+                </div></div>
+              <textarea id="answer19" rows="3" cols="50"></textarea>
+              
+              
+            </div>
+            <button id="checkAnswer19">정답 확인</button>
+            <button id="eraseAnswer19">정답 지우기</button>
+            <div id="answerResult19">
+              <p id="correctAnswer19"></p>
+            </div>
+        
+            <div id="question20">
+              <p>문제 20: 소프트웨어 개발 과정에서 변경 사항을 관리하는 기법은 ( ) 기법이라 하며 ( ) 기법을 활용한 도구로는 CVS, SVN , Git 등이 있다.</p>
+              
+              <textarea id="answer20" rows="3" cols="50"></textarea>
+            </div>
+            <button id="checkAnswer20">정답 확인</button>
+            <button id="eraseAnswer20">정답 지우기</button>
+            <div id="answerResult20">
+              <p id="correctAnswer20"></p>
+            </div>
+      
+            
+            <button id="prevPage5">이전</button>
+            <button color = red id="submit">제출</button>
+            <button id="nextPage5" style="display: none;">다음</button>
+    </div>
+
+
+
+
+      <button id="checkScore">점수 확인</button>
+    <div id="printScore">
+      <p id="printScoreText"></p>
+    </div>
+
+    </div>
+  
+
+  
+
+  
+  </div>
+
+  <script>
+    
+
+    document.querySelectorAll('#menu a').forEach(link => { //메뉴이동 스크립트
+          link.addEventListener('click', function(event) {
+              event.preventDefault();
+              const targetId = this.getAttribute('href').substring(1);
+              document.querySelectorAll('.page').forEach(page => {
+                  page.classList.remove('active');
+              });
+              const targetPage = document.getElementById(targetId).closest('.page');
+              targetPage.classList.add('active');
+              window.location.hash = this.getAttribute('href');
+              window.scrollTo(0, 0); // 페이지 전환 시 맨 위로 스크롤
+
+          });
+      });
+    
+
+      document.getElementById('menuButton').addEventListener('click', function() {
+    const menu = document.getElementById('menu');
+    
+    menu.style.display = menu.style.display === 'none' ? 'flex' : 'none';
+    
+  });
+      
+  
+
+  const pages = document.querySelectorAll('.page');
+  let currentPage = 0;
+  
+
+  document.getElementById('nextPage1').addEventListener('click', () => {
+    if (currentPage < pages.length -1 ) {
+      pages[currentPage].classList.remove('active');
+      currentPage++;
+      pages[currentPage].classList.add('active');
+      window.scrollTo(0, 0); // 페이지 전환 시 맨 위로 스크롤
+   
+    }
+  });
+
+  document.getElementById('prevPage1').addEventListener('click', () => {
+    if (currentPage > 0) {
+      pages[currentPage].classList.remove('active');
+      currentPage--;
+      pages[currentPage].classList.add('active');
+      window.scrollTo(0, 0); // 페이지 전환 시 맨 위로 스크롤
+     
+    }
+  });
+
+  document.getElementById('nextPage2').addEventListener('click', () => {
+    if (currentPage < pages.length -1 ) {
+      pages[currentPage].classList.remove('active');
+      currentPage++;
+      pages[currentPage].classList.add('active');
+      window.scrollTo(0, 0); // 페이지 전환 시 맨 위로 스크롤
+      
+    }
+  });
+
+  document.getElementById('prevPage2').addEventListener('click', () => {
+    if (currentPage > 0) {
+      pages[currentPage].classList.remove('active');
+      currentPage--;
+      pages[currentPage].classList.add('active');
+      window.scrollTo(0, 0); // 페이지 전환 시 맨 위로 스크롤
+      
+    }
+  });
+
+  document.getElementById('nextPage3').addEventListener('click', () => {
+    if (currentPage < pages.length -1 ) {
+      pages[currentPage].classList.remove('active');
+      currentPage++;
+      pages[currentPage].classList.add('active');
+      window.scrollTo(0, 0); // 페이지 전환 시 맨 위로 스크롤
+      
+    }
+  });
+
+  document.getElementById('prevPage3').addEventListener('click', () => {
+    if (currentPage > 0) {
+      pages[currentPage].classList.remove('active');
+      currentPage--;
+      pages[currentPage].classList.add('active');
+      window.scrollTo(0, 0); // 페이지 전환 시 맨 위로 스크롤
+      
+    }
+  });
+  document.getElementById('nextPage4').addEventListener('click', () => {
+    if (currentPage < pages.length -1 ) {
+      pages[currentPage].classList.remove('active');
+      currentPage++;
+      pages[currentPage].classList.add('active');
+      window.scrollTo(0, 0); // 페이지 전환 시 맨 위로 스크롤
+      
+    }
+  });
+
+  document.getElementById('prevPage4').addEventListener('click', () => {
+    if (currentPage > 0) {
+      pages[currentPage].classList.remove('active');
+      currentPage--;
+      pages[currentPage].classList.add('active');
+      window.scrollTo(0, 0); // 페이지 전환 시 맨 위로 스크롤
+      
+    }
+  });
+  document.getElementById('nextPage5').addEventListener('click', () => {
+    if (currentPage < pages.length -1 ) {
+      pages[currentPage].classList.remove('active');
+      currentPage++;
+      pages[currentPage].classList.add('active');
+      window.scrollTo(0, 0); // 페이지 전환 시 맨 위로 스크롤
+      
+    }
+  });
+
+  document.getElementById('prevPage5').addEventListener('click', () => {
+    if (currentPage > 0) {
+      pages[currentPage].classList.remove('active');
+      currentPage--;
+      pages[currentPage].classList.add('active');
+      window.scrollTo(0, 0); // 페이지 전환 시 맨 위로 스크롤
+      
+    }
+  });
+
+  let count = 0; // 전역 변수로 선언하여 두 스크립트에서 공유
+
+  function checkAnswer(questionNumber, correctAnswerText, keywords) {
+    const userAnswer = document.getElementById('answer' + questionNumber).value;
+    const correctAnswerElement = document.getElementById('correctAnswer' + questionNumber);
+    const answerResultElement = document.getElementById('answerResult' + questionNumber);
+    let correct = false;
+
+    if (userAnswer) {
+      for (const keyword of keywords) {
+        if (userAnswer.toLowerCase().includes(keyword)) {
+          correct = true;
+          break;
+        }
+      }
+      if (correct) {
+        correctAnswerElement.innerHTML = correctAnswerText + '<br/> (키워드 포함: "' + keywords.join(', ') + '")';
+        count++;
+      } else {
+        correctAnswerElement.innerHTML = '오답입니다. ' + questionNumber + '번 정답은 <br/>' + correctAnswerText;
+      }
+      answerResultElement.style.display = 'block';
+    }
+  }
+
+  function checkAnswer_and(questionNumber, correctAnswerText, keywords) {
+          const userAnswer = document.getElementById('answer' + questionNumber).value;
+          const correctAnswerElement = document.getElementById('correctAnswer' + questionNumber);
+          const answerResultElement = document.getElementById('answerResult' + questionNumber);
+          let correct = true;
+
+          if (userAnswer) {
+              for (const keyword of keywords) {
+                  if (!userAnswer.toLowerCase().includes(keyword.toLowerCase())) {
+                      correct = false;
+                      break;
+                  }
+              }
+              if (correct) {
+                  correctAnswerElement.innerHTML = correctAnswerText + '<br/> (키워드 포함: "' + keywords.join(', ') + '")';
+                  count++;
+              } else {
+                  correctAnswerElement.innerHTML = '오답입니다. ' + questionNumber + '번 정답은 <br/>' + correctAnswerText;
+              }
+              answerResultElement.style.display = 'block';
+          }
+      }
+
+  function eraseAnswer(questionNumber) {
+    document.getElementById('correctAnswer' + questionNumber).textContent = '';
+    document.getElementById('answerResult' + questionNumber).style.display = 'none';
+  }
+
+    document.getElementById('checkAnswer1').addEventListener('click', function() {
+      checkAnswer(1, '정답: 1.  목표 복구 시간, RTO, recovery time objective', ['목표 복구 시간', 'RTO', 'recovery time objective']);
+    });
+    document.getElementById('eraseAnswer1').addEventListener('click', function() {
+      eraseAnswer(1);
+    });
+
+    document.getElementById('checkAnswer2').addEventListener('click', function() {
+        checkAnswer_and(2, '정답: 2. {&#39;중국&#39;, &#39;한국&#39;,&#39;베트남&#39;,&#39;홍콩&#39;,&#39;태국&#39;}', ['{',"'중국'","'한국'","'베트남'","'홍콩'","'태국'", '}']);
+    });
+    document.getElementById('eraseAnswer2').addEventListener('click', function() {
+      eraseAnswer(2);
+    });
+
+    document.getElementById('checkAnswer3').addEventListener('click', function() {
+      checkAnswer(3, '정답: 3. AJAX', ['AJAX']);
+    });
+    document.getElementById('eraseAnswer3').addEventListener('click', function() {
+      eraseAnswer(3);
+    });
+
+    document.getElementById('checkAnswer4').addEventListener('click', function() {
+      checkAnswer(4, '정답: 4. 애자일, agile', ['애자일','agile']);
+    });
+    document.getElementById('eraseAnswer4').addEventListener('click', function() {
+      eraseAnswer(4);
+    });
+
+    document.getElementById('checkAnswer5').addEventListener('click', function() {
+      checkAnswer(5, '정답: 5. new', ['new']);
+    });
+    document.getElementById('eraseAnswer5').addEventListener('click', function() {
+      eraseAnswer(5);
+    });
+
+    document.getElementById('checkAnswer6').addEventListener('click', function() {
+        checkAnswer_and(6, '정답: ', ['SELECT 학번, 이름','FROM 학생','WHERE 학년','IN(3,4)']);
+    });
+    document.getElementById('eraseAnswer6').addEventListener('click', function() {
+      eraseAnswer(6);
+    });
+
+    document.getElementById('checkAnswer7').addEventListener('click', function() {
+      checkAnswer(7, '정답: 7. 트랜잭션 실패 시 트랜잭션 실행 이전으로 되돌리는 데이터 제어어', ['데이터 제어어','실행 이전']);
+    });
+    document.getElementById('eraseAnswer7').addEventListener('click', function() {
+      eraseAnswer(7);
+    });
+
+    document.getElementById('checkAnswer8').addEventListener('click', function() {
+      checkAnswer(8, '정답: 8. IPSec', ['IPSec']);
+    });
+    document.getElementById('eraseAnswer8').addEventListener('click', function() {
+      eraseAnswer(8);
+    });
+
+    document.getElementById('checkAnswer9').addEventListener('click', function() {
+      checkAnswer_and(9, '정답: 9. 정적 분석 도구 OR 정적 분석 OR 정적 테스트', ['정적 분석 도구','정적 분석','정적 테스트']);
+    });
+    document.getElementById('eraseAnswer9').addEventListener('click', function() {
+      eraseAnswer(9);
+    });
+
+    document.getElementById('checkAnswer10').addEventListener('click', function() {
+      checkAnswer(10, '정답: 10. 옵저버, Observer', ['Observer','옵저버']);
+    });
+    document.getElementById('eraseAnswer10').addEventListener('click', function() {
+      eraseAnswer(10);
+    });
+
+    document.getElementById('checkAnswer11').addEventListener('click', function() {
+      checkAnswer_and(11, '정답: 11. 안드로이드, Android ', ['안드로이드','Android']);
+    });
+    document.getElementById('eraseAnswer11').addEventListener('click', function() {
+      eraseAnswer(11);
+    });
+
+    document.getElementById('checkAnswer12').addEventListener('click', function() {
+      checkAnswer_and(12, '정답: CREATE INDEX idx_name ON student(name);', ['CREATE INDEX idx_name','ON student(name);']);
+    });
+    document.getElementById('eraseAnswer12').addEventListener('click', function() {
+      eraseAnswer(12);
+    });
+
+    document.getElementById('checkAnswer13').addEventListener('click', function() {
+      checkAnswer(13, '정답: 13. SOAP', ['SOAP']);
+    });
+    document.getElementById('eraseAnswer13').addEventListener('click', function() {
+      eraseAnswer(13);
+    });
+
+    document.getElementById('checkAnswer14').addEventListener('click', function() {
+      checkAnswer(14, '정답: 14. 사용자의 입력값 등 외부 입력값이 SQL 쿼리에 삽입되어 공격자가 원하는 SQL 쿼리문을 실행하는 공격기법', ['강제','SQL 구문을 삽입','관리자 인증을 우회']);
+    });
+    document.getElementById('eraseAnswer14').addEventListener('click', function() {
+      eraseAnswer(14);
+    });
+
+    document.getElementById('checkAnswer15').addEventListener('click', function() {
+      checkAnswer(15, '정답: 15. 유효성', ['유효성']);
+    });
+    document.getElementById('eraseAnswer15').addEventListener('click', function() {
+      eraseAnswer(15);
+    });
+
+    document.getElementById('checkAnswer16').addEventListener('click', function() {
+      checkAnswer(16, '정답: 16. Chmod 751 a.txt', ['Chmod 751 a.txt']);
+    });
+    document.getElementById('eraseAnswer16').addEventListener('click', function() {
+      eraseAnswer(16);
+    });
+
+    document.getElementById('checkAnswer17').addEventListener('click', function() {
+      checkAnswer(17, '정답: 17. Linked open data ', ['Linked open data']);
+    });
+    document.getElementById('eraseAnswer17').addEventListener('click', function() {
+      eraseAnswer(17);
+    });
+
+    document.getElementById('checkAnswer18').addEventListener('click', function() {
+      checkAnswer(18, '정답: 18. 개념적 설계 논리적 설계 물리적 설계', ['b c a']);
+    });
+    document.getElementById('eraseAnswer18').addEventListener('click', function() {
+      eraseAnswer(18);
+    });
+
+    document.getElementById('checkAnswer19').addEventListener('click', function() {
+      checkAnswer(19, '정답: 19. a=10', ['a=10']);
+    });
+    document.getElementById('eraseAnswer19').addEventListener('click', function() {
+      eraseAnswer(19);
+    });
+
+    document.getElementById('checkAnswer20').addEventListener('click', function() {
+      checkAnswer_and(20, '정답: 20. 형상관리', ['형상관리']);
+    });
+    document.getElementById('eraseAnswer20').addEventListener('click', function() {
+      eraseAnswer(20);
+    });
+
+    document.getElementById('checkScore').addEventListener('click', function() {
+      const score = count * 5;
+      const printScoreElement = document.getElementById('printScoreText');
+      printScoreElement.textContent = '총 점수는 ' + score + '점입니다. ' + (score >= 60 ? '합격입니다.' : '탈락입니다.');
+    });
+    document.addEventListener('DOMContentLoaded', function () {
+    // 타이머 설정
+    let totalTime = 0; // 0시간 0분을 초로 환산
+    
+
+    function updateTimer() {
+      
+      const timerElement = document.getElementById('timer'); //타이머
+      const hours = Math.floor(totalTime / 3600); //시간
+      const minutes = Math.floor((totalTime % 3600) / 60);
+      const seconds = totalTime % 60;
+
+      timerElement.textContent = 
+          `남은시간:${hours.toString().padStart(2, '0')}:${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
+
+      if (totalTime < 2 * 60 * 60 + 30 * 60) { //제한시간 2시간 반
+          totalTime++;
+          setTimeout(updateTimer, 1000); //1초씩 흘러감
+      } else {
+          alert(`제한시간이 경과되었습니다 ${count * 5}점 입니다.`);
+      }
+  }
+
+  updateTimer();
+
+  document.getElementById('submit').addEventListener('click', function() {
+      sessionStorage.setItem('totalTime', totalTime);
+      alert('제출 완료! 남은 시간이 저장되었습니다.');
+  });
+
+
+  
+
+    document.querySelectorAll('#menu a').forEach(link => { //메뉴이동 스크립트
+          link.addEventListener('click', function(event) {
+              event.preventDefault();
+              const targetId = this.getAttribute('href').substring(1);
+              document.querySelectorAll('.page').forEach(page => {
+                  page.classList.remove('active');
+              });
+              const targetPage = document.getElementById(targetId).closest('.page');
+              targetPage.classList.add('active');
+              window.location.hash = this.getAttribute('href');
+              window.scrollTo(0, 0); // 페이지 전환 시 맨 위로 스크롤
+
+          });
+      });
+
+      document.getElementById('menuButton').addEventListener('click', function() {
+    const menu = document.getElementById('menu');
+    
+    menu.style.display = menu.style.display === 'none' ? 'flex' : 'none';
+    menu.display='flex';
+  });
+});
+
+  
+
+
+  function changePageToMain() {
+  location.href = 'project.html';
+}
+</script>
+</body>
+</html>

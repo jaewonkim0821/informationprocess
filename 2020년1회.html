@@ -63,10 +63,24 @@
       margin-bottom: 10px;
       transition: background-color 0.3s ease;
     }
+    #menu a.submenu {
+            display: none;
+            margin-left: 20px;
+        }
+    #menu a.active + a.submenu {
+            display: block;
+        }
     #menu a:hover {
       background-color: #007BFF;
       color: #fff;
     }
+    #menu a.disabled {
+            pointer-events: none; /* 클릭 불가 */
+            color: black; /* 시각적으로 비활성화 표시 */
+            font-size: 20px;
+            font-weight: bold;
+
+        }
     #menu a.active {
       background-color: #0056b3;
       color: #fff;
@@ -77,7 +91,7 @@
     }
     .rounded-rectangle-box {
       display: inline-block; /* 상자가 내용에 맞게 크기가 조절되도록 합니다. */
-    max-width: 330px; /* 최대 너비를 설정하여 상자가 너무 넓어지지 않도록 합니다. */
+    width : 1200px; /* 고정된 너비를 설정합니다. */
     padding: 20px; /* 내부 여백을 추가합니다. */
     border-radius: 20px; /* 모서리를 둥글게 합니다. */
     background-color: #f0f0f0; /* 배경색 설정 */
@@ -89,7 +103,7 @@
       margin-bottom: 20px;
     }
     textarea {
-      width: 100%;
+      width: 1200px;
       height: 70px;
       font-size: 16px;
       padding: 10px;
@@ -138,11 +152,19 @@
   <div id="menu">
     <button id="menuButton">메뉴</button>
     <p><br></p>
+    <a class = disabled id="2020년 1회">2020년 1회</a>
     <a href="#question1" id="menu1">문제 1번 ~ 문제4번</a>
     <a href="#question5" id="menu2">문제 5번 ~ 문제8번</a>
     <a href="#question9" id="menu3">문제 9번 ~ 문제12번</a>
     <a href="#question13" id="menu4">문제 13번 ~ 문제16번</a>
     <a href="#question17" id="menu5">문제 17번 ~ 문제20번</a>
+    <a class = disabled id="2020년 2회">2020년 2회</a>
+    <a href="#question1" id="menu5">문제 1번 ~ 문제4번</a>
+    <a href="#question5" id="menu6">문제 5번 ~ 문제8번</a>
+    <a href="#question9" id="menu7">문제 9번 ~ 문제12번</a>
+    <a href="#question13" id="menu8">문제 13번 ~ 문제16번</a>
+    <a href="#question17" id="menu9">문제 17번 ~ 문제20번</a>
+    
   </div>
     
 
@@ -483,7 +505,7 @@
         
             <div id="question20">
               <p>문제 20: 다음은 어떤 프로그램의 구조를 나타낸다. Fan-in의 수가 가 2 이상인 모듈의 이름을 쓰시오.</p>
-              <img src="https://github.com/jaewonkim0821/informationprocess/blob/main/20%EB%85%841%ED%9A%8C20%EB%B2%88">
+              <img src="https://github.com/jaewonkim0821/informationprocess/blob/main/20%EB%85%841%ED%9A%8C20%EB%B2%88.png">
               <textarea id="answer20" rows="3" cols="50"></textarea>
             </div>
             <button id="checkAnswer20">정답 확인</button>
@@ -514,6 +536,21 @@
   </div>
 
   <script>
+
+      document.querySelectorAll('#menu a').forEach(link => { //메뉴이동 스크립트
+            link.addEventListener('click', function(event) {
+                event.preventDefault();
+                const targetId = this.getAttribute('href').substring(1);
+                document.querySelectorAll('.page').forEach(page => {
+                    page.classList.remove('active');
+                });
+                const targetPage = document.getElementById(targetId).closest('.page');
+                targetPage.classList.add('active');
+                window.location.hash = this.getAttribute('href');
+                window.scrollTo(0, 0); // 페이지 전환 시 맨 위로 스크롤
+
+            });
+        });
     
 
     const pages = document.querySelectorAll('.page');

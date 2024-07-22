@@ -539,32 +539,7 @@
       
         <div id="question14">
           <p>문제 14: SQL Injection을 설명하시오(약술형) </p>
-          <div class="code-slider">
-            <div class="code-slide">
-              <pre><code>
-                public class Test {
-
-                  public static void main(String[] args) {
-                    
-                    int i=3, k=1;
-                    
-                        switch(i){
-                      case 0: 
-                      case 1: 
-                      case 2: 
-                      case 3: k=0;
-                      case 4: k+=3;
-                      case 5: k-=10;
-                      default: k--;
-                    }
-                        
-                    System.out.println(k);
-                  }
-                    
-                }
-              </code>
-              </pre>
-            </div></div>
+    
     
             <textarea id="answer14" rows="1" cols="50"></textarea>
 
@@ -903,7 +878,7 @@
   }
 
     document.getElementById('checkAnswer1').addEventListener('click', function() {
-      checkAnswer(1, '정답: 1.  목표 복구 시간, RTO, recovery time objective', ['목표 복구 시간', 'RTO', 'recovery time objective']);
+      checkAnswer(1, '정답: 1.  목표 복구 시간, rto, recovery time objective', ['목표 복구 시간', 'rto', 'recovery time objective']);
     });
     document.getElementById('eraseAnswer1').addEventListener('click', function() {
       eraseAnswer(1);
@@ -917,7 +892,7 @@
     });
 
     document.getElementById('checkAnswer3').addEventListener('click', function() {
-      checkAnswer(3, '정답: 3. AJAX', ['AJAX']);
+      checkAnswer(3, '정답: 3. ajax', ['ajax']);
     });
     document.getElementById('eraseAnswer3').addEventListener('click', function() {
       eraseAnswer(3);
@@ -938,7 +913,7 @@
     });
 
     document.getElementById('checkAnswer6').addEventListener('click', function() {
-        checkAnswer_and(6, '정답: ', ['SELECT 학번, 이름','FROM 학생','WHERE 학년','IN(3,4)']);
+        checkAnswer_and(6, '정답: 6.select 학번, 이름 from 학생 where 학년 in(3,4)', ['select 학번, 이름','from 학생','where 학년','in(3,4)']);
     });
     document.getElementById('eraseAnswer6').addEventListener('click', function() {
       eraseAnswer(6);
@@ -952,49 +927,49 @@
     });
 
     document.getElementById('checkAnswer8').addEventListener('click', function() {
-      checkAnswer(8, '정답: 8. IPSec', ['IPSec']);
+      checkAnswer(8, '정답: 8. ipsec', ['ipsec']);
     });
     document.getElementById('eraseAnswer8').addEventListener('click', function() {
       eraseAnswer(8);
     });
 
     document.getElementById('checkAnswer9').addEventListener('click', function() {
-      checkAnswer_and(9, '정답: 9. 정적 분석 도구 OR 정적 분석 OR 정적 테스트', ['정적 분석 도구','정적 분석','정적 테스트']);
+      checkAnswer(9, '정답: 9. 정적 분석 도구 OR 정적 분석 OR 정적 테스트', ['정적 분석 도구','정적 분석','정적 테스트']);
     });
     document.getElementById('eraseAnswer9').addEventListener('click', function() {
       eraseAnswer(9);
     });
 
     document.getElementById('checkAnswer10').addEventListener('click', function() {
-      checkAnswer(10, '정답: 10. 옵저버, Observer', ['Observer','옵저버']);
+      checkAnswer(10, '정답: 10. 옵저버, observer', ['observer','옵저버']);
     });
     document.getElementById('eraseAnswer10').addEventListener('click', function() {
       eraseAnswer(10);
     });
 
     document.getElementById('checkAnswer11').addEventListener('click', function() {
-      checkAnswer_and(11, '정답: 11. 안드로이드, Android ', ['안드로이드','Android']);
+      checkAnswer_and(11, '정답: 11. 안드로이드, android ', ['안드로이드','android']);
     });
     document.getElementById('eraseAnswer11').addEventListener('click', function() {
       eraseAnswer(11);
     });
 
     document.getElementById('checkAnswer12').addEventListener('click', function() {
-      checkAnswer_and(12, '정답: CREATE INDEX idx_name ON student(name);', ['CREATE INDEX idx_name','ON student(name);']);
+      checkAnswer_and(12, '정답: create index idx_name on student(name);', ['create index idx_name','ON student(name);']);
     });
     document.getElementById('eraseAnswer12').addEventListener('click', function() {
       eraseAnswer(12);
     });
 
     document.getElementById('checkAnswer13').addEventListener('click', function() {
-      checkAnswer(13, '정답: 13. SOAP', ['SOAP']);
+      checkAnswer(13, '정답: 13. soap', ['soap']);
     });
     document.getElementById('eraseAnswer13').addEventListener('click', function() {
       eraseAnswer(13);
     });
 
     document.getElementById('checkAnswer14').addEventListener('click', function() {
-      checkAnswer(14, '정답: 14. 사용자의 입력값 등 외부 입력값이 SQL 쿼리에 삽입되어 공격자가 원하는 SQL 쿼리문을 실행하는 공격기법', ['강제','SQL 구문을 삽입','관리자 인증을 우회']);
+      checkAnswer(14, '정답: 14. 사용자의 입력값 등 외부 입력값이 sql 쿼리에 삽입되어 공격자가 원하는 sql 쿼리문을 실행하는 공격기법', ['강제','SQL 구문을 삽입','관리자 인증을 우회']);
     });
     document.getElementById('eraseAnswer14').addEventListener('click', function() {
       eraseAnswer(14);
@@ -1008,14 +983,14 @@
     });
 
     document.getElementById('checkAnswer16').addEventListener('click', function() {
-      checkAnswer(16, '정답: 16. Chmod 751 a.txt', ['Chmod 751 a.txt']);
+      checkAnswer(16, '정답: 16. chmod 751 a.txt', ['chmod 751 a.txt']);
     });
     document.getElementById('eraseAnswer16').addEventListener('click', function() {
       eraseAnswer(16);
     });
 
     document.getElementById('checkAnswer17').addEventListener('click', function() {
-      checkAnswer(17, '정답: 17. Linked open data ', ['Linked open data']);
+      checkAnswer(17, '정답: 17. linked open data ', ['linked open data']);
     });
     document.getElementById('eraseAnswer17').addEventListener('click', function() {
       eraseAnswer(17);

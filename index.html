@@ -13,6 +13,7 @@
             height: 100vh;
             margin: 0;
             background-color: #ffffff;
+            position: relative;
         }
         h1 {
             font-size: 50px;
@@ -42,11 +43,29 @@
             margin-bottom: 10px;
         }
         .list {
+            width: 100%; /* 테이블 넓이를 100%로 설정 */
+            border-collapse: collapse;
+            table-layout: fixed; /* 테이블 레이아웃을 고정으로 설정 */
             display: none; /* 기본적으로 숨기기 */
             list-style-type: none;
             padding: 5px;
             margin: 10px 0 0 0; /* 위쪽 여백 설정 */
             width: 100%; /* 리스트 넓이를 100%로 설정 */
+        }
+        .list tr{
+            cursor: pointer;
+            border: 1px solid #ddd;
+        }
+        .list td{
+            padding: 5px;
+            border: 1px solid #ddd; /* 테이블 셀에 테두리 추가 */
+        }
+        .list th{
+            background-color: #f2f2f2;
+            text-align: center;
+            padding: 5px;
+            border: 1px solid #ddd; /* 테이블 셀에 테두리 추가 */
+
         }
         .tdtitle {
             width: 400px;
@@ -60,41 +79,36 @@
             padding: 10px;
             border: 1px solid #ddd;
         }
-        table {
-            width: 100%; /* 테이블 넓이를 100%로 설정 */
-            border-collapse: collapse;
-            table-layout: fixed; /* 테이블 레이아웃을 고정으로 설정 */
-            margin-top: 10px;
-        }
-        table tr {
-            cursor: pointer;
-            border: 1px solid #ddd;
-        }
-        table td, table th {
-            padding: 5px;
-            border: 1px solid #ddd; /* 테이블 셀에 테두리 추가 */
-        }
-        table th {
-            background-color: #f2f2f2;
-            text-align: center;
-            padding: 5px;
-        }
-        input[type="text"] {
+        .joinTable{
+        width: 280px;
+        height: 550px;
+        margin: auto;}
+
+        input[type="text"], input[type="password"] ,input[type="date"]{
             width: 100%;
-            height: 30px;
-            font-size: 20px;
+            height: 26px;
+            font-size: 18px;
             padding: 5px;
             margin-bottom: 10px;
         }
-        button {
-            width: 100%;
-            padding: 10px;
+        input[type="email"]{
+            width: 40%;
+            height: 26px;
             font-size: 18px;
+            padding: 5px;
+            margin-bottom: 10px;
+        }
+
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
             cursor: pointer;
             border: none;
             border-radius: 5px;
-            background-color: #007BFF;
-            color: white;
+            background-color: #f0f0f0;
+            color: black;
+            margin-right: 10px;
+            margin-bottom: 20px;
         }
         a {
             text-decoration: none; /* 링크 밑줄 제거 */
@@ -102,15 +116,102 @@
             font-weight: normal; /* 기본 글씨 두께 설정 */
             transition: color 0.3s, font-weight 0.3s; /* 색상 및 글씨 두께 변경에 애니메이션 추가 */
         }
+        .emailSelect{
+            
+        width: 120px;
+        height: 32px;
+        font-size: 15px;
+        border: 1;
+        outline: none;
+        padding-left: 10px;
+        }
         a:hover {
             text-decoration-line: underline;
             color: blue;
             transition: color 0.3s, font-weight 0.3s;
         }
+        .top-right {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+            max-width: 300px;
+        }
+        #loginMenu {
+            display: none;
+            background-color: #fff;
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            margin-top: 10px;
+            z-index: 2;
+        }
+        #joinMenu {
+            display: none;
+            background-color: #fff;
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            margin-top: 40px;
+            z-index:3;
+        }
     </style>
 </head>
 <body>
-    <h1>정보처리기사 기출 문제 풀이</h1><br>
+    <h1>정보처리기사 기출 문제 풀이</h1>
+    <div class="top-right">
+        <button id="loginButton">로그인</button>
+        <div id="loginMenu">
+            <h2>Login</h2>
+            <input style="margin :10px; " id="fileInput" type="file" accept=".xlsx, .xls" />
+            <form method="post" action="main.html" id="login-form">
+                <input id="loginId" type="text" name="userName" placeholder="lD">
+                <input id="loginPwd" type="password" name="userPassword" placeholder="Password">
+                <label for="remember-check">
+                    <input type="checkbox" id="remember-check">아이디 저장하기
+                </label>
+                <input style="font-size: 16px; margin: 10px;" type="submit" value="Login" onclick="login(event)">
+                <a id="join" style="float: right; margin: 10px;" href="javascript:void(0);">회원가입</a>
+            </form>
+        </div>
+    </div>
+    <div id="joinMenu" class="top-right">
+        <form action="main.html">
+            <table class="joinTable">
+                <tr>
+                    <td><h2>회원가입</h2></td>
+                </tr>
+                <tr><td>아이디</td></tr>
+                <tr><td><input type="text" class="text" id="joinId"></td></tr>
+                <tr><td>비밀번호</td></tr>
+                <tr><td><input type="password" class="text" id="joinPwd"></td></tr>
+                <tr><td>비밀번호 확인</td></tr>
+                <tr><td><input type="password" class="text" id="joinPwdChk"></td></tr>
+                <tr><td>이름</td></tr>
+                <tr><td><input type="text" class="text" id="joinName"></td></tr>
+                <tr><td>생년월일</td></tr>
+                <tr><td><input type="date" class="text" id="joinBirthDate"></td></tr>
+                <tr><td>이메일</td></tr>
+                <tr>
+                    <td><input type="email" class="email" id="joinEmail"> @ 
+                        <select class="emailSelect">
+                            <option>naver.com</option>
+                            <option>gmail.com</option>
+                            <option>daum.net</option>
+                            <option>nate.com</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr><td><input type="submit" value="가입하기" class="btn" onclick="join()">
+                <a id="joinClose" style="float: right; margin: 10px;" href="javascript:void(0);">닫기</a></td></tr>
+            </table>
+        </form>
+    </div>
+    <br>
     <div class="wrapper">
         <div class="container" onclick="toggleList(this, 'list1')">
             <p class="ptag">정보처리기사 회차별 기출 문제 풀이</p>
@@ -123,24 +224,17 @@
                 </tr>
             </thead>
             <tbody>
+        
                 <tr>
-                    <td class="tdtitle"><a href="" target="_blank">[2024년 1회] 정보처리기사 실기 기출</a></td>
-                    <td class="solv_time"></td>
-                </tr>
-                <tr>
-                    <td class="tdtitle"><a href="" target="_blank">[2023년 3회] 정보처리기사 실기 기출</a></td>
-                    <td class="solv_time"></td>
-                </tr>
-                <tr>
-                    <td class="tdtitle"><a href="" target="_blank">[2023년 2회] 정보처리기사 실기 기출</a></td>
-                    <td class="solv_time"></td>
-                </tr>
-                <tr>
-                    <td class="tdtitle"><a href="" target="_blank">[2023년 1회] 정보처리기사 실기 기출</a></td>
+                    <td class="tdtitle"><a href="2021년1회.html" target="">[2021년 1회] 정보처리기사 실기 기출</a></td>
                     <td class="solv_time"></td>
                 </tr>
                 <tr>
                     <td class="tdtitle"><a href="2020년1회.html" target="">[2020년 1회] 정보처리기사 실기 기출</a></td>
+                    <td class="solv_time"></td>
+                </tr>
+                <tr>
+                    <td class="tdtitle"><a href="2020년2회.html" target="">[2020년 2회] 정보처리기사 실기 기출</a></td>
                     <td class="solv_time"></td>
                 </tr>
             </tbody>
@@ -207,10 +301,127 @@
             </tbody>
         </table>
     </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
     <script>
+        const loginId = document.querySelector("#loginMenu #loginId")
+        const loginPwd = document.querySelector("#loginMenu #loginPwd")
+
+        const joinId = document.querySelector("#joinMenu #joinId")
+        const joinPwd = document.querySelector("#joinMenu #joinPwd")
+        const joinPwdChk = document.querySelector("#joinMenu #joinPwdChk")
+        const joinName = document.querySelector("#joinMenu #joinName")
+        const joinBirthDate = document.querySelector("#joinMenu #joinBirthDate")
+        const joinEmail = document.querySelector("#joinMenu #joinEmail")
+
+
+        function login(){
+            id = loginId.value;
+            pwd = loginPwd.value;
+            if(id === ""){
+                alert("이름을 입력하세요");}
+            else if(id.length<=8){
+                alert("ID를 8자 이상으로 입력하세요")}
+            else if(id.length > 15){
+                alert("ID를 15자 미만으로 입력하세요.")}
+            else if(pwd.length === ""){
+                alert("비밀번호를 입력하세요")
+            }
+            else{
+                alert('로그인 성공!');}
+        }
+
+        function join(){
+            id = joinId.value;
+            pwd = loginPwd.value;
+            if(id === ""){
+                alert("이름을 입력하세요");}
+            else if(id.length<=8){
+                alert("ID를 8자 이상으로 입력하세요")}
+            else if(id.length > 15){
+                alert("ID를 15자 미만으로 입력하세요.")}
+            else if(pwd.length === ""){
+                alert("비밀번호를 입력하세요")
+            }
+            else{
+                alert('가입 성공!');}
+        };
+
         function toggleList(container, listId) {
             const list = document.getElementById(listId);
             list.style.display = list.style.display === 'none' || list.style.display === '' ? 'block' : 'none';
+        };
+
+        document.getElementById('loginButton').addEventListener('click', function () {
+            var loginMenu = document.getElementById('loginMenu');
+            var joinMenu = document.getElementById('joinMenu');
+            if (loginMenu.style.display === 'block') {
+                loginMenu.style.display = 'none';
+                joinMenu.style.display = 'none';
+            } else {
+                loginMenu.style.display = 'block';
+                joinMenu.style.display = 'none';
+            }
+        });
+
+        document.getElementById('joinClose').addEventListener('click',function(){
+            const joinMenu = document.getElementById('joinMenu');
+            joinMenu.style.display = 'none';
+        });
+
+        document.getElementById('join').addEventListener('click', function () {
+            var joinMenu = document.getElementById('joinMenu');
+            var loginMenu = document.getElementById('loginMenu');
+            if (joinMenu.style.display === 'block') {
+                joinMenu.style.display = 'none';
+            } else {
+                joinMenu.style.display = 'block';
+                loginMenu.style.display = 'none';
+            }
+        });
+        
+        function login(event) {
+            event.preventDefault(); // 기본 폼 제출 동작 막기
+
+            const fileInput = document.getElementById('fileInput');
+            const loginId = document.getElementById('loginId').value;
+            const loginPwd = document.getElementById('loginPwd').value;
+
+            if (!fileInput.files.length) {
+                alert('엑셀 파일을 업로드해주세요.');
+                return;
+            }
+
+            const file = fileInput.files[0];
+            const reader = new FileReader();
+
+            reader.onload = function (e) {
+                const data = new Uint8Array(e.target.result);
+                const workbook = XLSX.read(data, { type: 'array' });
+                const sheetName = workbook.SheetNames[0];
+                const worksheet = workbook.Sheets[sheetName];
+                const rows = XLSX.utils.sheet_to_json(worksheet, { header: 1 });
+
+                let loginSuccess = false;
+
+                // 엑셀 데이터를 순회하며 ID와 비밀번호를 비교
+                for (let i = 1; i < rows.length; i++) {
+                    const row = rows[i];
+                    if (row[0] === loginId && row[1] === loginPwd) {
+                        loginSuccess = true;
+                        break;
+                    }
+                }
+
+                if (loginSuccess) {
+                    alert('로그인 성공!');
+                    document.getElementById('login-form').submit(); // 폼 제출
+                } else {
+                    alert('로그인 실패! 아이디 또는 비밀번호를 확인해주세요.');
+                }
+            };
+
+            reader.readAsArrayBuffer(file);
         }
     </script>
 </body>

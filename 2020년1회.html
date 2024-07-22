@@ -52,20 +52,29 @@
       display: flex;
       flex-direction: column;
       z-index: 1000;
-      height: 2000px;
+      height: 1000px;
+      overflow-y: scroll;
+      
+      
+
     }
     #menu a {
-      margin-top: 30px;
+      margin-top: 10px;
       text-decoration: none;
       color: #000;
       padding: 10px;
       border-radius: 5px;
       margin-bottom: 10px;
       transition: background-color 0.3s ease;
+      
     }
-    #menu a.submenu {
-            display: none;
+    .submenu {
+            display: block;
             margin-left: 20px;
+        }
+    .submenu a {
+            display: block;
+            margin: 5px 0;
         }
     #menu a.active + a.submenu {
             display: block;
@@ -74,8 +83,8 @@
       background-color: #007BFF;
       color: #fff;
     }
-    #menu a.disabled {
-            pointer-events: none; /* 클릭 불가 */
+    #mainmenu {
+            
             color: black; /* 시각적으로 비활성화 표시 */
             font-size: 20px;
             font-weight: bold;
@@ -144,26 +153,74 @@
     .active{
       display:block;
     }
+
+    .hidden {
+    display: none;
+}
+#timer {
+    position: fixed;
+    top: 10px;
+    right: 10px;
+    font-size: 20px;
+    background-color: #ffdddd;
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+}
+#submit {
     
+    margin-right: 10px;
+    margin-bottom: 20px;
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #000000;
+    color: red;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
 
   </style>
 </head>
 <body>
+  <div id="timer">02:30:00</div>
   <div id="menu">
     <button id="menuButton">메뉴</button>
     <p><br></p>
-    <a class = disabled id="2020년 1회">2020년 1회</a>
-    <a href="#question1" id="menu1">문제 1번 ~ 문제4번</a>
-    <a href="#question5" id="menu2">문제 5번 ~ 문제8번</a>
-    <a href="#question9" id="menu3">문제 9번 ~ 문제12번</a>
-    <a href="#question13" id="menu4">문제 13번 ~ 문제16번</a>
-    <a href="#question17" id="menu5">문제 17번 ~ 문제20번</a>
-    <a class = disabled id="2020년 2회">2020년 2회</a>
-    <a href="#question1" id="menu5">문제 1번 ~ 문제4번</a>
-    <a href="#question5" id="menu6">문제 5번 ~ 문제8번</a>
-    <a href="#question9" id="menu7">문제 9번 ~ 문제12번</a>
-    <a href="#question13" id="menu8">문제 13번 ~ 문제16번</a>
-    <a href="#question17" id="menu9">문제 17번 ~ 문제20번</a>
+    <div class="mainmenu" id="2020년 1회">
+      <a href='#2020년1회.html' class = "mainmenu" id="2020년 1회">2020년 1회</a>
+      
+
+      </div>
+      <div class="submenu" >
+        <a href="#question1" id="menu1">문제 1번 ~ 문제4번</a>
+        <a href="#question5" id="menu2">문제 5번 ~ 문제8번</a>
+        <a href="#question9" id="menu3">문제 9번 ~ 문제12번</a>
+        <a href="#question13" id="menu4">문제 13번 ~ 문제16번</a>
+        <a href="#question17" id="menu5">문제 17번 ~ 문제20번</a>
+
+    </div>
+    
+      
+    <div class="mainmenu" id="2020년 2회">
+      <a href='#2020년2회.html' class = "mainmenu" id="2020년 2회">2020년 2회</a>
+
+
+    </div>
+    
+    
+    <div class="submenu">
+      <a href="#question1" id="menu6">문제 1번 ~ 문제4번</a>
+      <a href="#question5" id="menu7">문제 5번 ~ 문제8번</a>
+      <a href="#question9" id="menu8">문제 9번 ~ 문제12번</a>
+      <a href="#question13" id="menu9">문제 13번 ~ 문제16번</a>
+      <a href="#question17" id="menu10">문제 17번 ~ 문제20번</a>
+
+
+    </div>
+    
     
   </div>
     
@@ -516,6 +573,7 @@
       
             
             <button id="prevPage5">이전</button>
+            <button color = red id="submit">제출</button>
             <button id="nextPage5" style="display: none;">다음</button>
     </div>
 
@@ -536,21 +594,11 @@
   </div>
 
   <script>
+    //타이머 로직 구현
 
-      document.querySelectorAll('#menu a').forEach(link => { //메뉴이동 스크립트
-            link.addEventListener('click', function(event) {
-                event.preventDefault();
-                const targetId = this.getAttribute('href').substring(1);
-                document.querySelectorAll('.page').forEach(page => {
-                    page.classList.remove('active');
-                });
-                const targetPage = document.getElementById(targetId).closest('.page');
-                targetPage.classList.add('active');
-                window.location.hash = this.getAttribute('href');
-                window.scrollTo(0, 0); // 페이지 전환 시 맨 위로 스크롤
-
-            });
-        });
+    
+  
+        
     
 
     const pages = document.querySelectorAll('.page');
@@ -853,11 +901,63 @@
       const printScoreElement = document.getElementById('printScoreText');
       printScoreElement.textContent = '총 점수는 ' + score + '점입니다. ' + (score >= 60 ? '합격입니다.' : '탈락입니다.');
     });
+    document.addEventListener('DOMContentLoaded', function () {
+    // 타이머 설정
+    let totalTime = 0; // 0시간 0분을 초로 환산
+    
 
-    document.getElementById('menuButton').addEventListener('click', function() {
-      const menu = document.getElementById('menu');
-      menu.style.display = menu.style.display === 'none' ? 'flex' : 'none';
+    function updateTimer() {
+      
+        const timerElement = document.getElementById('timer'); //타이머
+        const hours = Math.floor(totalTime / 3600); //시간
+        const minutes = Math.floor((totalTime % 3600) / 60);
+        const seconds = totalTime % 60;
+
+        timerElement.textContent = 
+            `남은시간:${hours.toString().padStart(2, '0')}:${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
+
+        if (totalTime < 2 * 60 * 60 + 30 * 60) { //제한시간 2시간 반
+            totalTime++;
+            setTimeout(updateTimer, 1000); //1초씩 흘러감
+        } else {
+            alert(`제한시간이 경과되었습니다 ${count * 5}점 입니다.`);
+        }
+    }
+
+    updateTimer();
+
+    document.getElementById('submit').addEventListener('click', function() {
+        sessionStorage.setItem('totalTime', totalTime);
+        alert('제출 완료! 남은 시간이 저장되었습니다.');
     });
+
+
+    
+
+      document.querySelectorAll('#menu a').forEach(link => { //메뉴이동 스크립트
+            link.addEventListener('click', function(event) {
+                event.preventDefault();
+                const targetId = this.getAttribute('href').substring(1);
+                document.querySelectorAll('.page').forEach(page => {
+                    page.classList.remove('active');
+                });
+                const targetPage = document.getElementById(targetId).closest('.page');
+                targetPage.classList.add('active');
+                window.location.hash = this.getAttribute('href');
+                window.scrollTo(0, 0); // 페이지 전환 시 맨 위로 스크롤
+
+            });
+        });
+
+        document.getElementById('menuButton').addEventListener('click', function() {
+      const menu = document.getElementById('menu');
+      
+      menu.style.display = menu.style.display === 'none' ? 'flex' : 'none';
+      menu.display='flex';
+    });
+  });
+
+    
 
 
     function changePageToMain() {

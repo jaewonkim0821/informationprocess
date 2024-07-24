@@ -12,6 +12,8 @@
   </style>
 </head>
 <body>
+  <div id="timer2">제한시간:02:30:00</div>
+
     <div id="timer">02:30:00</div>
     <div id="menu">
       <button id="menuButton">메뉴</button>
@@ -395,7 +397,7 @@ const pages = document.querySelectorAll('.page');
     
     document.addEventListener('DOMContentLoaded', function () {
     // 타이머 설정
-    let totalTime = sessionStorage.getItem("totalTime");
+    let totalTime = 0;
     totalTime = totalTime ? parseInt(totalTime, 10) : 0; // totalTime 초기화
 
     if (window.location.pathname.endsWith('project.html')) {

@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -15,83 +16,131 @@
             background-color: #ffffff;
             position: relative;
         }
+
         h1 {
             font-size: 50px;
             text-align: center;
             width: 100%;
-            margin: 100px 0; /* 상단 여백과 하단 여백 설정 */
+            margin: 100px 0;
+            /* 상단 여백과 하단 여백 설정 */
         }
+
+        .userButton {
+            
+            width:80px;
+            height:80px;
+            border-radius: 90px;
+            margin-right:20px;
+            background-color: #ffffff;
+            display: none;
+        }
+
+        .userImage {
+
+            border: 2px solid #ddd;
+            border-radius: 90px;
+        }
+
         .wrapper {
             display: flex;
             flex-direction: column;
-            width: 90%; /* 기본 너비 설정 */
-            max-width: 600px; /* 최대 너비 설정 */
-            gap: 20px; /* 각 요소 사이의 간격 조정 */
+            width: 90%;
+            /* 기본 너비 설정 */
+            max-width: 600px;
+            /* 최대 너비 설정 */
+            gap: 20px;
+            /* 각 요소 사이의 간격 조정 */
         }
+
         .container {
             background-color: white;
             padding: 20px;
             border-radius: 10px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
             text-align: center;
-            cursor: pointer; /* 클릭 가능한 커서로 변경 */
+            cursor: pointer;
+            /* 클릭 가능한 커서로 변경 */
             position: relative;
         }
+
         .ptag {
             font-size: 20px;
             padding: 5px;
             margin-bottom: 10px;
         }
+
         .list {
-            width: 100%; /* 테이블 넓이를 100%로 설정 */
+            width: 100%;
+            /* 테이블 넓이를 100%로 설정 */
             border-collapse: collapse;
-            table-layout: fixed; /* 테이블 레이아웃을 고정으로 설정 */
-            display: none; /* 기본적으로 숨기기 */
+            table-layout: fixed;
+            /* 테이블 레이아웃을 고정으로 설정 */
+            display: none;
+            /* 기본적으로 숨기기 */
             list-style-type: none;
             padding: 5px;
-            margin: 10px 0 0 0; /* 위쪽 여백 설정 */
-            width: 100%; /* 리스트 넓이를 100%로 설정 */
+            margin: 10px 0 0 0;
+            /* 위쪽 여백 설정 */
+            width: 100%;
+            /* 리스트 넓이를 100%로 설정 */
         }
-        .list tr{
+
+        .list tr {
             cursor: pointer;
             border: 1px solid #ddd;
         }
-        .list td{
+
+        .list td {
             padding: 5px;
-            border: 1px solid #ddd; /* 테이블 셀에 테두리 추가 */
+            border: 1px solid #ddd;
+            /* 테이블 셀에 테두리 추가 */
         }
-        .list th{
+
+        .list th {
             background-color: #f2f2f2;
             text-align: center;
             padding: 5px;
-            border: 1px solid #ddd; /* 테이블 셀에 테두리 추가 */
+            border: 1px solid #ddd;
+            /* 테이블 셀에 테두리 추가 */
 
         }
+
         .tdtitle {
             width: 400px;
         }
+
         .solv_time {
             width: 200px;
             text-align: center;
         }
+        .score{
+            width:150px;
+            text-align: center;
+        }
+
         .list li {
             background-color: #f9f9f9;
             padding: 10px;
             border: 1px solid #ddd;
         }
-        .joinTable{
-        width: 280px;
-        height: 550px;
-        margin: auto;}
 
-        input[type="text"], input[type="password"] ,input[type="date"]{
+        .joinTable {
+            width: 280px;
+            height: 550px;
+            margin: auto;
+        }
+
+        input[type="text"],
+        input[type="password"],
+        input[type="date"] {
             width: 100%;
             height: 26px;
             font-size: 18px;
             padding: 5px;
             margin-bottom: 10px;
         }
-        input[type="email"]{
+
+        input[type="email"] {
             width: 40%;
             height: 26px;
             font-size: 18px;
@@ -110,26 +159,34 @@
             margin-right: 10px;
             margin-bottom: 20px;
         }
+
         a {
-            text-decoration: none; /* 링크 밑줄 제거 */
-            color: inherit; /* 부모 요소의 색상 상속 */
-            font-weight: normal; /* 기본 글씨 두께 설정 */
-            transition: color 0.3s, font-weight 0.3s; /* 색상 및 글씨 두께 변경에 애니메이션 추가 */
+            text-decoration: none;
+            /* 링크 밑줄 제거 */
+            color: inherit;
+            /* 부모 요소의 색상 상속 */
+            font-weight: normal;
+            /* 기본 글씨 두께 설정 */
+            transition: color 0.3s, font-weight 0.3s;
+            /* 색상 및 글씨 두께 변경에 애니메이션 추가 */
         }
-        .emailSelect{
-            
-        width: 120px;
-        height: 32px;
-        font-size: 15px;
-        border: 1;
-        outline: none;
-        padding-left: 10px;
+
+        .emailSelect {
+
+            width: 120px;
+            height: 32px;
+            font-size: 15px;
+            border: 1;
+            outline: none;
+            padding-left: 10px;
         }
+
         a:hover {
             text-decoration-line: underline;
             color: blue;
             transition: color 0.3s, font-weight 0.3s;
         }
+
         .top-right {
             position: absolute;
             top: 20px;
@@ -139,6 +196,7 @@
             align-items: flex-end;
             max-width: 300px;
         }
+
         #loginMenu {
             display: none;
             background-color: #fff;
@@ -149,6 +207,7 @@
             margin-top: 10px;
             z-index: 2;
         }
+
         #joinMenu {
             display: none;
             background-color: #fff;
@@ -157,18 +216,52 @@
             border-radius: 10px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
             margin-top: 40px;
-            z-index:3;
+            z-index: 3;
+        }
+
+        #userMenu{
+            
+            display: none;
+            background-color: #fff;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            margin-top: 10px;
+            z-index: 3;
+            min-width: 300px;
+        }
+        .logout{
+            text-align:right;
+            margin-bottom:10px;
+        }
+        .userInfo{
+            display:flex;
+        }
+        .userInfo div{
+            padding-bottom: 10px;
+            flex-direction: column;
+            justify-content: center;
+        }
+        .userInfo img{
+            width: 80px;
+            height:80px;
+            border-radius:50%;
+            margin:20px;
+            
         }
     </style>
 </head>
+
 <body>
     <h1>정보처리기사 기출 문제 풀이</h1>
     <div class="top-right">
         <button id="loginButton">로그인</button>
+        <button class="userButton" id="userButton"><img class="userImage" src="기본프사.png" width="70px"
+                height="70px"> </button>
         <div id="loginMenu">
             <h2>Login</h2>
-            <input style="margin :10px; " id="fileInput" type="file" accept=".xlsx, .xls" />
-            <form method="post" action="main.html" id="login-form">
+            <form method="post" action="login.html" id="login-form">
                 <input id="loginId" type="text" name="userName" placeholder="lD">
                 <input id="loginPwd" type="password" name="userPassword" placeholder="Password">
                 <label for="remember-check">
@@ -178,27 +271,64 @@
                 <a id="join" style="float: right; margin: 10px;" href="javascript:void(0);">회원가입</a>
             </form>
         </div>
+
+        <div id="userMenu">
+            <div class="logout"><a href="javascript:void(0);" onclick="logout()">로그아웃</a></div>
+            <div class="userInfo">
+                <img class="userImage" src="기본프사.png" alt="User Image" width="70" height="70">
+                <div>
+                    <h4 id="userName">사용자 이름</h6>
+                    <p id="userEmail">이메일</p>
+                    <input style="font-size: 14px;" type="submit" value="사용자 정보" onclick="userInformation()">
+                </div>
+            </div>
+        </div>
     </div>
     <div id="joinMenu" class="top-right">
-        <form action="main.html">
+        <form action="">
             <table class="joinTable">
                 <tr>
-                    <td><h2>회원가입</h2></td>
+                    <td>
+                        <h2>회원가입</h2>
+                    </td>
                 </tr>
-                <tr><td>아이디</td></tr>
-                <tr><td><input type="text" class="text" id="joinId"></td></tr>
-                <tr><td>비밀번호</td></tr>
-                <tr><td><input type="password" class="text" id="joinPwd"></td></tr>
-                <tr><td>비밀번호 확인</td></tr>
-                <tr><td><input type="password" class="text" id="joinPwdChk"></td></tr>
-                <tr><td>이름</td></tr>
-                <tr><td><input type="text" class="text" id="joinName"></td></tr>
-                <tr><td>생년월일</td></tr>
-                <tr><td><input type="date" class="text" id="joinBirthDate"></td></tr>
-                <tr><td>이메일</td></tr>
                 <tr>
-                    <td><input type="email" class="email" id="joinEmail"> @ 
-                        <select class="emailSelect">
+                    <td>아이디</td>
+                </tr>
+                <tr>
+                    <td><input type="text" class="text" id="joinId"></td>
+                </tr>
+                <tr>
+                    <td>비밀번호</td>
+                </tr>
+                <tr>
+                    <td><input type="password" class="text" id="joinPwd"></td>
+                </tr>
+                <tr>
+                    <td>비밀번호 확인</td>
+                </tr>
+                <tr>
+                    <td><input type="password" class="text" id="joinPwdChk"></td>
+                </tr>
+                <tr>
+                    <td>이름</td>
+                </tr>
+                <tr>
+                    <td><input type="text" class="text" id="joinName"></td>
+                </tr>
+                <tr>
+                    <td>생년월일</td>
+                </tr>
+                <tr>
+                    <td><input type="date" class="text" id="joinBirthDate"></td>
+                </tr>
+                <tr>
+                    <td>이메일</td>
+                </tr>
+                <tr>
+                    <td><input type="email" class="email" id="joinEmail"> @
+                        <select class="emailSelect" id="email-select" name="email-select" onchange="addEmail()">
+                            <option>선택</option>
                             <option>naver.com</option>
                             <option>gmail.com</option>
                             <option>daum.net</option>
@@ -206,8 +336,11 @@
                         </select>
                     </td>
                 </tr>
-                <tr><td><input type="submit" value="가입하기" class="btn" onclick="join()">
-                <a id="joinClose" style="float: right; margin: 10px;" href="javascript:void(0);">닫기</a></td></tr>
+                <tr>
+                    <td><input type="submit" value="가입하기" class="btn" onclick="join()">
+                        <a id="joinClose" style="float: right; margin: 10px;" href="javascript:void(0);">닫기</a>
+                    </td>
+                </tr>
             </table>
         </form>
     </div>
@@ -221,21 +354,78 @@
                 <tr>
                     <th class="tdtitle">강의명</th>
                     <th class="solv_time">풀이 시간</th>
+                    <th class="score">점수</th>
                 </tr>
             </thead>
             <tbody>
-        
+                <tr>
+                    <td class="tdtitle"><a href="2023_1_1.html" target="">[2023년 1회] 정보처리기사 실기 기출</a></td>
+                    <td class="solv_time"></td>
+                    <td class="score"></td>
+                </tr>
+                <tr>
+                    <td class="tdtitle"><a href="2023_2_1.html" target="">[2023년 2회] 정보처리기사 실기 기출</a></td>
+                    <td class="solv_time"></td>
+                    <td class="score"></td>
+                </tr>
+                <tr>
+                    <td class="tdtitle"><a href="2023_3_1.html" target="">[2023년 3회] 정보처리기사 실기 기출</a></td>
+                    <td class="solv_time"></td>
+                    <td class="score"></td>
+                </tr>
+
+                <tr>
+                    <td class="tdtitle"><a href="2022_1_1.html" target="">[2022년 1회] 정보처리기사 실기 기출</a></td>
+                    <td class="solv_time"></td>
+                    <td class="score"></td>
+                </tr>
+                <tr>
+                    <td class="tdtitle"><a href="2022_2_1.html" target="">[2022년 2회] 정보처리기사 실기 기출</a></td>
+                    <td class="solv_time"></td>
+                    <td class="score"></td>
+                </tr>
+                <tr>
+                    <td class="tdtitle"><a href="2022_3_1.html" target="">[2022년 3회] 정보처리기사 실기 기출</a></td>
+                    <td class="solv_time"></td>
+                    <td class="score"></td>
+                </tr>
+
                 <tr>
                     <td class="tdtitle"><a href="2021_1_1.html" target="">[2021년 1회] 정보처리기사 실기 기출</a></td>
                     <td class="solv_time"></td>
+                    <td class="score"></td>
                 </tr>
+                <tr>
+                    <td class="tdtitle"><a href="2021_1_1.html" target="">[2021년 2회] 정보처리기사 실기 기출</a></td>
+                    <td class="solv_time"></td>
+                    <td class="score"></td>
+                </tr>
+                <tr>
+                    <td class="tdtitle"><a href="2021_1_1.html" target="">[2021년 3회] 정보처리기사 실기 기출</a></td>
+                    <td class="solv_time"></td>
+                    <td class="score"></td>
+                </tr>
+
                 <tr>
                     <td class="tdtitle"><a href="2020_1_1.html" target="">[2020년 1회] 정보처리기사 실기 기출</a></td>
                     <td class="solv_time"></td>
+                    <td class="score"></td>
                 </tr>
+                
                 <tr>
                     <td class="tdtitle"><a href="2020_2_1.html" target="">[2020년 2회] 정보처리기사 실기 기출</a></td>
                     <td class="solv_time"></td>
+                    <td class="score"></td>
+                </tr>
+                <tr>
+                    <td class="tdtitle"><a href="2020_3_1.html" target="">[2020년 3회] 정보처리기사 실기 기출</a></td>
+                    <td class="solv_time"></td>
+                    <td class="score"></td>
+                </tr>
+                <tr>
+                    <td class="tdtitle"><a href="2020_4_1.html" target="">[2020년 4회] 정보처리기사 실기 기출</a></td>
+                    <td class="solv_time"></td>
+                    <td class="score"></td>
                 </tr>
             </tbody>
         </table>
@@ -247,182 +437,223 @@
                 <tr>
                     <th class="tdtitle">강의명</th>
                     <th class="solv_time">풀이 시간</th>
+                    <th class="score">점수</th>
                 </tr>
             </thead>
             <tbody>
                 <tr>
-                    <td class="tdtitle"><a href="" target="_blank">[요구사항 확인] 정보처리기사 실기 기출</a></td>
+                    <td class="tdtitle"><a href="" target="_blank">[C언어] 정보처리기사 실기 기출</a></td>
                     <td class="solv_time"></td>
+                    <td class="score"></td>
                 </tr>
                 <tr>
-                    <td class="tdtitle"><a href="" target="_blank">[데이터 입출력 구현] 정보처리기사 실기 기출</a></td>
+                    <td class="tdtitle"><a href="" target="_blank">[JAVA] 정보처리기사 실기 기출</a></td>
                     <td class="solv_time"></td>
+                    <td class="score"></td>
                 </tr>
                 <tr>
-                    <td class="tdtitle"><a href="" target="_blank">[통합 구현] 정보처리기사 실기 기출</a></td>
+                    <td class="tdtitle"><a href="" target="_blank">[PYTHON] 정보처리기사 실기 기출</a></td>
                     <td class="solv_time"></td>
+                    <td class="score"></td>
                 </tr>
                 <tr>
-                    <td class="tdtitle"><a href="" target="_blank">[제품 소프트웨어 패키징] 정보처리기사 실기 기출</a></td>
+                    <td class="tdtitle"><a href="" target="_blank">[데이터베이스] 정보처리기사 실기 기출</a></td>
                     <td class="solv_time"></td>
-                </tr>
-                <tr>
-                    <td class="tdtitle"><a href="" target="_blank">[서버프로그램 구현] 정보처리기사 실기 기출</a></td>
-                    <td class="solv_time"></td>
-                </tr>
-                <tr>
-                    <td class="tdtitle"><a href="" target="_blank">[인터페이스 구현] 정보처리기사 실기 기출</a></td>
-                    <td class="solv_time"></td>
-                </tr>
-                <tr>
-                    <td class="tdtitle"><a href="" target="_blank">[프로그래밍 언어 활용] 정보처리기사 실기 기출</a></td>
-                    <td class="solv_time"></td>
-                </tr>
-                <tr>
-                    <td class="tdtitle"><a href="" target="_blank">[응용 SW 기초 기술 활용] 정보처리기사 실기 기출</a></td>
-                    <td class="solv_time"></td>
-                </tr>
-                <tr>
-                    <td class="tdtitle"><a href="" target="_blank">[화면 설계] 정보처리기사 실기 기출</a></td>
-                    <td class="solv_time"></td>
-                </tr>
-                <tr>
-                    <td class="tdtitle"><a href="" target="_blank">[애플리케이션 테스트 관리] 정보처리기사 실기 기출</a></td>
-                    <td class="solv_time"></td>
-                </tr>
-                <tr>
-                    <td class="tdtitle"><a href="" target="_blank">[SQL 응용] 정보처리기사 실기 기출</a></td>
-                    <td class="solv_time"></td>
-                </tr>
-                <tr>
-                    <td class="tdtitle"><a href="" target="_blank">[소프트웨어 개발 보안 구축] 정보처리기사 실기 기출</a></td>
-                    <td class="solv_time"></td>
+                    <td class="score"></td>
                 </tr>
             </tbody>
         </table>
     </div>
-
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
-    <script>
-        const loginId = document.querySelector("#loginMenu #loginId")
-        const loginPwd = document.querySelector("#loginMenu #loginPwd")
-
-        const joinId = document.querySelector("#joinMenu #joinId")
-        const joinPwd = document.querySelector("#joinMenu #joinPwd")
-        const joinPwdChk = document.querySelector("#joinMenu #joinPwdChk")
-        const joinName = document.querySelector("#joinMenu #joinName")
-        const joinBirthDate = document.querySelector("#joinMenu #joinBirthDate")
-        const joinEmail = document.querySelector("#joinMenu #joinEmail")
-
-
-        function login(){
-            id = loginId.value;
-            pwd = loginPwd.value;
-            if(id === ""){
-                alert("이름을 입력하세요");}
-            else if(id.length<=8){
-                alert("ID를 8자 이상으로 입력하세요")}
-            else if(id.length > 15){
-                alert("ID를 15자 미만으로 입력하세요.")}
-            else if(pwd.length === ""){
-                alert("비밀번호를 입력하세요")
-            }
-            else{
-                alert('로그인 성공!');}
-        }
-
-        function join(){
-            id = joinId.value;
-            pwd = loginPwd.value;
-            if(id === ""){
-                alert("이름을 입력하세요");}
-            else if(id.length<=8){
-                alert("ID를 8자 이상으로 입력하세요")}
-            else if(id.length > 15){
-                alert("ID를 15자 미만으로 입력하세요.")}
-            else if(pwd.length === ""){
-                alert("비밀번호를 입력하세요")
-            }
-            else{
-                alert('가입 성공!');}
-        };
-
-        function toggleList(container, listId) {
-            const list = document.getElementById(listId);
-            list.style.display = list.style.display === 'none' || list.style.display === '' ? 'block' : 'none';
-        };
-
-        document.getElementById('loginButton').addEventListener('click', function () {
-            var loginMenu = document.getElementById('loginMenu');
-            var joinMenu = document.getElementById('joinMenu');
-            if (loginMenu.style.display === 'block') {
-                loginMenu.style.display = 'none';
-                joinMenu.style.display = 'none';
-            } else {
-                loginMenu.style.display = 'block';
-                joinMenu.style.display = 'none';
-            }
-        });
-
-        document.getElementById('joinClose').addEventListener('click',function(){
-            const joinMenu = document.getElementById('joinMenu');
-            joinMenu.style.display = 'none';
-        });
-
-        document.getElementById('join').addEventListener('click', function () {
-            var joinMenu = document.getElementById('joinMenu');
-            var loginMenu = document.getElementById('loginMenu');
-            if (joinMenu.style.display === 'block') {
-                joinMenu.style.display = 'none';
-            } else {
-                joinMenu.style.display = 'block';
-                loginMenu.style.display = 'none';
-            }
-        });
-        
-        function login(event) {
-            event.preventDefault(); // 기본 폼 제출 동작 막기
-
-            const fileInput = document.getElementById('fileInput');
-            const loginId = document.getElementById('loginId').value;
-            const loginPwd = document.getElementById('loginPwd').value;
-
-            if (!fileInput.files.length) {
-                alert('엑셀 파일을 업로드해주세요.');
-                return;
-            }
-
-            const file = fileInput.files[0];
-            const reader = new FileReader();
-
-            reader.onload = function (e) {
-                const data = new Uint8Array(e.target.result);
-                const workbook = XLSX.read(data, { type: 'array' });
-                const sheetName = workbook.SheetNames[0];
-                const worksheet = workbook.Sheets[sheetName];
-                const rows = XLSX.utils.sheet_to_json(worksheet, { header: 1 });
-
-                let loginSuccess = false;
-
-                // 엑셀 데이터를 순회하며 ID와 비밀번호를 비교
-                for (let i = 1; i < rows.length; i++) {
-                    const row = rows[i];
-                    if (row[0] === loginId && row[1] === loginPwd) {
-                        loginSuccess = true;
-                        break;
-                    }
-                }
-
-                if (loginSuccess) {
-                    alert('로그인 성공!');
-                    document.getElementById('login-form').submit(); // 폼 제출
-                } else {
-                    alert('로그인 실패! 아이디 또는 비밀번호를 확인해주세요.');
-                }
-            };
-
-            reader.readAsArrayBuffer(file);
-        }
-    </script>
 </body>
+<script>
+    
+    
+    const loginButton = document.getElementById("loginButton");
+    const userButton = document.getElementById("userButton");
+    const userMenu = document.getElementById("userMenu");
+    const loginMenu = document.getElementById('loginMenu');
+    const joinMenu = document.getElementById('joinMenu');
+
+    const loginId = document.querySelector("#loginMenu #loginId")
+    const loginPwd = document.querySelector("#loginMenu #loginPwd")
+
+    const joinClose = document.getElementById('joinClose')
+
+    
+    let userName = document.getElementById('userName');
+    let userEmail = document.getElementById('userEmail');
+
+
+
+
+    function join() {
+        User = userData;
+        const joinId = document.getElementById('joinId').value;
+        const joinPwd = document.getElementById('joinPwd').value;
+        const joinPwdChk = document.getElementById('joinPwdChk').value;
+        const joinName = document.getElementById('joinName').value;
+        const joinBirthDate = document.getElementById('joinBirthDate').value;
+        const joinEmail = document.getElementById('email-select').value === "선택"
+         ? document.getElementById('joinEmail').value 
+         : document.getElementById('joinEmail').value + '@' + document.getElementById('email-select').value;
+
+        // // 입력 값 검증
+        // if (joinId === "") {
+        //     alert("아이디를 입력하세요");
+        //     return;
+        // } else if (joinId.length < 8 || joinId.length > 15) {
+        //     alert("아이디는 8자 이상 15자 이하로 입력하세요");
+        //     return;
+        // } else if (joinPwd === "") {
+        //     alert("비밀번호를 입력하세요");
+        //     return;
+        // } else if (joinPwd !== joinPwdChk) {
+        //     alert('비밀번호가 일치하지 않습니다.');
+        //     return;
+        // } else if (joinName === "") {
+        //     alert("이름을 입력하세요");
+        //     return;
+        // } else if (joinBirthDate === "") {
+        //     alert("생년월일을 입력하세요");
+        //     return;
+        // } else if (joinEmail === "") {
+        //     alert("이메일을 입력하세요");
+        //     return;
+        // }
+            
+            let idExist = false;
+
+            let loggedInUser = {};
+            User.items.forEach(user => {
+                if (user.id === joinId) {
+                    loggedInUser = user;
+                    idExist = true;
+                }
+            });
+
+
+            if (idExist) {
+                alert('존재하는 아이디입니다');
+                return;
+            } 
+
+            User.items.push({
+                id: joinId,
+                pwd: joinPwd,
+                name: joinName,
+                birthDate: joinBirthDate,
+                email: joinEmail
+            });
+
+            console.log(loggedInUser);
+            alert('가입 성공!');
+            //sessionStorage.setItem("")
+            document.getElementById('joinMenu').style.display = 'none';
+            
+    };
+
+    function toggleList(container, listId) {
+        const list = document.getElementById(listId);
+        list.style.display = list.style.display === 'none' || list.style.display === '' ? 'block' : 'none';
+    };
+
+    function logout(){
+
+          loginButton.style.display = "block";
+          userButton.style.display = "none";
+          userMenu.style.display = "none";
+          location.reload(true);
+
+    }
+
+    loginButton.addEventListener('click', function () {
+        if (loginMenu.style.display === 'block') {
+            loginMenu.style.display = 'none';
+            joinMenu.style.display = 'none';
+        } else {
+            loginMenu.style.display = 'block';
+            joinMenu.style.display = 'none';
+        }
+    });
+    userButton.addEventListener('click',function(){
+        if(userMenu.style.display === 'none'){
+            userMenu.style.display = 'block';
+        } else {
+            userMenu.style.display = 'none';
+        }
+
+    });
+
+    joinClose.addEventListener('click', function () {
+        joinMenu.style.display = 'none';
+    });
+
+    document.getElementById('join').addEventListener('click', function () {
+        var joinMenu = document.getElementById('joinMenu');
+        var loginMenu = document.getElementById('loginMenu');
+        if (joinMenu.style.display === 'block') {
+            joinMenu.style.display = 'none';
+        } else {
+            joinMenu.style.display = 'block';
+            loginMenu.style.display = 'none';
+        }
+    });
+    function addEmail() {
+        var email_select = document.getElementById("email-select");
+        var joinEmail = document.getElementById("joinEmail");
+
+        var selectedValue = email_select.options[email_select.selectedIndex].value;
+        var selectedText = email_select.options[email_select.selectedIndex].text;
+
+        if (selectedValue === "선택") {
+            joinEmail.value = "";
+        } else {
+            var currentEmail = joinEmail.value;
+            var atIndex = currentEmail.indexOf("@");
+
+            if (atIndex !== -1) {
+            joinEmail.value = currentEmail.slice(0, atIndex) + "@" + selectedText;
+            } else {
+            joinEmail.value = currentEmail + "@" + selectedText;
+            }
+        }
+}
+
+
+    function login(event) {
+        event.preventDefault(); // 기본 폼 제출 동작 막기
+        
+
+            let loginSuccess = false;
+            let loggedInUser = {};
+
+            User.items.forEach(user => {
+                if (user.id === loginId.value && user.pwd === loginPwd.value) {
+                    loginSuccess = true;
+                    loggedInUser = user;
+                }
+            });
+
+
+            if (loginSuccess) {
+                alert('로그인 성공!');
+                loginId.value = "";
+                loginPwd.value = "";
+
+                document.getElementById('login-form').reset(); // 폼 제출
+                userButton.style.display = 'block';
+                loginButton.style.display = 'none';
+                loginMenu.style.display = 'none';
+
+                // 사용자 이름과 이메일 업데이트
+                userName.textContent = loggedInUser.name;
+                userEmail.textContent = loggedInUser.email;
+
+            } else {
+                alert('로그인 실패! 아이디 또는 비밀번호를 확인해주세요.');
+            };
+    }
+</script>
+<script src="user.js"></script>
+
 </html>

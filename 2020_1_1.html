@@ -8,6 +8,7 @@
   <link rel='stylesheet' href="information.css">
 </head>
 <body>
+  <div id="timer2">제한시간:02:30:00</div>
   <div id="timer">02:30:00</div>
   <div id="menu">
     <button id="menuButton">메뉴</button>
@@ -434,9 +435,11 @@
     function updateTimer() {
       
         const timerElement = document.getElementById('timer'); //타이머
+        
         const hours = Math.floor(totalTime / 3600); //시간
         const minutes = Math.floor((totalTime % 3600) / 60);
         const seconds = totalTime % 60;
+        
 
         timerElement.textContent = 
             `경과시간:${hours.toString().padStart(2, '0')}:${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;

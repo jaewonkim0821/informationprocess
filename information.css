@@ -205,6 +205,16 @@ body { /* */
   border-radius: 5px;
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
 }
+.timer2 {
+  position: fixed;
+  top: 10px;
+  right: 10px;
+  font-size: 15px;
+  background-color: #ffdddd;
+  padding: 10px;
+  border-radius: 5px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+}
 table{
 
   border:1px solid #ddd;

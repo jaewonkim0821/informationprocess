@@ -32,7 +32,7 @@ body { /* */
     
   }
   #menu {
-    
+    display: block;
     position: fixed;
     
     top: 10px;
@@ -60,6 +60,13 @@ body { /* */
     transition: background-color 0.3s ease;
     
   }
+  .mainmenu a {
+    display: block;
+    padding: 10px;
+    background-color: #f0f0f0;
+    text-decoration: none;
+    color: black;
+}
   
   .submenu {
           display: none;
@@ -93,6 +100,9 @@ body { /* */
     background-color: #0056b3;
     color: #fff;
   }
+  .mainmenu a.active {
+    background-color: #ccc;
+}
   h1 {
     text-align: center;
     margin-bottom: 20px;
@@ -131,6 +141,7 @@ body { /* */
 
   }
   #menuButton {
+    display: block;
     position: absolute;
     left: 10px;
     top: 10px;
@@ -180,4 +191,7 @@ body { /* */
   border-radius: 5px;
   cursor: pointer;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+#menuContainer {
+  display: none; /* 전체 메뉴 초기 상태를 숨김 */
 }

@@ -1,0 +1,325 @@
+
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>[2022년 2회] 정보처리기사 기출문제</title>
+  <link rel='stylesheet' href="information.css">
+</head>
+<body>
+  <div id="timer">02:30:00</div>
+  <div id="menu">
+    <button id="menuButton">메뉴</button>
+    <p><br></p>
+    <div class="mainmenu" id="2020년 1회">
+      <a href='#2022년2회.html' class = "mainmenu" id="2021년 3회">2020년 1회</a>
+      
+
+      </div>
+      <div class="submenu" >
+        <a href="2022_1_1.html#question1" id="menu1">문제 1번 ~ 문제4번</a>
+        <a href="2022_1_2.html#question5" id="menu2">문제 5번 ~ 문제8번</a>
+        <a href="2022_1_3.html#question9" id="menu3">문제 9번 ~ 문제12번</a>
+        <a href="2022_1_4.html#question13" id="menu4">문제 13번 ~ 문제16번</a>
+        <a href="2022_1_5.html#question17" id="menu5">문제 17번 ~ 문제20번</a>
+
+    </div>
+    
+      
+    <div class="mainmenu" id="2022년 2회">
+      <a href='#2022년2회.html' class = "mainmenu" id="2021년 3회">2020년 2회</a>
+
+
+    </div>
+    
+    
+    <div class="submenu">
+      <a href="2022_2_1.html#question1" id="menu6">문제 1번 ~ 문제4번</a>
+      <a href="2022_2_2.html#question5" id="menu7">문제 5번 ~ 문제8번</a>
+      <a href="2022_2_3.html#question9" id="menu8">문제 9번 ~ 문제12번</a>
+      <a href="2022_2_4.html#question13" id="menu9">문제 13번 ~ 문제16번</a>
+      <a href="2022_2_5.html#question17" id="menu10">문제 17번 ~ 문제20번</a>
+
+
+    </div>
+  </div>
+    
+    
+    
+
+  <div id="main-content">
+    <h1>[2022년 2회] 정보처리기사 기출문제</h1>
+    <button onclick="changePageToMain()">메인 메뉴로 돌아가기</button>
+    <div id="page1" class="page active">
+      
+      <div id="question1">
+        <p>문제 1:데이터베이스에 대한 다음 설명에서 괄호에 공통으로 들어갈 알맞은 용어를 쓰시오.</p>
+        <div class="rounded-rectangle-box">
+      · (      )은 관계 데이터의 연산을 표현하는 방법으로, 관계 데이터 모델의 제안자인 코드(E. F. Codd)가 수학의 술어 해석(Predicate Calculus)에 기반을 두고 관계 데이터베이스를 위해 제안했다.</p>
+      · 원하는 정보가 무엇이라는 것만 정의하는 비절차적 특성을 지니며, 원하는 정보를 정의할 때 계산 수식을 사용한다.</p>
+      · 튜플 해석식을 사용하는 튜플 (      )과 도메인 해석식을 사용하는 도메인 (      )으로 구분된다.</p>
+      </div>
+        <textarea id="answer1" rows="3" cols="50"></textarea>
+      </div>
+      <button id="checkAnswer1">정답 확인</button>
+      <button id="eraseAnswer1">정답 지우기</button>
+      <div id="answerResult1">
+        <p id="correctAnswer1"></p>
+      </div>
+  
+      <div id="question2">
+        <p>문제 2: 암호화 알고리즘에 대한 다음 설명에서 괄호(①,②)에 들어갈 알맞은 용어를 쓰시오.</p>
+        <div class="rounded-rectangle-box">
+         
+· 암호화 고리즘은 패스워드, 주민번호, 은행계좌와 같은 중요 정보를 보호하기 위해 평문을 암호화된 문장으로</P>
+만드는 절차 또는 방법을 의미한다.</P>
+· 스위스의 라이(Lai)와 메시(Messy)는 1990년 PES를 발표하고, 이후 이를 개선한 IPES를 발표하였다. </P>
+IPES는 128비트의 Key를 사용하여 64비트 블록을 암호화하는 알고리즘이며 현재는 (  ①  ) 라고 불린다.</P>
+· (  ②  )은 국가 안전 보장국(NSA)에서 개발한 암호화 알고리즘으로, 클리퍼 칩(Clipper Chip)이라는 IC 칩에</P>
+ 내장되어있다. 80비트의 Key를 사용하여 64비트 블록을 암호화하며, 주로 전화기와 같은 음성 통신 장비에 삽입되어 음성 데이터를 암호화한다. </P>
+ </div>
+
+        <textarea id="answer2" rows="3" cols="50"></textarea>
+      </div>
+      <button id="checkAnswer2">정답 확인</button>
+      <button id="eraseAnswer2">정답 지우기</button>
+      <div id="answerResult2">
+        <p id="correctAnswer2"></p>
+      </div>
+  
+      <div id="question3">
+        <p>문제 3: 다음은 <제품>(제품명, 단가, 제조사) 테이블을 대상으로 "H" 제조사에서 생산한 제품들의 '단가' 보다 높은 '단가'를 가진 제품의 정보를 조회하는 (SQL문)이다. 괄호에 알맞은 답을 적어 (SQL문)을 완성하시오.</p>
+        (SQL문)</P>
+        <div class="rounded-rectangle-box">
+          SELECT 제품명, 단가, 제조사</P>
+          FROM 제품</P>
+          WHERE 단가>(    ) (SELECT 단가 FROM 제품 WHERE 제조사 = 'H');   </P>
+          </div>
+
+        <textarea id="answer3" rows="3" cols="50"></textarea>
+      </div>
+      <button id="checkAnswer3">정답 확인</button>
+      <button id="eraseAnswer3">정답 지우기</button>
+      <div id="answerResult3">
+        <p id="correctAnswer3"></p>
+      </div>
+  
+      <div id="question4">
+        <p>문제 4: 다음 (TABLE)을 참조하여 (SQL문)을 실행했을 때 출력되는 결과를 쓰시오.</p>
+         (TABLE에 표시된 'NULL'은 값이 없음을 의미한다.)</p>
+           
+        <img src="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FcDFf0x%2Fbtsc9SphYfr%2F8cksTOHC2gsZPQpRDlbbqK%2Fimg.png" alt="이미지 설명">
+   
+        <textarea id="answer4" rows="3" cols="50"></textarea>
+      </div>
+      <button id="checkAnswer4">정답 확인</button>
+      <button id="eraseAnswer4">정답 지우기</button>
+      <div id="answerResult4">
+        <p id="correctAnswer4"></p>
+      </div>
+      <button id="prevPage1" style="display: none;">이전</button>
+  
+      <button id="nextPage1">다음</button>
+    </div>
+
+
+  
+    <script>
+
+    const pages = document.querySelectorAll('.page');
+    let currentPage = 0;
+    
+
+    document.getElementById('nextPage1').addEventListener('click', () => {
+      
+        window.location.href = '2020_1_2.html';
+        window.scrollTo(0, 0); // 페이지 전환 시 맨 위로 스크롤
+     
+      
+    });
+
+    document.getElementById('prevPage1').addEventListener('click', () => {
+      if (currentPage > 0) {
+        pages[currentPage].classList.remove('active');
+        currentPage--;
+        pages[currentPage].classList.add('active');
+        window.scrollTo(0, 0); // 페이지 전환 시 맨 위로 스크롤
+       
+      }
+    });
+
+
+    document.getElementById('checkAnswer1').addEventListener('click', function() {
+      checkAnswer(1, '정답:  관계해석, Relational Calculus', ['관계해석']);
+    });
+    document.getElementById('eraseAnswer1').addEventListener('click', function() {
+      eraseAnswer(1);
+    });
+
+    document.getElementById('checkAnswer2').addEventListener('click', function() {
+      checkAnswer_and(2, '정답:  ①IDEA, International Data Encryption Algorithm,  ②Skipjack', [' idea skipjack']);
+    });
+    document.getElementById('eraseAnswer2').addEventListener('click', function() {
+      eraseAnswer(2);
+    });
+
+    document.getElementById('checkAnswer3').addEventListener('click', function() {
+      checkAnswer(3, '정답: ALL', ['all']);
+    });
+    document.getElementById('eraseAnswer3').addEventListener('click', function() {
+      eraseAnswer(3);
+    });
+
+    document.getElementById('checkAnswer4').addEventListener('click', function() {
+      checkAnswer(4, '정답: 3', ['3']);
+    });
+    document.getElementById('eraseAnswer4').addEventListener('click', function() {
+      eraseAnswer(4);
+    });
+
+
+    let count = sessionStorage.getItem("count"); ; // count 받아옴
+
+    function checkAnswer(questionNumber, correctAnswerText, keywords) {
+      const userAnswer = document.getElementById('answer' + questionNumber).value;
+      const correctAnswerElement = document.getElementById('correctAnswer' + questionNumber);
+      const answerResultElement = document.getElementById('answerResult' + questionNumber);
+      let correct = false;
+
+      if (userAnswer) {
+        for (const keyword of keywords) {
+          if (userAnswer.toLowerCase().includes(keyword)) {
+            correct = true;
+            break;
+          }
+        }
+        if (correct) {
+          correctAnswerElement.innerHTML = correctAnswerText + '<br/> (키워드 포함: "' + keywords.join(', ') + '")';
+          count++;
+          sessionStorage.setItem("count", count); // count 저장
+
+        } else {
+          correctAnswerElement.innerHTML = '오답입니다. ' + questionNumber + '번 정답은 <br/>' + correctAnswerText;
+        }
+        answerResultElement.style.display = 'block';
+      }
+    }
+
+    function checkAnswer_and(questionNumber, correctAnswerText, keywords) {
+            const userAnswer = document.getElementById('answer' + questionNumber).value;
+            const correctAnswerElement = document.getElementById('correctAnswer' + questionNumber);
+            const answerResultElement = document.getElementById('answerResult' + questionNumber);
+            let correct = true;
+
+            if (userAnswer) {
+                for (const keyword of keywords) {
+                    if (!userAnswer.toLowerCase().includes(keyword.toLowerCase())) {
+                        correct = false;
+                        break;
+                    }
+                }
+                if (correct) {
+                    correctAnswerElement.innerHTML = correctAnswerText + '<br/> (키워드 포함: "' + keywords.join(', ') + '")';
+                    count++;
+                    sessionStorage.setItem("count", count); // count 저장
+
+                } else {
+                    correctAnswerElement.innerHTML = '오답입니다. ' + questionNumber + '번 정답은 <br/>' + correctAnswerText;
+                }
+                answerResultElement.style.display = 'block';
+            }
+        }
+
+    function eraseAnswer(questionNumber) {
+      document.getElementById('correctAnswer' + questionNumber).textContent = '';
+      document.getElementById('answerResult' + questionNumber).style.display = 'none';
+    }
+    
+
+
+    document.addEventListener('DOMContentLoaded', function () {
+    // 타이머 설정
+    let totalTime = sessionStorage.getItem("totalTime");
+    totalTime = totalTime ? parseInt(totalTime, 10) : 0; // totalTime 초기화
+
+    if (window.location.pathname.endsWith('project.html')) {
+            // 세션 스토리지에서 textarea 데이터 제거
+            document.querySelectorAll('textarea').forEach(textarea => {
+                sessionStorage.removeItem(textarea.id);
+            });
+        }
+
+    
+        // textarea의 상태를 로컬 스토리지에서 복원합니다.
+        document.querySelectorAll('textarea').forEach(textarea => {
+            const savedValue = sessionStorage.getItem(textarea.id);
+            if (savedValue) {
+                textarea.value = savedValue;
+            }
+
+            // 사용자가 입력하는 내용을 로컬 스토리지에 저장합니다.
+            textarea.addEventListener('input', function() {
+                sessionStorage.setItem(textarea.id, this.value);
+            });
+        });
+    
+
+    function updateTimer() {
+      
+        const timerElement = document.getElementById('timer'); //타이머
+        const hours = Math.floor(totalTime / 3600); //시간
+        const minutes = Math.floor((totalTime % 3600) / 60);
+        const seconds = totalTime % 60;
+
+        timerElement.textContent = 
+            `경과시간:${hours.toString().padStart(2, '0')}:${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
+
+        if (totalTime < 2 * 60 * 60 + 30 * 60) { //제한시간 2시간 반
+            totalTime++;
+            sessionStorage.setItem("totalTime", totalTime); // totalTime 저장
+            setTimeout(updateTimer, 1000); //1초씩 흘러감
+        } else {
+            
+            alert(`제한시간이 경과되었습니다 ${count * 5}점 입니다.`);
+        }
+    }
+
+    updateTimer();
+
+    
+
+    
+
+    document.querySelectorAll('#menu a').forEach(link => { //메뉴이동 스크립트
+        link.addEventListener('click', function(event) {
+            const href = this.getAttribute('href');
+            window.location.href = href;
+        });
+    });
+
+
+
+
+        document.getElementById('menuButton').addEventListener('click', function() {
+      const menu = document.getElementById('menu');
+      
+      menu.style.display = menu.style.display === 'none' ? 'flex' : 'none';
+      
+    });
+  });
+
+    
+
+
+    function changePageToMain() {
+    location.href = 'project.html';
+  }
+
+
+    
+  </script>
+    
+  
+</body>
+</html>

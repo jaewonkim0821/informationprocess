@@ -1,0 +1,387 @@
+
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>[2022년 2회] 정보처리기사 기출문제</title>
+  <link rel='stylesheet' href="information.css">
+</head>
+<style>
+    table {
+        width: 50%;
+        border-collapse: collapse;
+    }
+    th, td {
+        border: 1px solid black;
+        padding: 8px;
+        text-align: left;
+    }
+    th {
+        background-color: #f2f2f2;
+    }
+</style>
+<body>
+  <div id="timer">02:30:00</div>
+  <div id="menu">
+    <button id="menuButton">메뉴</button>
+    <p><br></p>
+    <div class="mainmenu" id="2020년 1회">
+      <a href='#2022년2회.html' class = "mainmenu" id="2021년 3회">2020년 1회</a>
+      
+
+      </div>
+      <div class="submenu" >
+        <a href="2022_1_1.html#question1" id="menu1">문제 1번 ~ 문제4번</a>
+        <a href="2022_1_2.html#question5" id="menu2">문제 5번 ~ 문제8번</a>
+        <a href="2022_1_3.html#question9" id="menu3">문제 9번 ~ 문제12번</a>
+        <a href="2022_1_4.html#question13" id="menu4">문제 13번 ~ 문제16번</a>
+        <a href="2022_1_5.html#question17" id="menu5">문제 17번 ~ 문제20번</a>
+
+    </div>
+    
+      
+    <div class="mainmenu" id="2020년 2회">
+      <a href='#2022년2회.html' class = "mainmenu" id="2022년 2회">2020년 2회</a>
+
+
+    </div>
+    
+    
+    <div class="submenu">
+      <a href="2022_2_1.html#question1" id="menu6">문제 1번 ~ 문제4번</a>
+      <a href="2022_2_2.html#question5" id="menu7">문제 5번 ~ 문제8번</a>
+      <a href="2022_2_3.html#question9" id="menu8">문제 9번 ~ 문제12번</a>
+      <a href="2022_2_4.html#question13" id="menu9">문제 13번 ~ 문제16번</a>
+      <a href="2022_2_5.html#question17" id="menu10">문제 17번 ~ 문제20번</a>
+
+
+    </div>
+  </div>
+    
+    
+    
+
+  <div id="main-content">
+    <h1>[2022년 2회] 정보처리기사 기출문제</h1>
+    <button onclick="changePageToMain()">메인 메뉴로 돌아가기</button>
+    <div id="page1" class="page active">
+      
+      <div id="question13">
+        <p>문제 13:[문제 13] 다음 Python으로 구현된 프로그램을 분석하여 그 실행 결과를 쓰시오.</p>
+        <div class="rounded-rectangle-box">
+            a = "REMEMBER NOVEMBER"</p>
+            b = a[0:3] + a[12:16]</p>
+            c = "R AND %s" % "STR"</p>
+            print(b + c)</p>
+        </div>
+        <textarea id="answer13" rows="3" cols="50"></textarea>
+      </div>
+      <button id="checkAnswer13">정답 확인</button>
+      <button id="eraseAnswer13">정답 지우기</button>
+      <div id="answerResult13">
+        <p id="correctAnswer13"></p>
+      </div>
+  
+      <div id="question14">
+        <p>문제 14: 경로 제어 프로토콜(Routing Protocol)에 대한 다음 설명에서 괄호(①~④)에 들어갈 알맞은 용어를 <보기>에서 찾아 쓰시오.</p>
+        <div class="rounded-rectangle-box">
+            경로 제어 프로토콜은 크게 자율시스템 내부의 라우팅에 사용되는 (  ①  )와 자율 시스템간의 라우팅에 사용되는 (  ②  )로 구분할 수 있다.</p>
+            (  ①  )는 소규모 동종 자율 시스템에서 효율적인 RIP와 대규모 자유 시스템에서 많이 사용되는 (  ③  )로 나누어진다.</p>
+            (  ③  )는 링크 상태(Link State)를 실시간으로 반영하여 최단 경로로 라우팅을 지원하는 특징이 있다.</p>
+            (  ④  )는 (  ②  )의 단점을 보완하여 만들어진 라우팅 프로토콜로, 처음 연결될 때는 전체 라우팅 테이블을 교환하고, 이후에는 변화된 정보만을 교환한다.</p>
+        </div>
+        <보기></p>
+
+    <table >
+        <tr>
+            <td style="text-align:center;">BGP</td>
+            <td style="text-align:center;">AS</td>
+            <td style="text-align:center;">HOP</td>
+            <td style="text-align:center;">OSPF</td>
+        </tr>
+        <tr>
+            <td style="text-align:center;">NAT</td>
+            <td style="text-align:center;">ISP</td>
+            <td style="text-align:center;">EGP</td>
+            <td style="text-align:center;">IGP</td>
+        </tr>
+    </table>
+</p>
+      
+
+        <textarea id="answer14" rows="3" cols="50"></textarea>
+    
+      <button id="checkAnswer14">정답 확인</button>
+      <button id="eraseAnswer14">정답 지우기</button>
+      <div id="answerResult14">
+        <p id="correctAnswer14"></p>
+      </div>
+  
+      <div id="question15">
+        <p>문제 15: 다음 C언어로 구현된 프로그램을 분석하여 그 실행 결과를 쓰시오.</p>
+        <div class="code-slider">
+            <div class="code-slide">
+              <pre><code>
+                #include <stdio.h>
+                    int len(char* p);
+                    int main() {
+                        char* p1 = "2022";
+                        char* p2 = "202207";
+                        int a = len(p1);
+                        int b = len(p2);
+                        printf("%d", a+b);
+                    }
+                    
+                    int len(char* p){
+                        int r = 0;
+                        while (*p != '\0') {
+                            p++;
+                            r++;
+                        }
+                        return r;
+                    }
+        </code>
+    </pre>
+  </div></div>
+        <textarea id="answer15" rows="3" cols="50"></textarea>
+      </div>
+      <button id="checkAnswer15">정답 확인</button>
+      <button id="eraseAnswer15">정답 지우기</button>
+      <div id="answerResult15">
+        <p id="correctAnswer15"></p>
+      </div>
+  
+      <div id="question16">
+        <p>문제 16:다음 C언어로 구현된 프로그램을 분석하여 그 실행 결과를 쓰시오. </p>
+        <div class="code-slider">
+            <div class="code-slide">
+              <pre><code>
+                #include <stdio.h>
+                    int main() {
+                        int a[4] = {0,2,4,8};
+                        int b[3];
+                        int* p;
+                        int sum = 0;
+                        for (int i=1; i&lt;4; i++){
+                            p = a + i;
+                            b[i-1] = *p -a[i-1];
+                            sum = sum + b[i-1] + a[i];
+                        }
+                        printf("%d", sum);
+                    }
+        </code>
+    </pre>
+  </div></div>
+        <textarea id="answer16" rows="3" cols="50"></textarea>
+      </div>
+      <button id="checkAnswer16">정답 확인</button>
+      <button id="eraseAnswer16">정답 지우기</button>
+      <div id="answerResult16">
+        <p id="correctAnswer16"></p>
+      </div>
+      <button id="prevPage1" style="display: none;">이전</button>
+  
+      <button id="nextPage1">다음</button>
+    </div>
+
+
+  
+    <script>
+
+    const pages = document.querySelectorAll('.page');
+    let currentPage = 0;
+    
+
+    document.getElementById('nextPage1').addEventListener('click', () => {
+      
+        window.location.href = '2020_1_2.html';
+        window.scrollTo(0, 0); // 페이지 전환 시 맨 위로 스크롤
+     
+      
+    });
+
+    document.getElementById('prevPage1').addEventListener('click', () => {
+      if (currentPage > 0) {
+        pages[currentPage].classList.remove('active');
+        currentPage--;
+        pages[currentPage].classList.add('active');
+        window.scrollTo(0, 0); // 페이지 전환 시 맨 위로 스크롤
+       
+      }
+    });
+
+
+    document.getElementById('checkAnswer13').addEventListener('click', function() {
+      checkAnswer(13, '정답: REMEMBER AND STR', ['remember and str']);
+    });
+    document.getElementById('eraseAnswer13').addEventListener('click', function() {
+      eraseAnswer(13);
+    });
+
+    document.getElementById('checkAnswer14').addEventListener('click', function() {
+      checkAnswer_and(14, '정답: IGP, EGP, OSPE,BGP', ['igp egp ospe bgp']);
+    });
+    document.getElementById('eraseAnswer14').addEventListener('click', function() {
+      eraseAnswer(14);
+    });
+
+    document.getElementById('checkAnswer15').addEventListener('click', function() {
+      checkAnswer(15, '정답: 10', ['10']);
+    });
+    document.getElementById('eraseAnswer15').addEventListener('click', function() {
+      eraseAnswer(15);
+    });
+
+    document.getElementById('checkAnswer16').addEventListener('click', function() {
+      checkAnswer(16, '정답: 22', ['22']);
+    });
+    document.getElementById('eraseAnswer16').addEventListener('click', function() {
+      eraseAnswer(16);
+    });
+
+
+    let count = sessionStorage.getItem("count"); ; // count 받아옴
+
+    function checkAnswer(questionNumber, correctAnswerText, keywords) {
+      const userAnswer = document.getElementById('answer' + questionNumber).value;
+      const correctAnswerElement = document.getElementById('correctAnswer' + questionNumber);
+      const answerResultElement = document.getElementById('answerResult' + questionNumber);
+      let correct = false;
+
+      if (userAnswer) {
+        for (const keyword of keywords) {
+          if (userAnswer.toLowerCase().includes(keyword)) {
+            correct = true;
+            break;
+          }
+        }
+        if (correct) {
+          correctAnswerElement.innerHTML = correctAnswerText + '<br/> (키워드 포함: "' + keywords.join(', ') + '")';
+          count++;
+          sessionStorage.setItem("count", count); // count 저장
+
+        } else {
+          correctAnswerElement.innerHTML = '오답입니다. ' + questionNumber + '번 정답은 <br/>' + correctAnswerText;
+        }
+        answerResultElement.style.display = 'block';
+      }
+    }
+
+    function checkAnswer_and(questionNumber, correctAnswerText, keywords) {
+            const userAnswer = document.getElementById('answer' + questionNumber).value;
+            const correctAnswerElement = document.getElementById('correctAnswer' + questionNumber);
+            const answerResultElement = document.getElementById('answerResult' + questionNumber);
+            let correct = true;
+
+            if (userAnswer) {
+                for (const keyword of keywords) {
+                    if (!userAnswer.toLowerCase().includes(keyword.toLowerCase())) {
+                        correct = false;
+                        break;
+                    }
+                }
+                if (correct) {
+                    correctAnswerElement.innerHTML = correctAnswerText + '<br/> (키워드 포함: "' + keywords.join(', ') + '")';
+                    count++;
+                    sessionStorage.setItem("count", count); // count 저장
+
+                } else {
+                    correctAnswerElement.innerHTML = '오답입니다. ' + questionNumber + '번 정답은 <br/>' + correctAnswerText;
+                }
+                answerResultElement.style.display = 'block';
+            }
+        }
+
+    function eraseAnswer(questionNumber) {
+      document.getElementById('correctAnswer' + questionNumber).textContent = '';
+      document.getElementById('answerResult' + questionNumber).style.display = 'none';
+    }
+    
+
+
+    document.addEventListener('DOMContentLoaded', function () {
+    // 타이머 설정
+    let totalTime = sessionStorage.getItem("totalTime");
+    totalTime = totalTime ? parseInt(totalTime, 10) : 0; // totalTime 초기화
+
+    if (window.location.pathname.endsWith('project.html')) {
+            // 세션 스토리지에서 textarea 데이터 제거
+            document.querySelectorAll('textarea').forEach(textarea => {
+                sessionStorage.removeItem(textarea.id);
+            });
+        }
+
+    
+        // textarea의 상태를 로컬 스토리지에서 복원합니다.
+        document.querySelectorAll('textarea').forEach(textarea => {
+            const savedValue = sessionStorage.getItem(textarea.id);
+            if (savedValue) {
+                textarea.value = savedValue;
+            }
+
+            // 사용자가 입력하는 내용을 로컬 스토리지에 저장합니다.
+            textarea.addEventListener('input', function() {
+                sessionStorage.setItem(textarea.id, this.value);
+            });
+        });
+    
+
+    function updateTimer() {
+      
+        const timerElement = document.getElementById('timer'); //타이머
+        const hours = Math.floor(totalTime / 3600); //시간
+        const minutes = Math.floor((totalTime % 3600) / 60);
+        const seconds = totalTime % 60;
+
+        timerElement.textContent = 
+            `경과시간:${hours.toString().padStart(2, '0')}:${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
+
+        if (totalTime < 2 * 60 * 60 + 30 * 60) { //제한시간 2시간 반
+            totalTime++;
+            sessionStorage.setItem("totalTime", totalTime); // totalTime 저장
+            setTimeout(updateTimer, 1000); //1초씩 흘러감
+        } else {
+            
+            alert(`제한시간이 경과되었습니다 ${count * 5}점 입니다.`);
+        }
+    }
+
+    updateTimer();
+
+    
+
+    
+
+    document.querySelectorAll('#menu a').forEach(link => { //메뉴이동 스크립트
+        link.addEventListener('click', function(event) {
+            const href = this.getAttribute('href');
+            window.location.href = href;
+        });
+    });
+
+
+
+
+        document.getElementById('menuButton').addEventListener('click', function() {
+      const menu = document.getElementById('menu');
+      
+      menu.style.display = menu.style.display === 'none' ? 'flex' : 'none';
+      
+    });
+  });
+
+    
+
+
+    function changePageToMain() {
+    location.href = 'project.html';
+  }
+
+
+    
+  </script>
+    
+  
+</body>
+</html>

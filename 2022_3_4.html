@@ -1,0 +1,351 @@
+
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>[2022년 3회] 정보처리기사 기출문제</title>
+  <link rel='stylesheet' href="information.css">
+</head>
+<style>
+    table {
+        width: 50%;
+        border-collapse: collapse;
+    }
+    th, td {
+        border: 1px solid black;
+        padding: 8px;
+        text-align: left;
+    }
+    th {
+        background-color: #f2f2f2;
+    }
+</style>
+<body>
+  <div id="timer">02:30:00</div>
+  <div id="menu">
+    <button id="menuButton">메뉴</button>
+    <p><br></p>
+    <div class="mainmenu" id="2020년 1회">
+      <a href='#2022년3회.html' class = "mainmenu" id="2021년 3회">2020년 1회</a>
+      
+
+      </div>
+      <div class="submenu" >
+        <a href="2022_1_1.html#question1" id="menu1">문제 1번 ~ 문제4번</a>
+        <a href="2022_1_2.html#question5" id="menu2">문제 5번 ~ 문제8번</a>
+        <a href="2022_1_3.html#question9" id="menu3">문제 9번 ~ 문제12번</a>
+        <a href="2022_1_4.html#question13" id="menu4">문제 13번 ~ 문제16번</a>
+        <a href="2022_1_5.html#question17" id="menu5">문제 17번 ~ 문제20번</a>
+
+    </div>
+    
+      
+    <div class="mainmenu" id="2020년 2회">
+      <a href='#2022년3회.html' class = "mainmenu" id="2022년 3회">2020년 2회</a>
+
+
+    </div>
+    
+    
+    <div class="submenu">
+      <a href="2022_2_1.html#question1" id="menu6">문제 1번 ~ 문제4번</a>
+      <a href="2022_2_2.html#question5" id="menu7">문제 5번 ~ 문제8번</a>
+      <a href="2022_2_3.html#question9" id="menu8">문제 9번 ~ 문제12번</a>
+      <a href="2022_2_4.html#question13" id="menu9">문제 13번 ~ 문제16번</a>
+      <a href="2022_2_5.html#question17" id="menu10">문제 17번 ~ 문제20번</a>
+
+
+    </div>
+  </div>
+    
+    
+    
+
+  <div id="main-content">
+    <h1>[2022년 3회] 정보처리기사 기출문제</h1>
+    <button onclick="changePageToMain()">메인 메뉴로 돌아가기</button>
+    <div id="page1" class="page active">
+      
+      <div id="question13">
+        <p>문제 13:다음 코드에 대한 출력 값을 작성하시오.
+        </p>
+        <div class="rounded-rectangle-box">
+            int n;</p>
+            int k;</p>
+            int s;</p>
+            int el = 0;</p>
+        　</p>
+              for(n=6; n&l=30; n++){</p>
+                s=0;</p>
+                k=n/2;</p>
+                for(int j=1; j&l=k; j++){</p>
+                  if(n%j==0){</p>
+                    s=s+j;</p>
+                  }</p>
+                }</p>
+                if(s==n){</p>
+                el++;</p>
+                }</p>
+              }</p>
+            　</p>
+              printf("%d", el);</p>
+        </div>
+        <textarea id="answer13" rows="3" cols="50"></textarea>
+      </div>
+      <button id="checkAnswer13">정답 확인</button>
+      <button id="eraseAnswer13">정답 지우기</button>
+      <div id="answerResult13">
+        <p id="correctAnswer13"></p>
+      </div>
+  
+      <div id="question14">
+        <p>문제 14: 아래 설명에 대하여 알맞는 답을 보기에서 고르시오</p>
+        (기호식 보기가 있습니다. ex: CSRF 등)</p>
+      　</p>
+        (   1   )은/는 프로세서(processor) 안에 독립적인 보안 구역을 따로 두어 중요한 정보를 보호하는 ARM사에서 개발한 </p>
+        하드웨어 기반의 보안 기술로 프로세서(processor) 안에 독립적인 보안 구역을 별도로 하여, 중요한 정보를 보호하는</p>
+         하드웨어 기반의 보안 기술이다.</p>
+      　</p>
+       (   2   )은/는 사용자들이 사이트에 접속할 때 주소를 잘못 입력하거나 철자를 빠뜨리는 실수를 이용하기 위해 유사한</p>
+        유명 도메인을 미리 등록하는 일로 URL 하이재킹(hijacking)이라고도 한다.</p>
+        <textarea id="answer14" rows="3" cols="50"></textarea>
+    
+      <button id="checkAnswer14">정답 확인</button>
+      <button id="eraseAnswer14">정답 지우기</button>
+      <div id="answerResult14">
+        <p id="correctAnswer14"></p>
+      </div>
+  
+      <div id="question15">
+        <p>문제 15: 아래 설명에 대하여 알맞는 용어를 작성하시오.</p>
+        (       )은/는 여러 개의 사이트에서 한번의 로그인으로 여러가지 다른 사이트들을 자동적으로 접속하여 이용하는 방법을 말한다.</p>
+         일반적으로 서로 다른 시스템 및 사이트에서 각각의 사용자 정보를 관리하게 되는데 이때 하나의 사용자 정보를 기반으로 여러</p>
+          시스템을 하나의 통합 인증을 사용하게 하는 것을 말한다. </p>
+        　</p>
+       즉 하나의 시스템에서 인증을 할 경우 타 시스템에서는 인증 정보가 있는지 확인하고 있으면 로그인 처리를 하도록 하고, </p>
+       없는 경우 다시 통합 인증을 할 수 있도록 만드는 것을 의미한다.
+    </p>
+        <textarea id="answer15" rows="3" cols="50"></textarea>
+      </div>
+      <button id="checkAnswer15">정답 확인</button>
+      <button id="eraseAnswer15">정답 지우기</button>
+      <div id="answerResult15">
+        <p id="correctAnswer15"></p>
+      </div>
+  
+      <div id="question16">
+        <p>문제 16:다음은 스케줄링에 관한 내용이다. 괄호안에 알맞는 답을 작성하시오.</p>
+        <img src="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FbQsUms%2FbtsC2x0JYh0%2FGg8Nz22KJDw4qu3tmKPRrk%2Fimg.png" alt="Example Image" width="600" height="500">
+        <textarea id="answer16" rows="3" cols="50"></textarea>
+      </div>
+      <button id="checkAnswer16">정답 확인</button>
+      <button id="eraseAnswer16">정답 지우기</button>
+      <div id="answerResult16">
+        <p id="correctAnswer16"></p>
+      </div>
+      <button id="prevPage1" style="display: none;">이전</button>
+  
+      <button id="nextPage1">다음</button>
+    </div>
+
+
+  
+    <script>
+
+    const pages = document.querySelectorAll('.page');
+    let currentPage = 0;
+    
+
+    document.getElementById('nextPage1').addEventListener('click', () => {
+      
+        window.location.href = '2020_1_2.html';
+        window.scrollTo(0, 0); // 페이지 전환 시 맨 위로 스크롤
+     
+      
+    });
+
+    document.getElementById('prevPage1').addEventListener('click', () => {
+      if (currentPage > 0) {
+        pages[currentPage].classList.remove('active');
+        currentPage--;
+        pages[currentPage].classList.add('active');
+        window.scrollTo(0, 0); // 페이지 전환 시 맨 위로 스크롤
+       
+      }
+    });
+
+
+    document.getElementById('checkAnswer13').addEventListener('click', function() {
+      checkAnswer(13, '정답: 2R', ['2']);
+    });
+    document.getElementById('eraseAnswer13').addEventListener('click', function() {
+      eraseAnswer(13);
+    });
+
+    document.getElementById('checkAnswer14').addEventListener('click', function() {
+      checkAnswer_and(14, '정답: 1.Trustzone,2.typosquatting ', ['Trustzone typosquatting']);
+    });
+    document.getElementById('eraseAnswer14').addEventListener('click', function() {
+      eraseAnswer(14);
+    });
+
+    document.getElementById('checkAnswer15').addEventListener('click', function() {
+      checkAnswer(15, '정답: SSO', ['sso']);
+    });
+    document.getElementById('eraseAnswer15').addEventListener('click', function() {
+      eraseAnswer(15);
+    });
+
+    document.getElementById('checkAnswer16').addEventListener('click', function() {
+      checkAnswer_and(16, '정답:SJF, RR, SRT', ['sjf rr srt']);
+    });
+    document.getElementById('eraseAnswer16').addEventListener('click', function() {
+      eraseAnswer(16);
+    });
+
+
+    let count = sessionStorage.getItem("count"); ; // count 받아옴
+
+    function checkAnswer(questionNumber, correctAnswerText, keywords) {
+      const userAnswer = document.getElementById('answer' + questionNumber).value;
+      const correctAnswerElement = document.getElementById('correctAnswer' + questionNumber);
+      const answerResultElement = document.getElementById('answerResult' + questionNumber);
+      let correct = false;
+
+      if (userAnswer) {
+        for (const keyword of keywords) {
+          if (userAnswer.toLowerCase().includes(keyword)) {
+            correct = true;
+            break;
+          }
+        }
+        if (correct) {
+          correctAnswerElement.innerHTML = correctAnswerText + '<br/> (키워드 포함: "' + keywords.join(', ') + '")';
+          count++;
+          sessionStorage.setItem("count", count); // count 저장
+
+        } else {
+          correctAnswerElement.innerHTML = '오답입니다. ' + questionNumber + '번 정답은 <br/>' + correctAnswerText;
+        }
+        answerResultElement.style.display = 'block';
+      }
+    }
+
+    function checkAnswer_and(questionNumber, correctAnswerText, keywords) {
+            const userAnswer = document.getElementById('answer' + questionNumber).value;
+            const correctAnswerElement = document.getElementById('correctAnswer' + questionNumber);
+            const answerResultElement = document.getElementById('answerResult' + questionNumber);
+            let correct = true;
+
+            if (userAnswer) {
+                for (const keyword of keywords) {
+                    if (!userAnswer.toLowerCase().includes(keyword.toLowerCase())) {
+                        correct = false;
+                        break;
+                    }
+                }
+                if (correct) {
+                    correctAnswerElement.innerHTML = correctAnswerText + '<br/> (키워드 포함: "' + keywords.join(', ') + '")';
+                    count++;
+                    sessionStorage.setItem("count", count); // count 저장
+
+                } else {
+                    correctAnswerElement.innerHTML = '오답입니다. ' + questionNumber + '번 정답은 <br/>' + correctAnswerText;
+                }
+                answerResultElement.style.display = 'block';
+            }
+        }
+
+    function eraseAnswer(questionNumber) {
+      document.getElementById('correctAnswer' + questionNumber).textContent = '';
+      document.getElementById('answerResult' + questionNumber).style.display = 'none';
+    }
+    
+
+
+    document.addEventListener('DOMContentLoaded', function () {
+    // 타이머 설정
+    let totalTime = sessionStorage.getItem("totalTime");
+    totalTime = totalTime ? parseInt(totalTime, 10) : 0; // totalTime 초기화
+
+    if (window.location.pathname.endsWith('project.html')) {
+            // 세션 스토리지에서 textarea 데이터 제거
+            document.querySelectorAll('textarea').forEach(textarea => {
+                sessionStorage.removeItem(textarea.id);
+            });
+        }
+
+    
+        // textarea의 상태를 로컬 스토리지에서 복원합니다.
+        document.querySelectorAll('textarea').forEach(textarea => {
+            const savedValue = sessionStorage.getItem(textarea.id);
+            if (savedValue) {
+                textarea.value = savedValue;
+            }
+
+            // 사용자가 입력하는 내용을 로컬 스토리지에 저장합니다.
+            textarea.addEventListener('input', function() {
+                sessionStorage.setItem(textarea.id, this.value);
+            });
+        });
+    
+
+    function updateTimer() {
+      
+        const timerElement = document.getElementById('timer'); //타이머
+        const hours = Math.floor(totalTime / 3600); //시간
+        const minutes = Math.floor((totalTime % 3600) / 60);
+        const seconds = totalTime % 60;
+
+        timerElement.textContent = 
+            `경과시간:${hours.toString().padStart(2, '0')}:${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
+
+        if (totalTime < 2 * 60 * 60 + 30 * 60) { //제한시간 2시간 반
+            totalTime++;
+            sessionStorage.setItem("totalTime", totalTime); // totalTime 저장
+            setTimeout(updateTimer, 1000); //1초씩 흘러감
+        } else {
+            
+            alert(`제한시간이 경과되었습니다 ${count * 5}점 입니다.`);
+        }
+    }
+
+    updateTimer();
+
+    
+
+    
+
+    document.querySelectorAll('#menu a').forEach(link => { //메뉴이동 스크립트
+        link.addEventListener('click', function(event) {
+            const href = this.getAttribute('href');
+            window.location.href = href;
+        });
+    });
+
+
+
+
+        document.getElementById('menuButton').addEventListener('click', function() {
+      const menu = document.getElementById('menu');
+      
+      menu.style.display = menu.style.display === 'none' ? 'flex' : 'none';
+      
+    });
+  });
+
+    
+
+
+    function changePageToMain() {
+    location.href = 'project.html';
+  }
+
+
+    
+  </script>
+    
+  
+</body>
+</html>

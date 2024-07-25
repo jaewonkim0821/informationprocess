@@ -1,0 +1,389 @@
+
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <style>
+        table {
+        width: 80%;
+        border-collapse: collapse;
+    }
+    th, td {
+        border: 1px solid black;
+        padding: 8px;
+        text-align: left;
+    }
+    th {
+        background-color: #f2f2f2;
+    }
+
+    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>[2022년 3회] 정보처리기사 기출문제</title>
+  <link rel='stylesheet' href="information.css">
+</head>
+<body>
+  <div id="timer">02:30:00</div>
+  <div id="menu">
+    <button id="menuButton">메뉴</button>
+    <p><br></p>
+    <div class="mainmenu" id="2020년 1회">
+      <a href='#2022년3회.html' class = "mainmenu" id="2021년 3회">2020년 1회</a>
+      
+
+      </div>
+      <div class="submenu" >
+        <a href="2022_1_1.html#question1" id="menu1">문제 1번 ~ 문제4번</a>
+        <a href="2022_1_2.html#question5" id="menu2">문제 5번 ~ 문제8번</a>
+        <a href="2022_1_3.html#question9" id="menu3">문제 9번 ~ 문제12번</a>
+        <a href="2022_1_4.html#question13" id="menu4">문제 13번 ~ 문제16번</a>
+        <a href="2022_1_5.html#question17" id="menu5">문제 17번 ~ 문제20번</a>
+
+    </div>
+    
+      
+    <div class="mainmenu" id="2022년 2회">
+      <a href='#2022년3회.html' class = "mainmenu" id="2021년 3회">2020년 2회</a>
+
+
+    </div>
+    
+    
+    <div class="submenu">
+      <a href="2022_2_1.html#question1" id="menu6">문제 1번 ~ 문제4번</a>
+      <a href="2022_2_2.html#question5" id="menu7">문제 5번 ~ 문제8번</a>
+      <a href="2022_2_3.html#question9" id="menu8">문제 9번 ~ 문제12번</a>
+      <a href="2022_2_4.html#question13" id="menu9">문제 13번 ~ 문제16번</a>
+      <a href="2022_2_5.html#question17" id="menu10">문제 17번 ~ 문제20번</a>
+
+
+    </div>
+  </div>
+    
+    
+    
+
+  <div id="main-content">
+    <h1>[2022년 3회] 정보처리기사 기출문제</h1>
+    <button onclick="changePageToMain()">메인 메뉴로 돌아가기</button>
+    <div id="page1" class="page active">
+      
+      <div id="question1">
+        <p>문제 1:아래는 C언어의 2차원 배열 형태이다. field의 경우 2차원 배열 형태는 예시처럼 출력되므로, 이를 참고하여 mines의 2차원 배열 형태를 작성하시오.</p>
+        <div class="code-slider">
+            <div class="code-slide">
+              <pre><code>
+                void main{
+ 
+                    field {{0,1,0,1},{0,0,0,1},{1,1,1,0},{0,1,1,1}};
+                    mines {{0,0,0,0},{0,0,0,0},{0,0,0,0},{0,0,0,0}}; 
+                     
+                    int w = 4, h = 4;
+                      for(y=0; y&lt;h; y++) {
+                        for(x=0; x&lt;w; x++) {  
+                        if(field[y][x] == 0) continue;
+                        
+                          for(i=y-1; i&lt;=y+1; i++) {
+                            for(j=x-1; j&lt;=x+1; j++) {
+                              if(calculate(w,h,j,i) == 1) {
+                                mines[i][j] += 1;
+                              }
+                            }
+                          }
+                        }
+                      }
+                      for(y=0; y&lt;h; y++){
+                        for(x=0; x&lt;w; x++)
+                          printf("%d", mines[y][x]);
+                          printf("\n");
+                      }
+                     
+                    }
+                     
+                     
+                    int calculate(w,h,j,i) {
+                        if (i &lt;= 0 && i &lt; h && j &lt;= 0 && j &lt; w) return 1;
+                        return 0;
+                      }
+                </code>
+            </pre>
+          </div></div>
+          <img src="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FcCbUxZ%2FbtsC34D6MjF%2FfdDm0sXVgrQF8RrZQ0wcm1%2Fimg.png" alt="Example Image" width="500" height="400">
+        <textarea id="answer1" rows="3" cols="50"></textarea>
+      </div>
+      <button id="checkAnswer1">정답 확인</button>
+      <button id="eraseAnswer1">정답 지우기</button>
+      <div id="answerResult1">
+        <p id="correctAnswer1"></p>
+    </div>
+  
+      <div id="question2">
+        <p>문제 2: 아래 예시를 보고 관계 대수에 대한 기호를 작성하시오.</p>
+        <img src="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FAToWM%2FbtsC4w1uWTW%2FhrGie53UIt7kCbK1ukE520%2Fimg.png" alt="Example Image" width="600" height="500">
+        <textarea id="answer2" rows="3" cols="50"></textarea>
+      </div>
+      <button id="checkAnswer2">정답 확인</button>
+      <button id="eraseAnswer2">정답 지우기</button>
+      <div id="answerResult2">
+        <p id="correctAnswer2"></p>
+      </div>
+  
+      <div id="question3">
+        <p>문제 3: 다음은 디자인 패턴에 대한 설명이다. 괄호안에 알맞는 답을 작성하시오.</p>
+        (SQL문)</P>
+        (기호식 보기가 있습니다. ex: Abstract Factory, Mediator 등)</p>
+
+        (   1   )은/는 기능을 처리하는 클래스와 구현을 담당하는 추상 클래스로 구별한다. </p>    
+        구현뿐 아니라 추상화도 독립적 변경이 필요할 때 브리지 패턴을 사용한다.</p>
+        기존 시스템에 부수적인 새로운 기능들을 지속적으로 추가할 때 사용하면 유용하며,</p>
+        새로운 인터페이스를 정의하여 기존 프로그램의 변경 없이 기능을 확장할 수 있다.</p>       
+        (   2   )은/는 한 객체의 상태가 변화하면 객체에 상속되어 있는 다른 객체들에게 변화된 상태를 전달해주는 패턴이다.</p>
+        일대다 관계를 가지며, ​주로 분산된 시스템 간에 이벤트를 생성·발행(Publish)하고, 이를 수신(Subscribe)해야 할 때 이용한다.</p>
+        
+         
+
+        <textarea id="answer3" rows="3" cols="50"></textarea>
+      </div>
+      <button id="checkAnswer3">정답 확인</button>
+      <button id="eraseAnswer3">정답 지우기</button>
+      <div id="answerResult3">
+        <p id="correctAnswer3"></p>
+      </div>
+  
+      <div id="question4">
+        <p>문제 4: 아래 코드에 대한 출력 값을 작성하시오.</p>
+        <div class="code-slider">
+            <div class="code-slide">
+              <pre><code>
+                void main{
+ 
+                    int []result = int[5];
+                    int []arr = [77,32,10,99,50];
+                     
+                      for(int i = 0; i &lt; 5; i++) {
+                        result[i] = 1;
+                        for(int j = 0; j &lt; 5; j++) {
+                          if(arr[i] &lt;arr[j]) result[i]++;
+                        }
+                      }
+                     
+                      for(int k = 0; k &lt; 5; k++) {
+                        printf(result[k]);
+                      }
+                    }
+        </code>
+    </pre>
+  </div></div>
+   
+        <textarea id="answer4" rows="3" cols="50"></textarea>
+      </div>
+      <button id="checkAnswer4">정답 확인</button>
+      <button id="eraseAnswer4">정답 지우기</button>
+      <div id="answerResult4">
+        <p id="correctAnswer4"></p>
+      </div>
+      <button id="prevPage1" style="display: none;">이전</button>
+  
+      <button id="nextPage1">다음</button>
+    </div>
+
+
+  
+    <script>
+
+    const pages = document.querySelectorAll('.page');
+    let currentPage = 0;
+    
+
+    document.getElementById('nextPage1').addEventListener('click', () => {
+      
+        window.location.href = '2020_1_2.html';
+        window.scrollTo(0, 0); // 페이지 전환 시 맨 위로 스크롤
+     
+      
+    });
+
+    document.getElementById('prevPage1').addEventListener('click', () => {
+      if (currentPage > 0) {
+        pages[currentPage].classList.remove('active');
+        currentPage--;
+        pages[currentPage].classList.add('active');
+        window.scrollTo(0, 0); // 페이지 전환 시 맨 위로 스크롤
+       
+      }
+    });
+
+
+    document.getElementById('checkAnswer1').addEventListener('click', function() {
+      checkAnswer_and(1, '정답:  1, 1, 3, 2/ 3, 4, 5, 3/ 3, 5, 6, 4/ 3, 5, 5, 3', [' 1 1 3 2 3 4 5 3 3 5 6 4 3 5 5 3']);
+    });
+    document.getElementById('eraseAnswer1').addEventListener('click', function() {
+      eraseAnswer(1);
+    });
+
+    document.getElementById('checkAnswer2').addEventListener('click', function() {
+      checkAnswer_and(2, '정답:  U, -, X, π, ⋈', ['U - X π ⋈']);
+    });
+    document.getElementById('eraseAnswer2').addEventListener('click', function() {
+      eraseAnswer(2);
+    });
+
+    document.getElementById('checkAnswer3').addEventListener('click', function() {
+      checkAnswer_and(3, '정답: 1.Bridge 2.Observer', [' Bridge Observer']);
+    });
+    document.getElementById('eraseAnswer3').addEventListener('click', function() {
+      eraseAnswer(3);
+    });
+
+    document.getElementById('checkAnswer4').addEventListener('click', function() {
+      checkAnswer(4, '정답: 24513', ['24513']);
+    });
+    document.getElementById('eraseAnswer4').addEventListener('click', function() {
+      eraseAnswer(4);
+    });
+
+
+    let count = sessionStorage.getItem("count"); ; // count 받아옴
+
+    function checkAnswer(questionNumber, correctAnswerText, keywords) {
+      const userAnswer = document.getElementById('answer' + questionNumber).value;
+      const correctAnswerElement = document.getElementById('correctAnswer' + questionNumber);
+      const answerResultElement = document.getElementById('answerResult' + questionNumber);
+      let correct = false;
+
+      if (userAnswer) {
+        for (const keyword of keywords) {
+          if (userAnswer.toLowerCase().includes(keyword)) {
+            correct = true;
+            break;
+          }
+        }
+        if (correct) {
+          correctAnswerElement.innerHTML = correctAnswerText + '<br/> (키워드 포함: "' + keywords.join(', ') + '")';
+          count++;
+          sessionStorage.setItem("count", count); // count 저장
+
+        } else {
+          correctAnswerElement.innerHTML = '오답입니다. ' + questionNumber + '번 정답은 <br/>' + correctAnswerText;
+        }
+        answerResultElement.style.display = 'block';
+      }
+    }
+
+    function checkAnswer_and(questionNumber, correctAnswerText, keywords) {
+            const userAnswer = document.getElementById('answer' + questionNumber).value;
+            const correctAnswerElement = document.getElementById('correctAnswer' + questionNumber);
+            const answerResultElement = document.getElementById('answerResult' + questionNumber);
+            let correct = true;
+
+            if (userAnswer) {
+                for (const keyword of keywords) {
+                    if (!userAnswer.toLowerCase().includes(keyword.toLowerCase())) {
+                        correct = false;
+                        break;
+                    }
+                }
+                if (correct) {
+                    correctAnswerElement.innerHTML = correctAnswerText + '<br/> (키워드 포함: "' + keywords.join(', ') + '")';
+                    count++;
+                    sessionStorage.setItem("count", count); // count 저장
+
+                } else {
+                    correctAnswerElement.innerHTML = '오답입니다. ' + questionNumber + '번 정답은 <br/>' + correctAnswerText;
+                }
+                answerResultElement.style.display = 'block';
+            }
+        }
+
+    function eraseAnswer(questionNumber) {
+      document.getElementById('correctAnswer' + questionNumber).textContent = '';
+      document.getElementById('answerResult' + questionNumber).style.display = 'none';
+    }
+    
+
+
+    document.addEventListener('DOMContentLoaded', function () {
+    // 타이머 설정
+    let totalTime = sessionStorage.getItem("totalTime");
+    totalTime = totalTime ? parseInt(totalTime, 10) : 0; // totalTime 초기화
+
+    if (window.location.pathname.endsWith('project.html')) {
+            // 세션 스토리지에서 textarea 데이터 제거
+            document.querySelectorAll('textarea').forEach(textarea => {
+                sessionStorage.removeItem(textarea.id);
+            });
+        }
+
+    
+        // textarea의 상태를 로컬 스토리지에서 복원합니다.
+        document.querySelectorAll('textarea').forEach(textarea => {
+            const savedValue = sessionStorage.getItem(textarea.id);
+            if (savedValue) {
+                textarea.value = savedValue;
+            }
+
+            // 사용자가 입력하는 내용을 로컬 스토리지에 저장합니다.
+            textarea.addEventListener('input', function() {
+                sessionStorage.setItem(textarea.id, this.value);
+            });
+        });
+    
+
+    function updateTimer() {
+      
+        const timerElement = document.getElementById('timer'); //타이머
+        const hours = Math.floor(totalTime / 3600); //시간
+        const minutes = Math.floor((totalTime % 3600) / 60);
+        const seconds = totalTime % 60;
+
+        timerElement.textContent = 
+            `경과시간:${hours.toString().padStart(2, '0')}:${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
+
+        if (totalTime < 2 * 60 * 60 + 30 * 60) { //제한시간 2시간 반
+            totalTime++;
+            sessionStorage.setItem("totalTime", totalTime); // totalTime 저장
+            setTimeout(updateTimer, 1000); //1초씩 흘러감
+        } else {
+            
+            alert(`제한시간이 경과되었습니다 ${count * 5}점 입니다.`);
+        }
+    }
+
+    updateTimer();
+
+    
+
+    
+
+    document.querySelectorAll('#menu a').forEach(link => { //메뉴이동 스크립트
+        link.addEventListener('click', function(event) {
+            const href = this.getAttribute('href');
+            window.location.href = href;
+        });
+    });
+
+
+
+
+        document.getElementById('menuButton').addEventListener('click', function() {
+      const menu = document.getElementById('menu');
+      
+      menu.style.display = menu.style.display === 'none' ? 'flex' : 'none';
+      
+    });
+  });
+
+    
+
+
+    function changePageToMain() {
+    location.href = 'project.html';
+  }
+
+
+    
+  </script>
+    
+  
+</body>
+</html>

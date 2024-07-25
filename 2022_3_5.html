@@ -1,0 +1,374 @@
+
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <style>
+        table {
+        width: 80%;
+        border-collapse: collapse;
+    }
+    th, td {
+        border: 1px solid black;
+        padding: 8px;
+        text-align: left;
+    }
+    th {
+        background-color: #f2f2f2;
+    }
+
+    </style>
+    
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>[2022년 3회] 정보처리기사 기출문제</title>
+  <link rel='stylesheet' href="information.css">
+</head>
+<body>
+  <div id="timer">02:30:00</div>
+  <div id="menu">
+    <button id="menuButton">메뉴</button>
+    <p><br></p>
+    <div class="mainmenu" id="2022년 3회">
+      <a href='#2022년3회.html' class = "mainmenu" id="2021년 3회">2020년 1회</a>
+      
+
+      </div>
+      <div class="submenu" >
+        <a href="2022_1_1.html#question1" id="menu1">문제 1번 ~ 문제4번</a>
+        <a href="2022_1_2.html#question5" id="menu2">문제 5번 ~ 문제8번</a>
+        <a href="2022_1_3.html#question9" id="menu3">문제 9번 ~ 문제12번</a>
+        <a href="2022_1_4.html#question13" id="menu4">문제 13번 ~ 문제16번</a>
+        <a href="2022_1_5.html#question17" id="menu5">문제 17번 ~ 문제20번</a>
+
+    </div>
+    
+      
+    <div class="mainmenu" id="2020년 2회">
+      <a href='#2022년3회.html' class = "mainmenu" id="2022년 3회">2020년 2회</a>
+
+
+    </div>
+    
+    
+    <div class="submenu">
+      <a href="2020_2_1.html#question1" id="menu6">문제 1번 ~ 문제4번</a>
+      <a href="2020_2_2.html#question5" id="menu7">문제 5번 ~ 문제8번</a>
+      <a href="2020_2_3.html#question9" id="menu8">문제 9번 ~ 문제12번</a>
+      <a href="2020_2_4.html#question13" id="menu9">문제 13번 ~ 문제16번</a>
+      <a href="2020_2_5.html#question17" id="menu10">문제 17번 ~ 문제20번</a>
+
+
+    </div>
+  </div>
+    
+    
+    
+
+  <div id="main-content">
+    <h1>[2022년 3회] 정보처리기사 기출문제</h1>
+    <button onclick="changePageToMain()">메인 메뉴로 돌아가기</button>
+    <div id="page1" class="page active">
+      
+      <div id="question17">
+        <p>문제 17: 다음은 UML에 관한 설명이다. 괄호안에 알맞는 답을 작성하시오.</p>
+        UML은 통합 모델링 언어로써, 시스템을 모델로 표현해주는 대표적인 모델링 언어이다.</p>
+
+구성 요소로는 사물, (    1    ), 다이어그램으로 이루어져 있으며, 구조 다이어그램 중,</p> (     2    ) 
+다이어그램은 시스템에서 사용되는 객체 타입을 정의하고, 그들 간의 존재하는 정적인 관계를 다양한 방식으로 표현한 다이어그램이다. </p>
+
+또한 UML 모델링에서 (     3    )은/는 클래스와 같은 기타 모델 요소 또는 컴포넌트가 구현해야 하는 오퍼레이션</p>
+ 세트를 정의하는 모델 요소이다.
+      </p>
+        <textarea id="answer17" rows="3" cols="50"></textarea>
+      </div>
+      <button id="checkAnswer17">정답 확인</button>
+      <button id="eraseAnswer17">정답 지우기</button>
+      <div id="answerResult17">
+        <p id="correctAnswer17"></p>
+      </div>
+  
+      <div id="question18">
+        <p>문제 18: 다음은 E-R다이어그램에 관한 설명이다. 괄호 안에 알맞는 답을 작성하시오.</p>
+        (아래 그래프 기호는 정확히 기억이 나지 않아 임의로 작성한 것이니 참고만 해주세요.)</p>
+        <img src="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FtLYA3%2FbtsC4KeezeX%2FsGKSaubIs9gHWdFsfPCTZ1%2Fimg.png" alt="Example Image" width="400" height="300"></p>
+
+
+
+     <div class="rounded-rectangle-box">
+        (    1    )  :  개체집합 - 관계집합 연결</p>
+        (    2    )  :  개체 집합과의 연결</p>
+        (    3    )  :  관계집합 - 관계집합의 속성 연결</p>
+        (    4    )  :  두 개체집합 관계에서 생성되는 값을 저장하는 속성</p>
+        (    5    )  :  같은 속성을 공유하는 개체들의 모임 </p>
+     </div>
+
+        <textarea id="answer18" rows="3" cols="50"></textarea>
+      </div>
+      <button id="checkAnswer18">정답 확인</button>
+      <button id="eraseAnswer18">정답 지우기</button>
+      <div id="answerResult18">
+        <p id="correctAnswer18"></p>
+      </div>
+  
+      <div id="question19">
+        <p>문제 19: 다음 자바 코드에 대한 출력 값을 작성하시오.</p>
+        <div class="rounded-rectangle-box">    
+            public class Main {</p>
+                static int[] MakeArray(){</p>
+               
+                int[] tempArr = new int[4];</p>
+                
+                for(int i=0; i&lt;tempArr.Length;i++){</p>
+                  tempArr[i] = i;</p>
+                }</p>
+                
+                return tempArr;</p>
+                }</p>
+                
+                public static void main(String[] args){</p>
+                
+                int[] intArr;</p>
+                intArr = MakeArray();</p>
+                
+                for(int i=0; i &lt; intArr.Length; i++)</p>
+                System.out.print(intArr[i]);</p>
+               
+                }</p>
+              }</p>
+
+        <textarea id="answer19" rows="3" cols="50"></textarea>
+      </div>
+      <button id="checkAnswer19">정답 확인</button>
+      <button id="eraseAnswer19">정답 지우기</button>
+      <div id="answerResult19">
+        <p id="correctAnswer19"></p>
+      </div>
+  
+      <div id="question20">
+        <p>문제 20: 다음 자바 코드에 대한 출력 값을 작성하시오. </p>
+        <div class="rounded-rectangle-box">
+            public class Exam {</p>
+                public static void main(String[] args){</p>
+                
+                int a = 0;</p>
+                for(int i=1; i&lt;999; i++){</p>
+                  if(i%3==0 && i%2!=0)</p>
+                    a = i;</p>
+                  }</p>
+                  System.out.print(a);</p>
+                }</p>
+              } </p>
+        <textarea id="answer20" rows="3" cols="50"></textarea>
+      </div>
+      <button id="checkAnswer20">정답 확인</button>
+      <button id="eraseAnswer20">정답 지우기</button>
+      <div id="answerResult20">
+        <p id="correctAnswer20"></p>
+      </div>
+      <button id="prevPage1" style="display: none;">이전</button>
+  
+      <button id="nextPage1">다음</button>
+    </div>
+
+    
+
+
+  
+    <script>
+
+    const pages = document.querySelectorAll('.page');
+    let currentPage = 0;
+    
+
+    document.getElementById('nextPage1').addEventListener('click', () => {
+      
+        window.location.href = '2020_1_2.html';
+        window.scrollTo(0, 0); // 페이지 전환 시 맨 위로 스크롤
+     
+      
+    });
+
+    document.getElementById('prevPage1').addEventListener('click', () => {
+      if (currentPage > 0) {
+        pages[currentPage].classList.remove('active');
+        currentPage--;
+        pages[currentPage].classList.add('active');
+        window.scrollTo(0, 0); // 페이지 전환 시 맨 위로 스크롤
+       
+      }
+    });
+
+
+    document.getElementById('checkAnswer17').addEventListener('click', function() {
+      checkAnswer_and(17, '정답: 1.관계, 2.클래스, 3. 인터페이스', ['관계 클래스 인터페이스']);
+    });
+    document.getElementById('eraseAnswer17').addEventListener('click', function() {
+      eraseAnswer(17);
+    });
+
+    document.getElementById('checkAnswer18').addEventListener('click', function() {
+      checkAnswer_and(18, '정답: 1. 실선 (ㄷ),2. 관계집합 (ㅂ),3. 점선 (ㄹ),4. 관계집합의 속성 (ㄴ),5.  개체집합 (ㄱ)', ['실선 관계집합 점선 관계집합의 속성 개체집합']);
+    });
+    document.getElementById('eraseAnswer18').addEventListener('click', function() {
+      eraseAnswer(18);
+    });
+
+    document.getElementById('checkAnswer19').addEventListener('click', function() {
+      checkAnswer_and(19, '정답: 0123', ['0123']);
+    });
+    document.getElementById('eraseAnswer19').addEventListener('click', function() {
+      eraseAnswer(19);
+    });
+
+    document.getElementById('checkAnswer20').addEventListener('click', function() {
+      checkAnswer_and(20, '정답: 993', ['993']);
+    });
+    document.getElementById('eraseAnswer20').addEventListener('click', function() {
+      eraseAnswer(20);
+    });
+
+
+    let count = sessionStorage.getItem("count"); ; // count 받아옴
+
+    function checkAnswer(questionNumber, correctAnswerText, keywords) {
+      const userAnswer = document.getElementById('answer' + questionNumber).value;
+      const correctAnswerElement = document.getElementById('correctAnswer' + questionNumber);
+      const answerResultElement = document.getElementById('answerResult' + questionNumber);
+      let correct = false;
+
+      if (userAnswer) {
+        for (const keyword of keywords) {
+          if (userAnswer.toLowerCase().includes(keyword)) {
+            correct = true;
+            break;
+          }
+        }
+        if (correct) {
+          correctAnswerElement.innerHTML = correctAnswerText + '<br/> (키워드 포함: "' + keywords.join(', ') + '")';
+          count++;
+          sessionStorage.setItem("count", count); // count 저장
+
+        } else {
+          correctAnswerElement.innerHTML = '오답입니다. ' + questionNumber + '번 정답은 <br/>' + correctAnswerText;
+        }
+        answerResultElement.style.display = 'block';
+      }
+    }
+
+    function checkAnswer_and(questionNumber, correctAnswerText, keywords) {
+            const userAnswer = document.getElementById('answer' + questionNumber).value;
+            const correctAnswerElement = document.getElementById('correctAnswer' + questionNumber);
+            const answerResultElement = document.getElementById('answerResult' + questionNumber);
+            let correct = true;
+
+            if (userAnswer) {
+                for (const keyword of keywords) {
+                    if (!userAnswer.toLowerCase().includes(keyword.toLowerCase())) {
+                        correct = false;
+                        break;
+                    }
+                }
+                if (correct) {
+                    correctAnswerElement.innerHTML = correctAnswerText + '<br/> (키워드 포함: "' + keywords.join(', ') + '")';
+                    count++;
+                    sessionStorage.setItem("count", count); // count 저장
+
+                } else {
+                    correctAnswerElement.innerHTML = '오답입니다. ' + questionNumber + '번 정답은 <br/>' + correctAnswerText;
+                }
+                answerResultElement.style.display = 'block';
+            }
+        }
+
+    function eraseAnswer(questionNumber) {
+      document.getElementById('correctAnswer' + questionNumber).textContent = '';
+      document.getElementById('answerResult' + questionNumber).style.display = 'none';
+    }
+    
+
+
+    document.addEventListener('DOMContentLoaded', function () {
+    // 타이머 설정
+    let totalTime = sessionStorage.getItem("totalTime");
+    totalTime = totalTime ? parseInt(totalTime, 10) : 0; // totalTime 초기화
+
+    if (window.location.pathname.endsWith('project.html')) {
+            // 세션 스토리지에서 textarea 데이터 제거
+            document.querySelectorAll('textarea').forEach(textarea => {
+                sessionStorage.removeItem(textarea.id);
+            });
+        }
+
+    
+        // textarea의 상태를 로컬 스토리지에서 복원합니다.
+        document.querySelectorAll('textarea').forEach(textarea => {
+            const savedValue = sessionStorage.getItem(textarea.id);
+            if (savedValue) {
+                textarea.value = savedValue;
+            }
+
+            // 사용자가 입력하는 내용을 로컬 스토리지에 저장합니다.
+            textarea.addEventListener('input', function() {
+                sessionStorage.setItem(textarea.id, this.value);
+            });
+        });
+    
+
+    function updateTimer() {
+      
+        const timerElement = document.getElementById('timer'); //타이머
+        const hours = Math.floor(totalTime / 3600); //시간
+        const minutes = Math.floor((totalTime % 3600) / 60);
+        const seconds = totalTime % 60;
+
+        timerElement.textContent = 
+            `경과시간:${hours.toString().padStart(2, '0')}:${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
+
+        if (totalTime < 2 * 60 * 60 + 30 * 60) { //제한시간 2시간 반
+            totalTime++;
+            sessionStorage.setItem("totalTime", totalTime); // totalTime 저장
+            setTimeout(updateTimer, 1000); //1초씩 흘러감
+        } else {
+            
+            alert(`제한시간이 경과되었습니다 ${count * 5}점 입니다.`);
+        }
+    }
+
+    updateTimer();
+
+    
+
+    
+
+    document.querySelectorAll('#menu a').forEach(link => { //메뉴이동 스크립트
+        link.addEventListener('click', function(event) {
+            const href = this.getAttribute('href');
+            window.location.href = href;
+        });
+    });
+
+
+
+
+        document.getElementById('menuButton').addEventListener('click', function() {
+      const menu = document.getElementById('menu');
+      
+      menu.style.display = menu.style.display === 'none' ? 'flex' : 'none';
+      
+    });
+  });
+
+    
+
+
+    function changePageToMain() {
+    location.href = 'project.html';
+  }
+
+
+    
+  </script>
+    
+  
+</body>
+</html>

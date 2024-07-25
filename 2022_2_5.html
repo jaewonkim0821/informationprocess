@@ -1,0 +1,402 @@
+
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <style>
+        table {
+        width: 80%;
+        border-collapse: collapse;
+    }
+    th, td {
+        border: 1px solid black;
+        padding: 8px;
+        text-align: left;
+    }
+    th {
+        background-color: #f2f2f2;
+    }
+
+    </style>
+    
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>[2021년 3회] 정보처리기사 기출문제</title>
+  <link rel='stylesheet' href="information.css">
+</head>
+<body>
+  <div id="timer">02:30:00</div>
+  <div id="menu">
+    <button id="menuButton">메뉴</button>
+    <p><br></p>
+    <div class="mainmenu" id="2020년 1회">
+      <a href='#2021년3회.html' class = "mainmenu" id="2021년 3회">2020년 1회</a>
+      
+
+      </div>
+      <div class="submenu" >
+        <a href="2020_1_1.html#question1" id="menu1">문제 1번 ~ 문제4번</a>
+        <a href="2020_1_2.html#question5" id="menu2">문제 5번 ~ 문제8번</a>
+        <a href="2020_1_3.html#question9" id="menu3">문제 9번 ~ 문제12번</a>
+        <a href="2020_1_4.html#question13" id="menu4">문제 13번 ~ 문제16번</a>
+        <a href="2020_1_5.html#question17" id="menu5">문제 17번 ~ 문제20번</a>
+
+    </div>
+    
+      
+    <div class="mainmenu" id="2020년 2회">
+      <a href='#2021년3회.html' class = "mainmenu" id="2021년 3회">2020년 2회</a>
+
+
+    </div>
+    
+    
+    <div class="submenu">
+      <a href="2020_2_1.html#question1" id="menu6">문제 1번 ~ 문제4번</a>
+      <a href="2020_2_2.html#question5" id="menu7">문제 5번 ~ 문제8번</a>
+      <a href="2020_2_3.html#question9" id="menu8">문제 9번 ~ 문제12번</a>
+      <a href="2020_2_4.html#question13" id="menu9">문제 13번 ~ 문제16번</a>
+      <a href="2020_2_5.html#question17" id="menu10">문제 17번 ~ 문제20번</a>
+
+
+    </div>
+  </div>
+    
+    
+    
+
+  <div id="main-content">
+    <h1>[2021년 3회] 정보처리기사 기출문제</h1>
+    <button onclick="changePageToMain()">메인 메뉴로 돌아가기</button>
+    <div id="page1" class="page active">
+      
+      <div id="question17">
+        <p>문제 17: 다음 Java로 구현된 프로그램을 분석하여 그 실행 결과를 쓰시오.</p>
+        <div class="code-slider">
+            <div class="code-slide">
+              <pre><code>
+                
+                class Test{
+                    public static void main(String args[]){
+                        cond obj = new cond(3);
+                        obj.a = 5;
+                        int b = obj.func();
+                        System.out.print(obj.a + b);
+                    }
+                }
+                
+                class cond{
+                    int a;
+                    public cond(int a){
+                        this.a = a;
+                    }
+                    public int func(){
+                        int b = 1;
+                        for (int i=1; i&lt;a; i++)
+                            b += a * i;
+                        return a + b;
+                    }
+                }
+        </code>
+        </pre>
+        </div></div>
+        <textarea id="answer17" rows="3" cols="50"></textarea>
+      </div>
+      <button id="checkAnswer17">정답 확인</button>
+      <button id="eraseAnswer17">정답 지우기</button>
+      <div id="answerResult17">
+        <p id="correctAnswer17"></p>
+      </div>
+  
+      <div id="question18">
+        <p>문제 18: 함수적 종속(Functional Dependency)에 대한 다음 설명에서 괄호(①~③)에 들어갈 알맞은 용어를 <보기>에서 찾아 기호(ㄱ~ㅇ)로 쓰시오.</p>
+        
+    <img src="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FzpvHp%2FbtsgB2hpTi0%2FQiTmCP2z5ZQ8CH6Hlycovk%2Fimg.png" alt="이미지 설명"></img>
+
+
+
+     <div class="rounded-rectangle-box">
+        · 테이블 (R)에서 '성적'은 기본키인 {학생, 학과}에 대해 (  ①  ) Functional Dependency이다.</p>
+        · 테이블 (R)에서 '학년'은 기본키인 {학생, 학과} 중 '학생'만으로 식별이 가능하므로 기본키에 대해 (  ②  ) Functional Dependcy이다.</p>
+        · 임의의 테이블에 속성 A, B, C가 있을 때, A→B이고 B→C일 때 A→C인 관계는 (  ③  ) Functional Dependency이다.</p>
+     </div>
+<보기></p>
+        <table>
+        <tr>
+            <td>ㄱ.Hybrid </td>
+            <td>ㄴ.Multi Valued</td>
+            <td>ㄷ.Transitive</td>
+            <td>ㄹ.Full</td>
+        </tr>
+        <tr>
+            <td>ㅁ.Defined</td>
+            <td>ㅂ.Natural</td>
+            <td>ㅅ.Relational</td>
+            <td>ㅇ.Partial</td>
+        </tr>
+    </table>
+</p>
+        <textarea id="answer18" rows="3" cols="50"></textarea>
+      </div>
+      <button id="checkAnswer18">정답 확인</button>
+      <button id="eraseAnswer18">정답 지우기</button>
+      <div id="answerResult18">
+        <p id="correctAnswer18"></p>
+      </div>
+  
+      <div id="question19">
+        <p>문제 19: 인터넷에 대한 다음 설명에서 괄호(①~③)에 들어갈 알맞은 용어를 보기에서 찾아 쓰시오.</p>
+        <div class="rounded-rectangle-box">    
+            <p>인터넷이란 TCP/IP 프로토콜을 기반으로 하여 전 세계 수많은 컴퓨터와 네트워크들이 연결된 광범위한 컴퓨터 통신망이다.</p>
+        · (  ①  ) : 월드 와이드 웹(WWW)에서 HTML 문서를 송수신 하기 위한 표준 프로토콜로, GET과 POST 메소드를 통해 메시지를 주고 받는다.</p>
+        · (  ②  ) : 다른 문서나 그림으로 이동할 수 있는 연결을 가지고 있는 텍스트를 의미한다.</p>
+        · (  ③  ) : 인터넷의 표준 문서인 하이퍼텍스트 문설르 만들기 위해 사용하는 언어이다.</p>
+        </div>
+        <보기></p>
+            <table >
+                <tr>
+                    <td style="text-align:center;">UDDI</td>
+                    <td style="text-align:center;">XML</td>
+                    <td style="text-align:center;">WSDL</td>
+                    <td style="text-align:center;">Hypertext</td>
+                </tr>
+                <tr>
+                    <td style="text-align:center;">DHTML</td>
+                    <td style="text-align:center;">HTML</td>
+                    <td style="text-align:center;">SOAP</td>
+                    <td style="text-align:center;">HTTP</td>
+                </tr>
+            </table>
+        
+        
+        
+        </p>
+        
+
+
+        <textarea id="answer19" rows="3" cols="50"></textarea>
+      </div>
+      <button id="checkAnswer19">정답 확인</button>
+      <button id="eraseAnswer19">정답 지우기</button>
+      <div id="answerResult19">
+        <p id="correctAnswer19"></p>
+      </div>
+  
+      <div id="question20">
+        <p>문제 20: 다음의 모듈 관계를 표현한 시스템 구조도를 참고하여 모듈 F의 팬인(Fan-In)과 팬아웃(Fan-Out)을 구하시오. </p>
+        
+    <img src="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2Fqe47y%2FbtsgC2A2cTz%2FHmoqawSWH7WlAPDTPaKGpk%2Fimg.png" alt="이미지 설명">
+
+        <textarea id="answer20" rows="3" cols="50"></textarea>
+      </div>
+      <button id="checkAnswer20">정답 확인</button>
+      <button id="eraseAnswer20">정답 지우기</button>
+      <div id="answerResult20">
+        <p id="correctAnswer20"></p>
+      </div>
+      <button id="prevPage1" style="display: none;">이전</button>
+  
+      <button id="nextPage1">다음</button>
+    </div>
+
+    
+
+
+  
+    <script>
+
+    const pages = document.querySelectorAll('.page');
+    let currentPage = 0;
+    
+
+    document.getElementById('nextPage1').addEventListener('click', () => {
+      
+        window.location.href = '2020_1_2.html';
+        window.scrollTo(0, 0); // 페이지 전환 시 맨 위로 스크롤
+     
+      
+    });
+
+    document.getElementById('prevPage1').addEventListener('click', () => {
+      if (currentPage > 0) {
+        pages[currentPage].classList.remove('active');
+        currentPage--;
+        pages[currentPage].classList.add('active');
+        window.scrollTo(0, 0); // 페이지 전환 시 맨 위로 스크롤
+       
+      }
+    });
+
+
+    document.getElementById('checkAnswer17').addEventListener('click', function() {
+      checkAnswer(17, '정답: 61', ['61']);
+    });
+    document.getElementById('eraseAnswer17').addEventListener('click', function() {
+      eraseAnswer(17);
+    });
+
+    document.getElementById('checkAnswer18').addEventListener('click', function() {
+      checkAnswer(18, '정답: ㄹ, ㅇ, ㄷ', ['ㄹ ㅇ ㄷ']);
+    });
+    document.getElementById('eraseAnswer18').addEventListener('click', function() {
+      eraseAnswer(18);
+    });
+
+    document.getElementById('checkAnswer19').addEventListener('click', function() {
+      checkAnswer_and(19, '정답: HTTP, Hypertext, HTMLI', ['http hypertext html']);
+    });
+    document.getElementById('eraseAnswer19').addEventListener('click', function() {
+      eraseAnswer(19);
+    });
+
+    document.getElementById('checkAnswer20').addEventListener('click', function() {
+      checkAnswer_and(20, '정답: 3,2', ['3 2']);
+    });
+    document.getElementById('eraseAnswer20').addEventListener('click', function() {
+      eraseAnswer(20);
+    });
+
+
+    let count = sessionStorage.getItem("count"); ; // count 받아옴
+
+    function checkAnswer(questionNumber, correctAnswerText, keywords) {
+      const userAnswer = document.getElementById('answer' + questionNumber).value;
+      const correctAnswerElement = document.getElementById('correctAnswer' + questionNumber);
+      const answerResultElement = document.getElementById('answerResult' + questionNumber);
+      let correct = false;
+
+      if (userAnswer) {
+        for (const keyword of keywords) {
+          if (userAnswer.toLowerCase().includes(keyword)) {
+            correct = true;
+            break;
+          }
+        }
+        if (correct) {
+          correctAnswerElement.innerHTML = correctAnswerText + '<br/> (키워드 포함: "' + keywords.join(', ') + '")';
+          count++;
+          sessionStorage.setItem("count", count); // count 저장
+
+        } else {
+          correctAnswerElement.innerHTML = '오답입니다. ' + questionNumber + '번 정답은 <br/>' + correctAnswerText;
+        }
+        answerResultElement.style.display = 'block';
+      }
+    }
+
+    function checkAnswer_and(questionNumber, correctAnswerText, keywords) {
+            const userAnswer = document.getElementById('answer' + questionNumber).value;
+            const correctAnswerElement = document.getElementById('correctAnswer' + questionNumber);
+            const answerResultElement = document.getElementById('answerResult' + questionNumber);
+            let correct = true;
+
+            if (userAnswer) {
+                for (const keyword of keywords) {
+                    if (!userAnswer.toLowerCase().includes(keyword.toLowerCase())) {
+                        correct = false;
+                        break;
+                    }
+                }
+                if (correct) {
+                    correctAnswerElement.innerHTML = correctAnswerText + '<br/> (키워드 포함: "' + keywords.join(', ') + '")';
+                    count++;
+                    sessionStorage.setItem("count", count); // count 저장
+
+                } else {
+                    correctAnswerElement.innerHTML = '오답입니다. ' + questionNumber + '번 정답은 <br/>' + correctAnswerText;
+                }
+                answerResultElement.style.display = 'block';
+            }
+        }
+
+    function eraseAnswer(questionNumber) {
+      document.getElementById('correctAnswer' + questionNumber).textContent = '';
+      document.getElementById('answerResult' + questionNumber).style.display = 'none';
+    }
+    
+
+
+    document.addEventListener('DOMContentLoaded', function () {
+    // 타이머 설정
+    let totalTime = sessionStorage.getItem("totalTime");
+    totalTime = totalTime ? parseInt(totalTime, 10) : 0; // totalTime 초기화
+
+    if (window.location.pathname.endsWith('project.html')) {
+            // 세션 스토리지에서 textarea 데이터 제거
+            document.querySelectorAll('textarea').forEach(textarea => {
+                sessionStorage.removeItem(textarea.id);
+            });
+        }
+
+    
+        // textarea의 상태를 로컬 스토리지에서 복원합니다.
+        document.querySelectorAll('textarea').forEach(textarea => {
+            const savedValue = sessionStorage.getItem(textarea.id);
+            if (savedValue) {
+                textarea.value = savedValue;
+            }
+
+            // 사용자가 입력하는 내용을 로컬 스토리지에 저장합니다.
+            textarea.addEventListener('input', function() {
+                sessionStorage.setItem(textarea.id, this.value);
+            });
+        });
+    
+
+    function updateTimer() {
+      
+        const timerElement = document.getElementById('timer'); //타이머
+        const hours = Math.floor(totalTime / 3600); //시간
+        const minutes = Math.floor((totalTime % 3600) / 60);
+        const seconds = totalTime % 60;
+
+        timerElement.textContent = 
+            `경과시간:${hours.toString().padStart(2, '0')}:${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
+
+        if (totalTime < 2 * 60 * 60 + 30 * 60) { //제한시간 2시간 반
+            totalTime++;
+            sessionStorage.setItem("totalTime", totalTime); // totalTime 저장
+            setTimeout(updateTimer, 1000); //1초씩 흘러감
+        } else {
+            
+            alert(`제한시간이 경과되었습니다 ${count * 5}점 입니다.`);
+        }
+    }
+
+    updateTimer();
+
+    
+
+    
+
+    document.querySelectorAll('#menu a').forEach(link => { //메뉴이동 스크립트
+        link.addEventListener('click', function(event) {
+            const href = this.getAttribute('href');
+            window.location.href = href;
+        });
+    });
+
+
+
+
+        document.getElementById('menuButton').addEventListener('click', function() {
+      const menu = document.getElementById('menu');
+      
+      menu.style.display = menu.style.display === 'none' ? 'flex' : 'none';
+      
+    });
+  });
+
+    
+
+
+    function changePageToMain() {
+    location.href = 'project.html';
+  }
+
+
+    
+  </script>
+    
+  
+</body>
+</html>

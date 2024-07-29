@@ -222,31 +222,34 @@
     <div id="page2" class="page active">
         <div id="question5">
           <p>문제 5: 자바 객체 생성 (   ) 채우기</p>
-          <div class="code-slider">
-              <div class="code-slide">
+          <div class="rounded-rectangle-box">
+            <p>
+              class Parent{</p>
+                void show(){</p>
+                    System.out.println(""Parent"");</p>
+                }</p>
+            }</p>
+            
+            class Child extends Parent{</p>
+                void show(){</p>
+                    System.out.println(""Child"");</p>
+                }</p>
+            }</p>
+            
+            public class Main{</p>
+                public static void main(String[] args) {</p>
+                    Parent pa = (       ) Child();</p>
+                    pa.show();</p>
+                }</p>
+            }</p>
+
+            </p>
+
+
+
+          </div>
                 
-                  <pre><code>
-                      class Parent{
-                          void show(){
-                              System.out.println(""Parent"");
-                          }
-                      }
-                      
-                      class Child extends Parent{
-                          void show(){
-                              System.out.println(""Child"");
-                          }
-                      }
-                      
-                      public class Main{
-                          public static void main(String[] args) {
-                              Parent pa = (       ) Child();
-                              pa.show();
-                          }
-                      }
-                      
-                  </code></pre>
-              </div></div>
+                  
           <textarea id="answer5" rows="3" cols="50"></textarea>
         </div>
         <button id="checkAnswer5">정답 확인</button>
@@ -379,7 +382,7 @@
 
 
   document.getElementById('checkAnswer5').addEventListener('click', function() {
-    checkAnswer_and(5, '정답: 5. new', ['new']);
+    checkAnswer_exact(5, '정답: 5. new', ['new']);
     });
     document.getElementById('eraseAnswer5').addEventListener('click', function() {
       eraseAnswer(5);
@@ -400,7 +403,7 @@
     });
 
     document.getElementById('checkAnswer8').addEventListener('click', function() {
-      checkAnswer_and(8, '정답: 8. ipsec', ['ipsec']);
+      checkAnswer_exact(8, '정답: 8. ipsec', ['ipsec']);
     });
     document.getElementById('eraseAnswer8').addEventListener('click', function() {
       eraseAnswer(8);
@@ -410,60 +413,7 @@
     
     let count = sessionStorage.getItem("count"); ; // count 받아옴
 
-function checkAnswer(questionNumber, correctAnswerText, keywords) {
-  const userAnswer = document.getElementById('answer' + questionNumber).value;
-  const correctAnswerElement = document.getElementById('correctAnswer' + questionNumber);
-  const answerResultElement = document.getElementById('answerResult' + questionNumber);
-  let correct = false;
 
-  if (userAnswer) {
-    for (const keyword of keywords) {
-      if (userAnswer.toLowerCase().includes(keyword)) {
-        correct = true;
-        break;
-      }
-    }
-    if (correct) {
-      correctAnswerElement.innerHTML = correctAnswerText + '<br/> (키워드 포함: "' + keywords.join(', ') + '")';
-      count++;
-      sessionStorage.setItem("count", count); // count 저장
-
-    } else {
-      correctAnswerElement.innerHTML = '오답입니다. ' + questionNumber + '번 정답은 <br/>' + correctAnswerText;
-    }
-    answerResultElement.style.display = 'block';
-  }
-}
-
-function checkAnswer_and(questionNumber, correctAnswerText, keywords) {
-        const userAnswer = document.getElementById('answer' + questionNumber).value;
-        const correctAnswerElement = document.getElementById('correctAnswer' + questionNumber);
-        const answerResultElement = document.getElementById('answerResult' + questionNumber);
-        let correct = true;
-
-        if (userAnswer) {
-            for (const keyword of keywords) {
-                if (!userAnswer.toLowerCase().includes(keyword.toLowerCase())) {
-                    correct = false;
-                    break;
-                }
-            }
-            if (correct) {
-                correctAnswerElement.innerHTML = correctAnswerText + '<br/> (키워드 포함: "' + keywords.join(', ') + '")';
-                count++;
-                sessionStorage.setItem("count", count); // count 저장
-
-            } else {
-                correctAnswerElement.innerHTML = '오답입니다. ' + questionNumber + '번 정답은 <br/>' + correctAnswerText;
-            }
-            answerResultElement.style.display = 'block';
-        }
-    }
-
-function eraseAnswer(questionNumber) {
-  document.getElementById('correctAnswer' + questionNumber).textContent = '';
-  document.getElementById('answerResult' + questionNumber).style.display = 'none';
-}
 
 
 
@@ -541,9 +491,6 @@ document.querySelectorAll('#menu a').forEach(link => { //메뉴이동 스크립�
 
 
 
-function changePageToMain() {
-location.href = 'project.html';
-}
 
 
 

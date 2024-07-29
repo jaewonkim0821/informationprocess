@@ -236,23 +236,24 @@
       <div id="question2">
         <p>문제 2: 다음의 출력 결과를 쓰시오.</p>
 
-        <div class="code-slider">
-          <div class="code-slide">
-            <pre><code>
-              #include &lt;stdio.h&gt;
+        <div class="rounded-rectangle-box">
+          #include &lt;stdio.h&gt;</p>
 
-                void main() {
-                  int c=0;
-                    int i=0;
+                void main() {</p>
+                  int c=0;</p>
+                    int i=0;</p>
                     
-                    while(i&lt;10) {
-                      i++;
-                        c *= i;
-                    }
-                    printf("%d", c);
-                }
-            </code></pre>
-          </div></div>
+                    while(i&lt;10) {</p>
+                      i++;</p>
+                        c *= i;</p>
+                    }</p>
+                    printf("%d", c);</p>
+                }</p>
+
+
+
+        </div>
+              
         <textarea id="answer2" rows="3" cols="50"></textarea>
       </div>
       <button id="checkAnswer2">정답 확인</button>
@@ -271,9 +272,50 @@
             - 속성명에 작은 따옴표(' ')를 사용합니다.
 
           </p>
-
-
         </div>
+          <p>학생</p>
+          <table>
+            <thead>
+              <tr>
+                <td>학번</td>
+                <td>이름</td>
+                <td>점수</td>
+                <td>과목이름</td>
+
+              
+            </tr>
+
+            </thead>
+            <tbody>
+              <tr>
+                <td>1000</td>
+                <td>김정미</td>
+                <td>90</td>
+                <td>알고리즘</td>
+              </tr>
+              <tr>
+                <td>2000</td>
+                <td>강은미</td>
+                <td>95</td>
+                <td>데이터베이스</td>
+              </tr>
+              <tr>
+                <td>3000</td>
+                <td>홍길동</td>
+                <td>90</td>
+                <td>전산수학</td>
+              </tr>
+              <tr>
+                <td>4000</td>
+                <td>민수</td>
+                <td>95</td>
+                <td>운영체제</td>
+              </tr>
+            </tbody>
+          </table>
+
+
+        
         <textarea id="answer3" rows="3" cols="50"></textarea>
       </div>
       <button id="checkAnswer3">정답 확인</button>
@@ -349,7 +391,7 @@
     });
 
     document.getElementById('checkAnswer2').addEventListener('click', function() {
-      checkAnswer_and(2, '정답: 2. 0', ['0']);
+      checkAnswer_exact(2, '정답: 2. 0', ['0']);
     });
     document.getElementById('eraseAnswer2').addEventListener('click', function() {
       eraseAnswer(2);
@@ -363,7 +405,7 @@
     });
 
     document.getElementById('checkAnswer4').addEventListener('click', function() {
-      checkAnswer(4, '정답: 4. ICMP', ['icmp']);
+      checkAnswer_exact(4, '정답: 4. ICMP', ['icmp']);
     });
     document.getElementById('eraseAnswer4').addEventListener('click', function() {
       eraseAnswer(4);
@@ -372,60 +414,7 @@
 
     let count = sessionStorage.getItem("count"); ; // count 받아옴
 
-    function checkAnswer(questionNumber, correctAnswerText, keywords) {
-      const userAnswer = document.getElementById('answer' + questionNumber).value;
-      const correctAnswerElement = document.getElementById('correctAnswer' + questionNumber);
-      const answerResultElement = document.getElementById('answerResult' + questionNumber);
-      let correct = false;
-
-      if (userAnswer) {
-        for (const keyword of keywords) {
-          if (userAnswer.toLowerCase().includes(keyword)) {
-            correct = true;
-            break;
-          }
-        }
-        if (correct) {
-          correctAnswerElement.innerHTML = correctAnswerText + '<br/> (키워드 포함: "' + keywords.join(', ') + '")';
-          count++;
-          sessionStorage.setItem("count", count); // count 저장
-
-        } else {
-          correctAnswerElement.innerHTML = '오답입니다. ' + questionNumber + '번 정답은 <br/>' + correctAnswerText;
-        }
-        answerResultElement.style.display = 'block';
-      }
-    }
-
-    function checkAnswer_and(questionNumber, correctAnswerText, keywords) {
-            const userAnswer = document.getElementById('answer' + questionNumber).value;
-            const correctAnswerElement = document.getElementById('correctAnswer' + questionNumber);
-            const answerResultElement = document.getElementById('answerResult' + questionNumber);
-            let correct = true;
-
-            if (userAnswer) {
-                for (const keyword of keywords) {
-                    if (!userAnswer.toLowerCase().includes(keyword.toLowerCase())) {
-                        correct = false;
-                        break;
-                    }
-                }
-                if (correct) {
-                    correctAnswerElement.innerHTML = correctAnswerText + '<br/> (키워드 포함: "' + keywords.join(', ') + '")';
-                    count++;
-                    sessionStorage.setItem("count", count); // count 저장
-
-                } else {
-                    correctAnswerElement.innerHTML = '오답입니다. ' + questionNumber + '번 정답은 <br/>' + correctAnswerText;
-                }
-                answerResultElement.style.display = 'block';
-            }
-        }
-
-    function eraseAnswer(questionNumber) {
-      document.getElementById('correctAnswer' + questionNumber).textContent = '';
-      document.getElementById('answerResult' + questionNumber).style.display = 'none';
-    }
+    
     
 
 
@@ -503,9 +492,7 @@
     
 
 
-    function changePageToMain() {
-    location.href = 'project.html';
-  }
+   
 
 
     

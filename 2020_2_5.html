@@ -252,35 +252,39 @@
     
         <div id="question19">
           <p>문제 19: 다음 자바코드의 출력 결과를 쓰시오.</p>
-          <div class="code-slider">
-            <div class="code-slide">
-              
-                <pre><code>
-                    class A {
-                        int a;
+          <div class="rounded-rectangle-box">
+            <p>
+              class A {</p>
+                int a;</p>
+            
+                A(int a) {</p>
+                    this.a = a;</p>
+                }</p>
+            
+                void display() {</p>
+                    System.out.println(""a=""+a);</p>
+                }</p>
+            }</p>
+            class B extends A {</p>
+                B(int a) {</p>
+                    super(a);</p>
+                    super.display();</p>
+                }</p>
+            }</p>
+            public class Main {</p>
+                public static void main(String[] args){</p>
+                    B obj = new B(10);</p>
+                }</p>
+            }</p>
+            
+            </p>
+
+
+
+
+          </div>
                     
-                        A(int a) {
-                            this.a = a;
-                        }
-                    
-                        void display() {
-                            System.out.println(""a=""+a);
-                        }
-                    }
-                    class B extends A {
-                        B(int a) {
-                            super(a);
-                            super.display();
-                        }
-                    }
-                    public class Main {
-                        public static void main(String[] args){
-                            B obj = new B(10);
-                        }
-                    }
-                    
-                </code></pre>
-            </div></div>
+                
           <textarea id="answer19" rows="3" cols="50"></textarea>
           
           
@@ -343,28 +347,28 @@
     });
 
     document.getElementById('checkAnswer17').addEventListener('click', function() {
-      checkAnswer_and(17, '정답: 17. linked open data ', ['linked open data']);
+      checkAnswer_exact(17, '정답: 17. linked open data ', ['lod','linked open data']);
     });
     document.getElementById('eraseAnswer17').addEventListener('click', function() {
       eraseAnswer(17);
     });
 
     document.getElementById('checkAnswer18').addEventListener('click', function() {
-      checkAnswer_and(18, '정답: 18. b c a', ['b c a']);
+      checkAnswer_exact(18, '정답: 18. b c a', ['b c a']);
     });
     document.getElementById('eraseAnswer18').addEventListener('click', function() {
       eraseAnswer(18);
     });
 
     document.getElementById('checkAnswer19').addEventListener('click', function() {
-      checkAnswer_and(19, '정답: 19. a=10', ['a=10']);
+      checkAnswer_exact(19, '정답: 19. a=10', ['a=10']);
     });
     document.getElementById('eraseAnswer19').addEventListener('click', function() {
       eraseAnswer(19);
     });
 
     document.getElementById('checkAnswer20').addEventListener('click', function() {
-      checkAnswer_and(20, '정답: 20. 형상관리', ['형상관리']);
+      checkAnswer_and(20, '정답: 20. 형상관리', ['형상','관리']);
     });
     document.getElementById('eraseAnswer20').addEventListener('click', function() {
       eraseAnswer(20);

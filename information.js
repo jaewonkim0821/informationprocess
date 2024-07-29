@@ -29,3 +29,90 @@ document.querySelectorAll('.submenu').forEach(submenu => {
         submenu.style.display = submenu.style.display === 'block' ? 'none' : 'block';      }
     });
   });
+  function checkAnswer_exact(questionNumber, correctAnswerText, keywords) {
+    const userAnswer = document.getElementById('answer' + questionNumber).value;
+    const correctAnswerElement = document.getElementById('correctAnswer' + questionNumber);
+    const answerResultElement = document.getElementById('answerResult' + questionNumber);
+  
+    // 정확한 일치 여부 확인 (대소문자 구분)
+    let correct=false;
+
+    if (userAnswer) {
+      for(const keyword of keywords){
+        if(userAnswer.toLowerCase()==keyword){
+          correct=true;
+          break;
+        }
+      }
+      if(correct){
+        correctAnswerElement.innerHTML = correctAnswerText + ' (정확히 일치)';
+        count++;
+        sessionStorage.setItem("count", count);
+      }
+     else {
+      correctAnswerElement.innerHTML = '오답입니다. ' + questionNumber + '번 정답은 <br/>' + correctAnswerText;
+    }
+  
+    answerResultElement.style.display = 'block';
+  }
+}
+
+  function checkAnswer(questionNumber, correctAnswerText, keywords) {
+    const userAnswer = document.getElementById('answer' + questionNumber).value;
+    const correctAnswerElement = document.getElementById('correctAnswer' + questionNumber);
+    const answerResultElement = document.getElementById('answerResult' + questionNumber);
+    let correct = false;
+
+    if (userAnswer) {
+      for (const keyword of keywords) {
+        if (userAnswer.toLowerCase().includes(keyword)) {
+          correct = true;
+          break;
+        }
+      }
+      if (correct) {
+        correctAnswerElement.innerHTML = correctAnswerText + '<br/> (키워드 포함: "' + keywords.join(', ') + '")';
+        count++;
+        sessionStorage.setItem("count", count); // count 저장
+
+      } else {
+        correctAnswerElement.innerHTML = '오답입니다. ' + questionNumber + '번 정답은 <br/>' + correctAnswerText;
+      }
+      answerResultElement.style.display = 'block';
+    }
+  }
+
+  function checkAnswer_and(questionNumber, correctAnswerText, keywords) {
+          const userAnswer = document.getElementById('answer' + questionNumber).value;
+          const correctAnswerElement = document.getElementById('correctAnswer' + questionNumber);
+          const answerResultElement = document.getElementById('answerResult' + questionNumber);
+          let correct = true;
+
+          if (userAnswer) {
+              for (const keyword of keywords) {
+                  if (!userAnswer.toLowerCase().includes(keyword.toLowerCase())) {
+                      correct = false;
+                      break;
+                  }
+              }
+              if (correct) {
+                  correctAnswerElement.innerHTML = correctAnswerText + '<br/> (키워드 포함: "' + keywords.join(', ') + '")';
+                  count++;
+                  sessionStorage.setItem("count", count); // count 저장
+
+              } else {
+                  correctAnswerElement.innerHTML = '오답입니다. ' + questionNumber + '번 정답은 <br/>' + correctAnswerText;
+              }
+              answerResultElement.style.display = 'block';
+          }
+      }
+
+  function eraseAnswer(questionNumber) {
+    document.getElementById('correctAnswer' + questionNumber).textContent = '';
+    document.getElementById('answerResult' + questionNumber).style.display = 'none';
+  }
+  function changePageToMain() {
+    location.href = 'project.html';
+  }
+  
+  

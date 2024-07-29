@@ -348,60 +348,6 @@
 
     let count = sessionStorage.getItem("count"); ; // count 받아옴
 
-    function checkAnswer(questionNumber, correctAnswerText, keywords) {
-      const userAnswer = document.getElementById('answer' + questionNumber).value;
-      const correctAnswerElement = document.getElementById('correctAnswer' + questionNumber);
-      const answerResultElement = document.getElementById('answerResult' + questionNumber);
-      let correct = false;
-
-      if (userAnswer) {
-        for (const keyword of keywords) {
-          if (userAnswer.toLowerCase().includes(keyword)) {
-            correct = true;
-            break;
-          }
-        }
-        if (correct) {
-          correctAnswerElement.innerHTML = correctAnswerText + '<br/> (키워드 포함: "' + keywords.join(', ') + '")';
-          count++;
-          sessionStorage.setItem("count", count); // count 저장
-
-        } else {
-          correctAnswerElement.innerHTML = '오답입니다. ' + questionNumber + '번 정답은 <br/>' + correctAnswerText;
-        }
-        answerResultElement.style.display = 'block';
-      }
-    }
-
-    function checkAnswer_and(questionNumber, correctAnswerText, keywords) {
-            const userAnswer = document.getElementById('answer' + questionNumber).value;
-            const correctAnswerElement = document.getElementById('correctAnswer' + questionNumber);
-            const answerResultElement = document.getElementById('answerResult' + questionNumber);
-            let correct = true;
-
-            if (userAnswer) {
-                for (const keyword of keywords) {
-                    if (!userAnswer.toLowerCase().includes(keyword.toLowerCase())) {
-                        correct = false;
-                        break;
-                    }
-                }
-                if (correct) {
-                    correctAnswerElement.innerHTML = correctAnswerText + '<br/> (키워드 포함: "' + keywords.join(', ') + '")';
-                    count++;
-                    sessionStorage.setItem("count", count); // count 저장
-
-                } else {
-                    correctAnswerElement.innerHTML = '오답입니다. ' + questionNumber + '번 정답은 <br/>' + correctAnswerText;
-                }
-                answerResultElement.style.display = 'block';
-            }
-        }
-
-    function eraseAnswer(questionNumber) {
-      document.getElementById('correctAnswer' + questionNumber).textContent = '';
-      document.getElementById('answerResult' + questionNumber).style.display = 'none';
-    }
     
 
 
@@ -481,9 +427,7 @@
     
 
 
-    function changePageToMain() {
-    location.href = 'project.html';
-  }
+    
 
 
     

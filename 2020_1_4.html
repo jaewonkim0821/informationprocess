@@ -226,28 +226,29 @@
     <div id="page4" class="page active">
         <div id="question13">
               <p>문제 13: 다음 출력 결과를 쓰시오. </p>
-              <div class="code-slider">
-                <div class="code-slide">
-                  <pre><code>
-                    public class Exam {
-                      public static int[] makeArray(int n ){
-                      
-                        int[] i = new int[n];
-                          for(int i=0; i&lt;n ;i++){
-                            t[i] = i;
-                          }
-                       }
-                      
-                      public static void main(String[] args){
-                        int[] a = makeArray(4);
-                          for(int i=0; i&lt;a.length; i++)
-                            System.out.print(a[i]+&quot;&quot;);
-                        }
-                      
-                    }
-                  </code>
-                  </pre>
-                </div></div>
+              <div class="rounded-rectangle-box">
+                <p>
+                public class Exam {</p>
+                  public static int[] makeArray(int n ){</p>
+                  </p>
+                    int[] i = new int[n];</p>
+                      for(int i=0; i&lt;n ;i++){</p>
+                        t[i] = i;</p>
+                      }</p>
+                   }</p>
+                  
+                  public static void main(String[] args){</p>
+                    int[] a = makeArray(4);</p>
+                      for(int i=0; i&lt;a.length; i++)</p>
+                        System.out.print(a[i]+&quot;&quot;);</p>
+                    }</p>
+                  
+                }
+
+
+              </div>
+                    
+                 
                 
               
         
@@ -261,32 +262,37 @@
         
           <div id="question14">
             <p>문제 14: 다음 출력 결과를 쓰시오. </p>
-            <div class="code-slider">
-              <div class="code-slide">
-                <pre><code>
-                  public class Test {
+            <div class="rounded-rectangle-box">
+              <p>
+                public class Test {</p>
   
-                    public static void main(String[] args) {
-                      
-                      int i=3, k=1;
-                      
-                          switch(i){
-                        case 0: 
-                        case 1: 
-                        case 2: 
-                        case 3: k=0;
-                        case 4: k+=3;
-                        case 5: k-=10;
-                        default: k--;
-                      }
-                          
-                      System.out.println(k);
-                    }
-                      
-                  }
-                </code>
-                </pre>
-              </div></div>
+                  public static void main(String[] args) {</p>
+                    
+                    int i=3, k=1;</p>
+                    
+                        switch(i){</p>
+                      case 0: </p>
+                      case 1: </p>
+                      case 2: </p>
+                      case 3: k=0;</p>
+                      case 4: k+=3;</p>
+                      case 5: k-=10;</p>
+                      default: k--;</p>
+                    }</p>
+                        
+                    System.out.println(k);</p>
+                  }</p>
+                    
+                }</p>
+
+                  
+              </p>
+
+            </div>
+                
+                  
+               
+             
       
               <textarea id="answer14" rows="1" cols="50"></textarea>
   
@@ -368,28 +374,28 @@
     
 
     document.getElementById('checkAnswer13').addEventListener('click', function() {
-      checkAnswer_and(13, '정답: 13. 0 1 2 3', ['0 1 2 3']);
+      checkAnswer_exact(13, '정답: 13. 0 1 2 3', ['0 1 2 3']);
     });
     document.getElementById('eraseAnswer13').addEventListener('click', function() {
       eraseAnswer(13);
     });
 
     document.getElementById('checkAnswer14').addEventListener('click', function() {
-        checkAnswer_and(14, '정답: 14. -8', ['-8']);
+      checkAnswer_exact(14, '정답: 14. -8', ['-8']);
     });
     document.getElementById('eraseAnswer14').addEventListener('click', function() {
       eraseAnswer(14);
     });
 
     document.getElementById('checkAnswer15').addEventListener('click', function() {
-        checkAnswer_and(15, '정답: 15. 헤더', ['헤더']);
+      checkAnswer_exact(15, '정답: 15. 헤더', ['헤더']);
     });
     document.getElementById('eraseAnswer15').addEventListener('click', function() {
       eraseAnswer(15);
     });
 
     document.getElementById('checkAnswer16').addEventListener('click', function() {
-        checkAnswer_and(16, '정답: 16. 20', ['20']);
+      checkAnswer_exact(16, '정답: 16. 20', ['20']);
     });
     document.getElementById('eraseAnswer16').addEventListener('click', function() {
       eraseAnswer(16);
@@ -399,60 +405,7 @@
 
     let count = sessionStorage.getItem("count"); ; // count 받아옴
 
-function checkAnswer(questionNumber, correctAnswerText, keywords) {
-  const userAnswer = document.getElementById('answer' + questionNumber).value;
-  const correctAnswerElement = document.getElementById('correctAnswer' + questionNumber);
-  const answerResultElement = document.getElementById('answerResult' + questionNumber);
-  let correct = false;
 
-  if (userAnswer) {
-    for (const keyword of keywords) {
-      if (userAnswer.toLowerCase().includes(keyword)) {
-        correct = true;
-        break;
-      }
-    }
-    if (correct) {
-      correctAnswerElement.innerHTML = correctAnswerText + '<br/> (키워드 포함: "' + keywords.join(', ') + '")';
-      count++;
-      sessionStorage.setItem("count", count); // count 저장
-
-    } else {
-      correctAnswerElement.innerHTML = '오답입니다. ' + questionNumber + '번 정답은 <br/>' + correctAnswerText;
-    }
-    answerResultElement.style.display = 'block';
-  }
-}
-
-function checkAnswer_and(questionNumber, correctAnswerText, keywords) {
-        const userAnswer = document.getElementById('answer' + questionNumber).value;
-        const correctAnswerElement = document.getElementById('correctAnswer' + questionNumber);
-        const answerResultElement = document.getElementById('answerResult' + questionNumber);
-        let correct = true;
-
-        if (userAnswer) {
-            for (const keyword of keywords) {
-                if (!userAnswer.toLowerCase().includes(keyword.toLowerCase())) {
-                    correct = false;
-                    break;
-                }
-            }
-            if (correct) {
-                correctAnswerElement.innerHTML = correctAnswerText + '<br/> (키워드 포함: "' + keywords.join(', ') + '")';
-                count++;
-                sessionStorage.setItem("count", count); // count 저장
-
-            } else {
-                correctAnswerElement.innerHTML = '오답입니다. ' + questionNumber + '번 정답은 <br/>' + correctAnswerText;
-            }
-            answerResultElement.style.display = 'block';
-        }
-    }
-
-function eraseAnswer(questionNumber) {
-  document.getElementById('correctAnswer' + questionNumber).textContent = '';
-  document.getElementById('answerResult' + questionNumber).style.display = 'none';
-}
 
 
 
@@ -530,9 +483,6 @@ document.querySelectorAll('#menu a').forEach(link => { //메뉴이동 스크립�
 
 
 
-function changePageToMain() {
-location.href = 'project.html';
-}
 
 
 

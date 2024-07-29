@@ -317,7 +317,7 @@
 
 
   document.getElementById('checkAnswer13').addEventListener('click', function() {
-    checkAnswer_and(13, '정답: 13. soap', ['soap']);
+    checkAnswer_exact(13, '정답: 13. soap', ['soap']);
     });
     document.getElementById('eraseAnswer13').addEventListener('click', function() {
       eraseAnswer(13);
@@ -331,14 +331,14 @@
     });
 
     document.getElementById('checkAnswer15').addEventListener('click', function() {
-      checkAnswer_and(15, '정답: 15. 유효성', ['유효성']);
+      checkAnswer_exact(15, '정답: 15. 유효성', ['유효성']);
     });
     document.getElementById('eraseAnswer15').addEventListener('click', function() {
       eraseAnswer(15);
     });
 
     document.getElementById('checkAnswer16').addEventListener('click', function() {
-      checkAnswer_and(16, '정답: 16. chmod 751 a.txt', ['chmod 751 a.txt']);
+      checkAnswer_exact(16, '정답: 16. chmod 751 a.txt', ['chmod 751 a.txt']);
     });
     document.getElementById('eraseAnswer16').addEventListener('click', function() {
       eraseAnswer(16);

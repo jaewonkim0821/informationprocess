@@ -1,0 +1,244 @@
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-color: #ffffff;
+    position: relative;
+}
+
+h1 {
+    font-size: 50px;
+    text-align: center;
+    width: 100%;
+    margin: 100px 0;
+    /* 상단 여백과 하단 여백 설정 */
+}
+
+.userButton {
+    
+    width:80px;
+    height:80px;
+    border-radius: 90px;
+    margin-right:20px;
+    background-color: #ffffff;
+    display: none;
+}
+
+.userImage {
+
+    border: 2px solid #ddd;
+    border-radius: 90px;
+}
+
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    width: 90%;
+    /* 기본 너비 설정 */
+    max-width: 600px;
+    /* 최대 너비 설정 */
+    gap: 20px;
+    /* 각 요소 사이의 간격 조정 */
+}
+
+.container {
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    cursor: pointer;
+    /* 클릭 가능한 커서로 변경 */
+    position: relative;
+}
+
+.ptag {
+    font-size: 20px;
+    padding: 5px;
+    margin-bottom: 10px;
+}
+
+.list {
+    width: 100%;
+    /* 테이블 넓이를 100%로 설정 */
+    border-collapse: collapse;
+    table-layout: fixed;
+    /* 테이블 레이아웃을 고정으로 설정 */
+    display: none;
+    /* 기본적으로 숨기기 */
+    list-style-type: none;
+    padding: 5px;
+    margin: 10px 0 0 0;
+    /* 위쪽 여백 설정 */
+    width: 100%;
+    /* 리스트 넓이를 100%로 설정 */
+}
+
+.list tr {
+    cursor: pointer;
+    border: 1px solid #ddd;
+}
+
+.list td {
+    padding: 5px;
+    border: 1px solid #ddd;
+    /* 테이블 셀에 테두리 추가 */
+}
+
+.list th {
+    background-color: #f2f2f2;
+    text-align: center;
+    padding: 5px;
+    border: 1px solid #ddd;
+    /* 테이블 셀에 테두리 추가 */
+
+}
+
+.tdtitle {
+    width: 400px;
+}
+
+.solv_time {
+    width: 200px;
+    text-align: center;
+}
+.score{
+    width:150px;
+    text-align: center;
+}
+
+.list li {
+    background-color: #f9f9f9;
+    padding: 10px;
+    border: 1px solid #ddd;
+}
+
+.joinTable {
+    width: 280px;
+    height: 550px;
+    margin: auto;
+}
+
+input[type="text"],
+input[type="password"],
+input[type="date"] {
+    width: 100%;
+    height: 26px;
+    font-size: 18px;
+    padding: 5px;
+    margin-bottom: 10px;
+}
+
+input[type="email"] {
+    width: 40%;
+    height: 26px;
+    font-size: 18px;
+    padding: 5px;
+    margin-bottom: 10px;
+}
+
+button {
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    border: none;
+    border-radius: 5px;
+    background-color: #f0f0f0;
+    color: black;
+    margin-right: 10px;
+    margin-bottom: 20px;
+}
+
+a {
+    text-decoration: none;
+    /* 링크 밑줄 제거 */
+    color: inherit;
+    /* 부모 요소의 색상 상속 */
+    font-weight: normal;
+    /* 기본 글씨 두께 설정 */
+    transition: color 0.3s, font-weight 0.3s;
+    /* 색상 및 글씨 두께 변경에 애니메이션 추가 */
+}
+
+.emailSelect {
+
+    width: 120px;
+    height: 32px;
+    font-size: 15px;
+    border: 1;
+    outline: none;
+    padding-left: 10px;
+}
+
+a:hover {
+    text-decoration-line: underline;
+    color: blue;
+    transition: color 0.3s, font-weight 0.3s;
+}
+
+.top-right {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    max-width: 300px;
+}
+
+#loginMenu {
+    display: none;
+    background-color: #fff;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin-top: 10px;
+    z-index: 2;
+}
+
+#joinMenu {
+    display: none;
+    background-color: #fff;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin-top: 40px;
+    z-index: 3;
+}
+
+#userMenu{
+    
+    display: none;
+    background-color: #fff;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin-top: 10px;
+    z-index: 3;
+    min-width: 300px;
+}
+.logout{
+    text-align:right;
+    margin-bottom:10px;
+}
+.userInfo{
+    display:flex;
+}
+.userInfo div{
+    padding-bottom: 10px;
+    flex-direction: column;
+    justify-content: center;
+}
+.userInfo img{
+    width: 80px;
+    height:80px;
+    border-radius:50%;
+    margin:20px;
+    
+}

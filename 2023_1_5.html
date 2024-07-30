@@ -1,0 +1,407 @@
+
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <style>
+        table {
+        width: 80%;
+        border-collapse: collapse;
+    }
+    th, td {
+        border: 1px solid black;
+        padding: 8px;
+        text-align: left;
+    }
+    th {
+        background-color: #f2f2f2;
+    }
+
+    </style>
+    
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>[2023년 1회] 정보처리기사 기출문제</title>
+  <link rel='stylesheet' href="information.css">
+</head>
+<body>
+  <div id="timer2">제한시간:02:30:00</div>
+
+  <div id="timer">02:30:00</div>
+  <button id="menuOpen">메뉴</button>
+  <div id="menu">
+    <button id="menuButton">메뉴</button>
+    <p><br></p>
+    <div class="mainmenu" id="2020년">
+      <a  href='#2020_1_1.html' class = "mainmenu" id="2020년">[2020년 기출문제]</a>
+        </div>
+        <div class="submenu">
+        <a href="2020_1_1.html#question1" id="menu1">[2020년 1회 기출]</a>
+        <a href="2020_2_1.html#question5" id="menu2">[2020년 2회 기출]</a>
+        <a href="2020_3_1.html#question9" id="menu3">[2020년 3회 기출]</a>
+        <a href="2020_4_1.html#question13" id="menu4">[2020년 4회 기출]</a>
+        </div>
+      <p><br></p>
+    
+  
+      <div class="mainmenu" id="2021년">
+        <a  href='#2021_1_1.html' class = "mainmenu" id="2021년">[2021년 기출문제]</a>
+          </div>
+          <div class="submenu">
+          <a href="2021_1_1.html#question1" id="menu5">[2021년 1회 기출]</a>
+          <a href="2021_2_1.html#question5" id="menu6">[2021년 2회 기출]</a>
+          <a href="2021_3_1.html#question9" id="menu7">[2021년 3회 기출]</a>
+          <a href="2021_4_1.html#question13" id="menu8">[2021년 4회 기출]</a>
+          </div>
+        <p><br></p>
+  
+        <div class="mainmenu" id="2022년">
+          <a  href='#2022_1_1.html' class = "mainmenu" id="2022년">[2022년 기출문제]</a>
+            </div>
+            <div class="submenu">
+            <a href="2022_1_1.html#question1" id="menu9">[2022년 1회 기출]</a>
+            <a href="2022_2_1.html#question5" id="menu10">[2022년 2회 기출]</a>
+            <a href="2022_3_1.html#question9" id="menu11">[2022년 3회 기출]</a>
+            <a href="2022_4_1.html#question13" id="menu12">[2022년 4회 기출]</a>
+            </div>
+          <p><br></p>
+        
+      
+          <div class="mainmenu" id="2023년">
+            <a  href='#2023_1_1.html' class = "mainmenu" id="2023년">[2023년 기출문제]</a>
+              </div>
+              <div class="submenu">
+              <a href="2023_1_1.html#question1" id="menu13">[2023년 1회 기출]</a>
+              <a href="2023_2_1.html#question5" id="menu14">[2023년 2회 기출]</a>
+              <a href="2023_3_1.html#question9" id="menu15">[2023년 3회 기출]</a>
+              <a href="2023_4_1.html#question13" id="menu16">[2023년 4회 기출]</a>
+              </div>
+            <p><br></p>
+    </div>
+  </div>
+    
+    
+    
+
+  <div id="main-content">
+    <h1>[2023년 1회] 정보처리기사 기출문제</h1>
+    <button onclick="changePageToMain()">메인 메뉴로 돌아가기</button>
+    <div id="page1" class="page active">
+      
+      <div id="question17">
+        <p>문제 17:  다음 JAVA 코드에서 알맞는 출력 값을 작성하시오.</p>
+        <div class="rounded-rectangle-box">
+            <p>
+                abstact class Vehicle {</p>
+ 
+                    String name;</p>
+                    abstract public String getName(String val);</p>
+                 
+                    public String getName() {</p>
+                            return "Vehicle name: " + name;</p>
+                    }</p>
+                }</p>
+                 
+                 
+                 
+                class Car extends Vehicle {</p>
+                 
+                    public Car(String val) {</p>
+                            name=super.name=val;</p>
+                    }</p>
+                 
+                    public String getName(String val) {</p>
+                            return "Car name:" + val;</p>
+                    }</p>
+                 
+                    public String getName(byte val[]) {</p>
+                            return "Car name:" + val;</p>
+                    }</p>
+                }</p>
+                 
+                 
+                public class Main {</p>
+                 
+                    public static void main(String[] args) {</p>
+                    </p>
+                    Vehicle obj = new Car("Spark");</p>
+                    System.out.println(obj.getName());</p>
+                 
+                    }</p>
+                }
+
+            </p>
+        </div>
+        
+        
+        <textarea id="answer17" rows="3" cols="50"></textarea>
+      </div>
+      <button id="checkAnswer17">정답 확인</button>
+      <button id="eraseAnswer17">정답 지우기</button>
+      <div id="answerResult17">
+        <p id="correctAnswer17"></p>
+      </div>
+  
+      <div id="question18">
+        <thead>
+
+            <tr>
+                <th style="width:100px;">구분</th>
+                <th style="max-width: 100px;">내용</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>()스키마</td>
+                <td style="text-align:left;">
+                    - 사용자나 응용 프로그래머가 개인의 입장에서 필요한 데이터베이스의 논리적 구조를 정의한다.<br>
+                    - 전체 데이터베이스의 한 논리적인 부분으로 볼 수 있기 때문에 서브 스키마라고도 한다.<br>
+                    - 하나의 데이터베이스 시스템에는 여러 개의 외부 스키마가 존재할 수 있다.<br>
+                    - 기관이나 조직체의 관점에서 데이터베이스를 정의한 것이다
+                </td>
+            </tr>
+            <tr>
+                <td>()스키마</td>
+                <td style="text-align:left;">
+                       - 데이터베이스의 전체적인 논리적 구조로, 모든 응용 프로그램이나 사용자들이 필요로 하는 데이터를 종합한 조직 전체의 데이터베이스로 하나만 존재한다.<br>
+                    - 개체 간의 관계(Relationship)와 제약 조건을 나타내고 데이터베이스의 접근 권한, 보안 및 무결성 규칙에 관한 명세를 정의한다.<br>
+                    - 데이터베이스 파일에 저장되는 데이터의 형태를 나타내는 것이다.<br>
+                    - 짧은 메시지의 패킷들을 전송할 때 효과적이고 재정렬 기능이 필요하다.
+                </td>
+            </tr>
+            <tr>
+                <td>()스키마</td>
+                <td style="text-align:left;">
+                    - 물리적인 저장장치 입장에서 데이터가 저장되는 방법을 기술한 것이다.<br>
+                    - 실제 데이터베이스에 저장될 레코드의 물리적인 구조를 정의한다. <br>
+                    - 저장 데이터 항목의 표현방법, 내부 레코드의 물리적 순서, 인덱스 유/무 등을 나타낸다.<br>
+                    - 시스템 프로그래머나 시스템 설계자가 관리한다.
+                </td>
+            </tr>
+        </tbody>
+ 
+        <textarea id="answer18" rows="3" cols="50"></textarea>
+      </div>
+      <button id="checkAnswer18">정답 확인</button>
+      <button id="eraseAnswer18">정답 지우기</button>
+      <div id="answerResult18">
+        <p id="correctAnswer18"></p>
+      </div>
+  
+      <div id="question19">
+        <p>문제 19: 다음 아래 제어 흐름 그래프가 분기 커버리지를 만족하기 위한 테스팅 순서를 쓰시오.</p>
+        <img src="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FbQZ756%2FbtscHlK9JMg%2Fp6HegekRsqNyGq0RKyJ8X1%2Fimg.png">
+
+         
+        <textarea id="answer19" rows="3" cols="50"></textarea>
+      </div>
+      <button id="checkAnswer19">정답 확인</button>
+      <button id="eraseAnswer19">정답 지우기</button>
+      <div id="answerResult19">
+        <p id="correctAnswer19"></p>
+      </div>
+  
+      <div id="question20">
+        <p>문제 20: 다음 자바 코드에 대한 출력 값을 작성하시오.</p>
+        <div class="rounded-rectangle-box">
+            <p>
+                class Parent {</p>
+                    int x = 100;v</p>
+                 
+                    Parent() {</p>
+                        this(500);</p>
+                    }</p>
+                 
+                    Parent(int x) {</p>
+                        this.x = x;</p>
+                    }</p>
+                 
+                    int getX() {</p>
+                        return x;</p>
+                    }</p>
+                }</p>
+                 
+                class Child extends Parent {</p>
+                    int x = 4000;</p>
+                    
+                    Child() {</p>
+                        this(5000);</p>
+                    }</p>
+                 
+                    Child(int x) {</p>
+                        this.x = x;</p>
+                    }</p>
+                }</p>
+                 
+                public class Main {</p>
+                    public static void main(String[] args) {</p>
+                        Child obj = new Child();</p>
+                        System.out.println(obj.getX());</p>
+                    }</p>
+                }</p>
+                
+                
+            </p>
+        </div>
+
+        <textarea id="answer20" rows="3" cols="50"></textarea>
+      </div>
+      <button id="checkAnswer20">정답 확인</button>
+      <button id="eraseAnswer20">정답 지우기</button>
+      <div id="answerResult20">
+        <p id="correctAnswer20"></p>
+      </div>
+      
+      <button id="prevPage55" >이전</button>
+      <button color = red id="submit">제출</button>
+  
+      
+    </div>
+
+    
+
+
+    <script src="information.js"></script>
+    <script>
+
+    const pages = document.querySelectorAll('.page');
+    let currentPage = 55;
+    
+
+    
+
+    document.getElementById('prevPage55').addEventListener('click', () => {
+      window.location.href = '2023_1_4.html';
+        window.scrollTo(0, 0); // 페이지 전환 시 맨 위로 스크롤
+    });
+
+
+    document.getElementById('checkAnswer17').addEventListener('click', function() {
+      checkAnswer_exact(17, '정답: 1.관계, 2.클래스, 3. 인터페이스', ['관계 클래스 인터페이스']);
+    });
+    document.getElementById('eraseAnswer17').addEventListener('click', function() {
+      eraseAnswer(17);
+    });
+
+    document.getElementById('checkAnswer18').addEventListener('click', function() {
+      checkAnswer_exact(18, '정답: 1. 실선 (ㄷ),2. 관계집합 (ㅂ),3. 점선 (ㄹ),4. 관계집합의 속성 (ㄴ),5.  개체집합 (ㄱ)', ['실선 관계집합 점선 관계집합의 속성 개체집합']);
+    });
+    document.getElementById('eraseAnswer18').addEventListener('click', function() {
+      eraseAnswer(18);
+    });
+
+    document.getElementById('checkAnswer19').addEventListener('click', function() {
+      checkAnswer_exact(19, '정답: 0123', ['0123']);
+    });
+    document.getElementById('eraseAnswer19').addEventListener('click', function() {
+      eraseAnswer(19);
+    });
+
+    document.getElementById('checkAnswer20').addEventListener('click', function() {
+      checkAnswer_exact(20, '정답: 993', ['993']);
+    });
+    document.getElementById('eraseAnswer20').addEventListener('click', function() {
+      eraseAnswer(20);
+    });
+
+
+    let count = sessionStorage.getItem("count"); ; // count 받아옴
+
+    
+
+
+    document.addEventListener('DOMContentLoaded', function () {
+    // 타이머 설정
+    let totalTime = sessionStorage.getItem("totalTime");
+    totalTime = totalTime ? parseInt(totalTime, 10) : 0; // totalTime 초기화
+
+    if (window.location.pathname.endsWith('project.html')) {
+            // 세션 스토리지에서 textarea 데이터 제거
+            document.querySelectorAll('textarea').forEach(textarea => {
+                sessionStorage.removeItem(textarea.id);
+            });
+        }
+
+    
+        // textarea의 상태를 로컬 스토리지에서 복원합니다.
+        document.querySelectorAll('textarea').forEach(textarea => {
+            const savedValue = sessionStorage.getItem(textarea.id);
+            if (savedValue) {
+                textarea.value = savedValue;
+            }
+
+            // 사용자가 입력하는 내용을 로컬 스토리지에 저장합니다.
+            textarea.addEventListener('input', function() {
+                sessionStorage.setItem(textarea.id, this.value);
+            });
+        });
+    
+
+    function updateTimer() {
+      
+        const timerElement = document.getElementById('timer'); //타이머
+        const hours = Math.floor(totalTime / 3600); //시간
+        const minutes = Math.floor((totalTime % 3600) / 60);
+        const seconds = totalTime % 60;
+
+        timerElement.textContent = 
+            `경과시간:${hours.toString().padStart(2, '0')}:${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
+
+        if (totalTime < 2 * 60 * 60 + 30 * 60) { //제한시간 2시간 반
+            totalTime++;
+            sessionStorage.setItem("totalTime", totalTime); // totalTime 저장
+            setTimeout(updateTimer, 1000); //1초씩 흘러감
+        } else {
+            
+            alert(`제한시간이 경과되었습니다 ${count * 5}점 입니다.`);
+        }
+    }
+
+    updateTimer();
+    document.getElementById('submit').addEventListener('click', function() {
+        sessionStorage.setItem('totalTime', totalTime);
+        sessionStorage.setItem('score', count*5);
+        if(count*5>=60){
+            alert('제출 완료! 남은 시간이 저장되었습니다. '+ count*5+'점 입니다. 합격입니다. 축하드립니다.');
+
+        }
+        else{
+            alert('제출 완료! 남은 시간이 저장되었습니다. '+ count*5+'점 입니다. 불합격입니다.');
+
+        }
+        const textareas = document.querySelectorAll('textarea');
+        textareas.forEach(textarea => {
+        textarea.value = '';
+    });
+
+        
+    });
+
+    
+
+    
+
+    document.querySelectorAll('#menu a').forEach(link => { //메뉴이동 스크립트
+        link.addEventListener('click', function(event) {
+            const href = this.getAttribute('href');
+            window.location.href = href;
+        });
+    });
+
+
+
+
+        document.getElementById('menuButton').addEventListener('click', function() {
+      const menu = document.getElementById('menu');
+      
+      menu.style.display = menu.style.display === 'none' ? 'flex' : 'none';
+      
+    });
+  });
+
+
+    
+  </script>
+    
+  
+</body>
+</html>

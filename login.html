@@ -40,48 +40,48 @@
             </div>
         </div>
     </div>
-    <div id="joinMenu" class="top-right">
-            <table class="joinTable">
+    <div id="userInformMenu" class="center">
+            <table class="userInformTable">
                 <tr>
                     <td>
-                        <h2>회원가입</h2>
+                        <h2>회원정보</h2>
                     </td>
                 </tr>
                 <tr>
                     <td>아이디</td>
                 </tr>
                 <tr>
-                    <td><input type="text" class="text" id="joinId"></td>
+                    <td><input type="text" class="text" id="userInformId"></td>
                 </tr>
                 <tr>
                     <td>비밀번호</td>
                 </tr>
                 <tr>
-                    <td><input type="password" class="text" id="joinPwd"></td>
+                    <td><input type="password" class="text" id="userInformPwd"></td>
                 </tr>
                 <tr>
                     <td>비밀번호 확인</td>
                 </tr>
                 <tr>
-                    <td><input type="password" class="text" id="joinPwdChk"></td>
+                    <td><input type="password" class="text" id="userInformPwdChk"></td>
                 </tr>
                 <tr>
                     <td>이름</td>
                 </tr>
                 <tr>
-                    <td><input type="text" class="text" id="joinName"></td>
+                    <td><input type="text" class="text" id="userInformName"></td>
                 </tr>
                 <tr>
                     <td>생년월일</td>
                 </tr>
                 <tr>
-                    <td><input type="date" class="text" id="joinBirthDate"></td>
+                    <td><input type="date" class="text" id="userInformBirthDate"></td>
                 </tr>
                 <tr>
                     <td>이메일</td>
                 </tr>
                 <tr>
-                    <td><input type="email" class="email" id="joinEmail"> @
+                    <td><input type="email" class="email" id="userInformEmail"> @
                         <select class="emailSelect" id="email-select" name="email-select" onchange="addEmail()">
                             <option>선택</option>
                             <option>naver.com</option>
@@ -93,7 +93,7 @@
                 </tr>
                 <tr>
                     <td><input type="submit" value="가입하기" class="btn" onclick="join()">
-                        <a id="joinClose" style="float: right; margin: 10px;" href="javascript:void(0);">닫기</a>
+                        <a id="userInformClose" style="float: right; margin: 10px;" href="javascript:void(0);">닫기</a>
                     </td>
                 </tr>
             </table>
@@ -189,28 +189,106 @@
             <thead>
                 <tr>
                     <th class="tdtitle">강의명</th>
+                    <th class="solv_time">풀이 시간</th>
+                    <th class="score">점수</th>
                 </tr>
             </thead>
             <tbody>
                 <tr>
-                    <td class="tdtitle"><a href="" target="_blank">[C언어] 정보처리기사 실기 기출</a></td>
+                    <td class="tdtitle"><a href="subject.html?subject=c" target="_blank">[C언어] 정보처리기사 실기 기출</a></td>
+                    <td class="solv_time"></td>
+                    <td class="score"></td>
                 </tr>
                 <tr>
-                    <td class="tdtitle"><a href="" target="_blank">[JAVA] 정보처리기사 실기 기출</a></td>
+                    <td class="tdtitle"><a href="subject.html?subject=java" target="_blank">[JAVA] 정보처리기사 실기 기출</a></td>
+                    <td class="solv_time"></td>
+                    <td class="score"></td>
                 </tr>
                 <tr>
-                    <td class="tdtitle"><a href="" target="_blank">[PYTHON] 정보처리기사 실기 기출</a></td>
+                    <td class="tdtitle"><a href="subject.html?subject=python" target="_blank">[PYTHON] 정보처리기사 실기 기출</a></td>
+                    <td class="solv_time"></td>
+                    <td class="score"></td>
                 </tr>
                 <tr>
-                    <td class="tdtitle"><a href="" target="_blank">[데이터베이스] 정보처리기사 실기 기출</a></td>
+                    <td class="tdtitle"><a href="subject.html?subject=db" target="_blank">[데이터베이스] 정보처리기사 실기 기출</a></td>
+                    <td class="solv_time"></td>
+                    <td class="score"></td>
                 </tr>
             </tbody>
         </table>
     </div>
 </body>
 <script src="user.js"></script>
-<script src="mainstyle.js"></script>
+
 <script>
+    const loginButton = document.getElementById("loginButton");
+    const userButton = document.getElementById("userButton");
+    const userMenu = document.getElementById("userMenu");
+    const loginMenu = document.getElementById('loginMenu');
+    const userInformMenu = document.getElementById('userInformMenu');
+
+    const userInformClose = document.getElementById('userInformClose')
+
+    
+    let userName = document.getElementById('userName');
+    let userEmail = document.getElementById('userEmail');
+
+    
+    // const savedUsername = localStorage.getItem('users');
+    // if(savedUsername === null){
+    //     localStorage.setItem('users',JSON.stringify(User.items));
+    //     console.log(JSON.parse(localStorage.getItem('users')));
+    // }
+
+    window.onload = function(){
+        
+
+        var loggedInUser = JSON.parse(sessionStorage.getItem('loggedInUser'));
+                console.log(loggedInUser.id+loggedInUser.name+loggedInUser.email);
+        // loggedInUser = sessionStorage.getItem('loggedInUser');
+        // console.log(loggedInUser);
+        // var storedLoggedInUser = JSON.parse(sessionStorage.getItem('loggedInUser'));
+                // storedlUsers.forEach(user =>{
+                //     console.log(user.name);
+                //     userName.textContent = user.name;
+                //     userEmail.textContent = loggedInUser.email;
+                // });
+                
+
+                userName.textContent = loggedInUser.name;
+                userEmail.textContent = loggedInUser.email;
+    }
+
+
+    function toggleList(container, listId) {
+        const list = document.getElementById(listId);
+        list.style.display = list.style.display === 'none' || list.style.display === '' ? 'block' : 'none';
+    };
+    
+    function userInformation(){
+        userInformMenu.style.display = userInformMenu.style.display === 'none' || userInformMenu.style.display === '' ? 'block' : 'none';
+    }
+    
+    userInformClose.addEventListener('click',function(){
+        userInformMenu.style.display = 'none';
+    })
+    
+    function logout(){
+
+        window.location.href = "project.html";
+
+    }
+
+    userButton.addEventListener('click',function(){
+        if(userMenu.style.display === 'none'){
+            userMenu.style.display = 'block';
+            userInformMenu.style.display = 'none';
+        } else {
+            userMenu.style.display = 'none';
+            userInformMenu.style.display = 'none';
+        }
+
+    });
     document.addEventListener('DOMContentLoaded', function() {
     // 저장된 세션 데이터를 가져옵니다
     const allSessionData = {
@@ -288,78 +366,10 @@
         }
     });
 });
-/*
-            else if(titleLink ==='2020_2_1.html') {
-                row.querySelector('.solv_time').innerHTML = totalTime+'초';
-                row.querySelector('.score').innerHTML = score+'점';
-            }
-            
-            else if(titleLink === '2020_3_1.html') {
-                row.querySelector('.solv_time').innerHTML = totalTime+'초';
-                row.querySelector('.score').innerHTML = score+'점';
-            } 
-            else if(titleLink === '2020_4_1.html') {
-                row.querySelector('.solv_time').innerHTML = totalTime+'초';
-                row.querySelector('.score').innerHTML = score+'점';
-            } 
-            
 
-            else if(titleLink === '2021_1_1.html') {
-                row.querySelector('.solv_time').innerHTML = totalTime+'초';
-                row.querySelector('.score').innerHTML = score+'점';
-            }
-            else if(titleLink === '2021_2_1.html') {
-                row.querySelector('.solv_time').innerHTML = totalTime+'초';
-                row.querySelector('.score').innerHTML = score+'점';
-            } 
-            else if(titleLink === '2021_3_1.html') {
-                row.querySelector('.solv_time').innerHTML = totalTime+'초';
-                row.querySelector('.score').innerHTML = score+'점';
-            }
+    
 
 
-
-            else if(titleLink === '2022_1_1.html') {
-                row.querySelector('.solv_time').innerHTML = totalTime+'초';
-                row.querySelector('.score').innerHTML = score+'점';
-            }
-            else if(titleLink === '2022_2_1.html') {
-                row.querySelector('.solv_time').innerHTML = totalTime+'초';
-                row.querySelector('.score').innerHTML = score+'점';
-            } 
-            else if(titleLink === '2022_3_1.html') {
-                row.querySelector('.solv_time').innerHTML = totalTime+'초';
-                row.querySelector('.score').innerHTML = score+'점';
-            } 
-
-
-            else if(titleLink === '2023_1_1.html') {
-                row.querySelector('.solv_time').innerHTML = totalTime+'초';
-                row.querySelector('.score').innerHTML = score+'점';
-            }
-            else if(titleLink === '2023_2_1.html') {
-                row.querySelector('.solv_time').innerHTML = totalTime+'초';
-                row.querySelector('.score').innerHTML = score+'점';
-            } 
-            else if(titleLink === '2023_3_1.html') {
-                row.querySelector('.solv_time').innerHTML = totalTime+'초';
-                row.querySelector('.score').innerHTML = score+'점';
-            } 
-                */
-                
-            //else {
-                // 다른 행은 빈 값으로 유지
-                //row.querySelector('.solv_time').innerHTML = ' ';
-               // row.querySelector('.score').innerHTML = ' ';
-           // }
-        
-        //rows.forEach(row => {
-            //const solvTimeCell = row.querySelector('.solv_time');
-            //const scoreCell = row.querySelector('.score');
-            //if (solvTimeCell && scoreCell) {
-                //solvTimeCell.innerHTML = totalTime;
-                //scoreCell.innerHTML = score;
-            //}
 
 </script>
 

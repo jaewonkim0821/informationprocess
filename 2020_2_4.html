@@ -9,6 +9,8 @@
 
 </head>
 <body>
+  <div id="id"></div>
+
   <div id="timer2">제한시간:02:30:00</div>
 
     <div id="timer">02:30:00</div>
@@ -219,64 +221,20 @@
     
     let count = sessionStorage.getItem("count"); ; // count 받아옴
 
-function checkAnswer(questionNumber, correctAnswerText, keywords) {
-  const userAnswer = document.getElementById('answer' + questionNumber).value;
-  const correctAnswerElement = document.getElementById('correctAnswer' + questionNumber);
-  const answerResultElement = document.getElementById('answerResult' + questionNumber);
-  let correct = false;
-
-  if (userAnswer) {
-    for (const keyword of keywords) {
-      if (userAnswer.toLowerCase().includes(keyword)) {
-        correct = true;
-        break;
-      }
-    }
-    if (correct) {
-      correctAnswerElement.innerHTML = correctAnswerText + '<br/> (키워드 포함: "' + keywords.join(', ') + '")';
-      count++;
-      sessionStorage.setItem("count", count); // count 저장
-
-    } else {
-      correctAnswerElement.innerHTML = '오답입니다. ' + questionNumber + '번 정답은 <br/>' + correctAnswerText;
-    }
-    answerResultElement.style.display = 'block';
-  }
-}
-
-function checkAnswer_and(questionNumber, correctAnswerText, keywords) {
-        const userAnswer = document.getElementById('answer' + questionNumber).value;
-        const correctAnswerElement = document.getElementById('correctAnswer' + questionNumber);
-        const answerResultElement = document.getElementById('answerResult' + questionNumber);
-        let correct = true;
-
-        if (userAnswer) {
-            for (const keyword of keywords) {
-                if (!userAnswer.toLowerCase().includes(keyword.toLowerCase())) {
-                    correct = false;
-                    break;
-                }
-            }
-            if (correct) {
-                correctAnswerElement.innerHTML = correctAnswerText + '<br/> (키워드 포함: "' + keywords.join(', ') + '")';
-                count++;
-                sessionStorage.setItem("count", count); // count 저장
-
-            } else {
-                correctAnswerElement.innerHTML = '오답입니다. ' + questionNumber + '번 정답은 <br/>' + correctAnswerText;
-            }
-            answerResultElement.style.display = 'block';
-        }
-    }
-
-function eraseAnswer(questionNumber) {
-  document.getElementById('correctAnswer' + questionNumber).textContent = '';
-  document.getElementById('answerResult' + questionNumber).style.display = 'none';
-}
 
 
 
 document.addEventListener('DOMContentLoaded', function () {
+  // 페이지 로드 시 세션 데이터를 복원합니다.
+  const savedSessionData = sessionStorage.getItem("sessionData2");
+    if (savedSessionData) {
+        const parsedSessionData = JSON.parse(savedSessionData);
+        loginId = parsedSessionData.loginId;
+        totalTime = parsedSessionData.totalTime;
+        count = parsedSessionData.count;
+    }
+
+    
 // 타이머 설정
 let totalTime = sessionStorage.getItem("totalTime");
 totalTime = totalTime ? parseInt(totalTime, 10) : 0; // totalTime 초기화
@@ -345,6 +303,18 @@ document.querySelectorAll('#menu a').forEach(link => { //메뉴이동 스크립�
   menu.style.display = menu.style.display === 'none' ? 'flex' : 'none';
   
 });
+
+// 데이터를 세션 스토리지에 저장하는 함수
+function saveSessionData() {
+        const sessionData = {
+            loginId,
+            totalTime,
+            count
+        };
+        sessionStorage.setItem("sessionData2", JSON.stringify(sessionData));
+    }
+
+
 });
 
 

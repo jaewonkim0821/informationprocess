@@ -12,6 +12,8 @@
   </style>
 </head>
 <body>
+  <div id="id"></div>
+
   <div id="timer2">제한시간:02:30:00</div>
 
     <div id="timer">02:30:00</div>
@@ -210,7 +212,7 @@ const pages = document.querySelectorAll('.page');
 
   
 
-  let count = sessionStorage.getItem("count"); ; // count 받아옴
+  let count = 0; // count 받아옴
 
     
 
@@ -221,7 +223,20 @@ const pages = document.querySelectorAll('.page');
 
     
     document.addEventListener('DOMContentLoaded', function () {
-    // 타이머 설정
+      const loginId = JSON.parse(sessionStorage.getItem("loggedInUser"));
+
+  if(loginId){
+      function updateloginId(){
+      const idelement = document.getElementById('id'); //아이디
+      idelement.textContent = 'ID:'+loginId.id;
+
+    }
+    updateloginId();
+
+    }
+    
+    
+      // 타이머 설정
     let totalTime = 0;
     totalTime = totalTime ? parseInt(totalTime, 10) : 0; // totalTime 초기화
 
@@ -289,6 +304,16 @@ const pages = document.querySelectorAll('.page');
       menu.style.display = menu.style.display === 'none' ? 'flex' : 'none';
       
     });
+
+
+    function saveSessionData() {
+        const sessionData = {
+            loginId,
+            totalTime,
+            count
+        };
+        sessionStorage.setItem("sessionData2", JSON.stringify(sessionData));
+    }
   });
 
     

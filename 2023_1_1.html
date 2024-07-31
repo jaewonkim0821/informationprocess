@@ -8,6 +8,8 @@
   <link rel='stylesheet' href="information.css">
 </head>
 <body>
+  <div id="id"></div>
+
   <div id="timer2">제한시간:02:30:00</div>
   <div id="timer">02:30:00</div>
   <button id="menuOpen">메뉴</button>
@@ -281,73 +283,26 @@
     });
 
 
-    let count = sessionStorage.getItem("count"); ; // count 받아옴
-
-    function checkAnswer(questionNumber, correctAnswerText, keywords) {
-      const userAnswer = document.getElementById('answer' + questionNumber).value;
-      const correctAnswerElement = document.getElementById('correctAnswer' + questionNumber);
-      const answerResultElement = document.getElementById('answerResult' + questionNumber);
-      console.log(userAnswer);
-      let correct = false;
-
-      if (userAnswer) {
-        for (const keyword of keywords) {
-          if (userAnswer.toLowerCase().includes(keyword)) {
-            correct = true;
-            break;
-          }
-        }
-        if (correct) {
-          correctAnswerElement.innerHTML = correctAnswerText + '<br/> (키워드 포함: "' + keywords.join(', ') + '")';
-          count++;
-          sessionStorage.setItem("count", count); // count 저장
-
-        } else {
-          correctAnswerElement.innerHTML = '오답입니다. ' + questionNumber + '번 정답은 <br/>' + correctAnswerText;
-        }
-        answerResultElement.style.display = 'block';
-      }
-    }
-
-    function checkAnswer_and(questionNumber, correctAnswerText, keywords) {
-            const userAnswer = document.getElementById('answer' + questionNumber).value;
-            const correctAnswerElement = document.getElementById('correctAnswer' + questionNumber);
-            const answerResultElement = document.getElementById('answerResult' + questionNumber);
-
-            let correct = true;
-
-            if (userAnswer) {
-                for (const keyword of keywords) {
-                    if (!userAnswer.toLowerCase().includes(keyword.toLowerCase())) {
-                        correct = false;
-                        break;
-                    }
-                }
-                if (correct) {
-                    correctAnswerElement.innerHTML = correctAnswerText + '<br/> (키워드 포함: "' + keywords.join(', ') + '")';
-                    count++;
-                    sessionStorage.setItem("count", count); // count 저장
-
-                } else {
-                    console.log(keywords);
-                    console.log(userAnswer);
-                    correctAnswerElement.innerHTML = '오답입니다. ' + questionNumber + '번 정답은 <br/>' + correctAnswerText;
-                }
-                answerResultElement.style.display = 'block';
-            }
-        }
-
-    function eraseAnswer(questionNumber) {
-      document.getElementById('correctAnswer' + questionNumber).textContent = '';
-      document.getElementById('answerResult' + questionNumber).style.display = 'none';
-    }
-    
+    let count = 0; // count 받아옴
 
 
     document.addEventListener('DOMContentLoaded', function () {
     // 타이머 설정
-    let totalTime = sessionStorage.getItem("totalTime");
+    const loginId = sessionStorage.getItem("loginId");
+    // 아이디 받아오기
+    function updateloginId(){
+      const idelement = document.getElementById('id'); //아이디
+      idelement.textContent = 'ID:'+loginId;
+
+    }
+    updateloginId();
+    
+
+
+    let totalTime = 0;
     totalTime = totalTime ? parseInt(totalTime, 10) : 0; // totalTime 초기화
+
+    
 
     if (window.location.pathname.endsWith('project.html')) {
             // 세션 스토리지에서 textarea 데이터 제거
@@ -374,9 +329,11 @@
     function updateTimer() {
       
         const timerElement = document.getElementById('timer'); //타이머
+        
         const hours = Math.floor(totalTime / 3600); //시간
         const minutes = Math.floor((totalTime % 3600) / 60);
         const seconds = totalTime % 60;
+        
 
         timerElement.textContent = 
             `경과시간:${hours.toString().padStart(2, '0')}:${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
@@ -407,20 +364,29 @@
 
 
 
-        document.getElementById('menuButton').addEventListener('click', function() {
+    document.getElementById('menuButton').addEventListener('click', function() {
       const menu = document.getElementById('menu');
       
       menu.style.display = menu.style.display === 'none' ? 'flex' : 'none';
       
     });
+
+
+    // 데이터를 세션 스토리지에 저장하는 함수
+    function saveSessionData() {
+        const sessionData = {
+            loginId,
+            totalTime,
+            count
+        };
+        sessionStorage.setItem("sessionData11", JSON.stringify(sessionData));
+    }
   });
 
     
 
 
-    function changePageToMain() {
-    location.href = 'project.html';
-  }
+    
 
 
     

@@ -9,6 +9,8 @@
 
 </head>
 <body>
+  <div id="id"></div>
+
   <div id="timer2">제한시간:02:30:00</div>
 
   <div id="timer">02:30:00</div>
@@ -259,92 +261,135 @@
 
 
     document.addEventListener('DOMContentLoaded', function () {
-    // 타이머 설정
-    let totalTime = sessionStorage.getItem("totalTime");
-    totalTime = totalTime ? parseInt(totalTime, 10) : 0; // totalTime 초기화
 
-    if (window.location.pathname.endsWith('project.html')) {
-            // 세션 스토리지에서 textarea 데이터 제거
-            document.querySelectorAll('textarea').forEach(textarea => {
-                sessionStorage.removeItem(textarea.id);
-            });
-        }
+// 페이지 로드 시 세션 데이터를 복원합니다.
+const savedSessionData = sessionStorage.getItem("sessionData5");
+if (savedSessionData) {
+  const parsedSessionData = JSON.parse(savedSessionData);
+  loginId = parsedSessionData.loginId;
+  totalTime = parsedSessionData.totalTime;
+  score = parsedSessionData.score;
 
-    
-        // textarea의 상태를 로컬 스토리지에서 복원합니다.
-        document.querySelectorAll('textarea').forEach(textarea => {
-            const savedValue = sessionStorage.getItem(textarea.id);
-            if (savedValue) {
-                textarea.value = savedValue;
-            }
+  // 테이블에 데이터 추가
+  const rows = document.querySelectorAll('tbody tr');
+  rows.forEach(row => {
+      const solvTimeCell = row.querySelector('.solv_time');
+      const scoreCell = row.querySelector('.score');
+      if (solvTimeCell && scoreCell) {
+          solvTimeCell.innerHTML = totalTime;
+          scoreCell.innerHTML = score;
+      }
+  });
 
-            // 사용자가 입력하는 내용을 로컬 스토리지에 저장합니다.
-            textarea.addEventListener('input', function() {
-                sessionStorage.setItem(textarea.id, this.value);
-            });
-        });
-    
+}
 
-    function updateTimer() {
-      
-        const timerElement = document.getElementById('timer'); //타이머
-        const hours = Math.floor(totalTime / 3600); //시간
-        const minutes = Math.floor((totalTime % 3600) / 60);
-        const seconds = totalTime % 60;
+// 타이머 설정
+let totalTime = sessionStorage.getItem("totalTime");
+totalTime = totalTime ? parseInt(totalTime, 10) : 0; // totalTime 초기화
 
-        timerElement.textContent = 
-            `경과시간:${hours.toString().padStart(2, '0')}:${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
-
-        if (totalTime < 2 * 60 * 60 + 30 * 60) { //제한시간 2시간 반
-            totalTime++;
-            sessionStorage.setItem("totalTime", totalTime); // totalTime 저장
-            setTimeout(updateTimer, 1000); //1초씩 흘러감
-        } else {
-            
-            alert(`제한시간이 경과되었습니다 ${count * 5}점 입니다.`);
-        }
-    }
-
-    updateTimer();
-
-    document.getElementById('submit').addEventListener('click', function() {
-        sessionStorage.setItem('totalTime', totalTime);
-        sessionStorage.setItem('score', count*5);
-        if(count*5>=60){
-            alert('제출 완료! 남은 시간이 저장되었습니다. '+ count*5+'점 입니다. 합격입니다. 축하드립니다.');
-
-        }
-        else{
-            alert('제출 완료! 남은 시간이 저장되었습니다. '+ count*5+'점 입니다. 불합격입니다.');
-
-        }
-        const textareas = document.querySelectorAll('textarea');
-        textareas.forEach(textarea => {
-        textarea.value = '';
-    });
-
-        
-    });
+if (window.location.pathname.endsWith('project.html')) {
+      // 세션 스토리지에서 textarea 데이터 제거
+      document.querySelectorAll('textarea').forEach(textarea => {
+          sessionStorage.removeItem(textarea.id);
+      });
+  }
 
 
-    
+  // textarea의 상태를 로컬 스토리지에서 복원합니다.
+  document.querySelectorAll('textarea').forEach(textarea => {
+      const savedValue = sessionStorage.getItem(textarea.id);
+      if (savedValue) {
+          textarea.value = savedValue;
+      }
 
-    document.querySelectorAll('#menu a').forEach(link => { //메뉴이동 스크립트
-        link.addEventListener('click', function(event) {
-        const href = this.getAttribute('href');
-        window.location.href = href;
-        });
-    });
-
-        document.getElementById('menuButton').addEventListener('click', function() {
-      const menu = document.getElementById('menu');
-      
-      menu.style.display = menu.style.display === 'none' ? 'flex' : 'none';
-      menu.display='flex';
-    });
+      // 사용자가 입력하는 내용을 로컬 스토리지에 저장합니다.
+      textarea.addEventListener('input', function() {
+          sessionStorage.setItem(textarea.id, this.value);
+      });
   });
 
 
-  </script>
+function updateTimer() {
+
+  const timerElement = document.getElementById('timer'); //타이머
+  const hours = Math.floor(totalTime / 3600); //시간
+  const minutes = Math.floor((totalTime % 3600) / 60);
+  const seconds = totalTime % 60;
+
+  timerElement.textContent = 
+      `경과시간:${hours.toString().padStart(2, '0')}:${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
+
+  if (totalTime < 2 * 60 * 60 + 30 * 60) { //제한시간 2시간 반
+      totalTime++;
+      sessionStorage.setItem("totalTime", totalTime); // totalTime 저장
+      setTimeout(updateTimer, 1000); //1초씩 흘러감
+  } else {
+      
+      alert(`제한시간이 경과되었습니다 ${count * 5}점 입니다.`);
+  }
+}
+
+updateTimer();
+
+document.getElementById('submit').addEventListener('click', function() {
+const score = count * 5;
+const sessionData = {
+  loginId: loginId,
+  totalTime: totalTime,
+  score: score
+};
+sessionStorage.setItem('sessionData5', JSON.stringify(sessionData));
+  
+  if(score>=60){
+      alert('제출 완료! 남은 시간이 저장되었습니다. '+ count*5+'점 입니다. 합격입니다. 축하드립니다.');
+
+  }
+  else{
+      alert('제출 완료! 남은 시간이 저장되었습니다. '+ count*5+'점 입니다. 불합격입니다.');
+
+  }
+  // 텍스트 영역 초기화
+  const textareas = document.querySelectorAll('textarea');
+  textareas.forEach(textarea => {
+  textarea.value = '';
+});
+// 메인 페이지로 이동
+window.location.href = 'project.html';
+});
+
+  
+
+
+
+
+
+document.querySelectorAll('#menu a').forEach(link => { //메뉴이동 스크립트
+  link.addEventListener('click', function(event) {
+  const href = this.getAttribute('href');
+  window.location.href = href;
+  });
+});
+
+  document.getElementById('menuButton').addEventListener('click', function() {
+const menu = document.getElementById('menu');
+
+menu.style.display = menu.style.display === 'none' ? 'flex' : 'none';
+menu.display='flex';
+});
+
+// 데이터를 세션 스토리지에 저장하는 함수
+function saveSessionData() {
+  const sessionData = {
+      loginId,
+      totalTime,
+      count
+  };
+  sessionStorage.setItem("sessionData5", JSON.stringify(sessionData));
+}
+});
+
+
+
+</script>
 </body>
 </html>

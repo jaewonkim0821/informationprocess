@@ -50,7 +50,7 @@ document.querySelectorAll('.submenu').forEach(submenu => {
       if(correct){
         correctAnswerElement.innerHTML = correctAnswerText + ' (정확히 일치)';
         count++;
-        sessionStorage.setItem("${loginId}_count", count);
+        sessionStorage.setItem("count", count);
       }
      else {
       correctAnswerElement.innerHTML = '오답입니다. ' + questionNumber + '번 정답은 <br/>' + correctAnswerText;
@@ -76,7 +76,7 @@ document.querySelectorAll('.submenu').forEach(submenu => {
       if (correct) {
         correctAnswerElement.innerHTML = correctAnswerText + '<br/> (키워드 포함: "' + keywords.join(', ') + '")';
         count++;
-        sessionStorage.setItem("${loginId}_count", count); // count 저장
+        sessionStorage.setItem("count", count); // count 저장
 
       } else {
         correctAnswerElement.innerHTML = '오답입니다. ' + questionNumber + '번 정답은 <br/>' + correctAnswerText;
@@ -121,5 +121,9 @@ document.querySelectorAll('.submenu').forEach(submenu => {
     const menu =document.getElementById('menu');
     menu.style.display = 'flex';
   }); 
-  
+  let loginId=sessionStorage.getItem("loginId");
+  if (!loginId) {
+    loginId = "user1";
+    sessionStorage.setItem("loginId", loginId);
+}
   

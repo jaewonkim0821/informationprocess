@@ -8,6 +8,8 @@
   <link rel='stylesheet' href="information.css">
 </head>
 <body>
+  <div id="id"></div>
+  
   <div id="timer2">제한시간:02:30:00</div>
   <div id="timer">02:30:00</div>
   <button id="menuOpen">메뉴</button>
@@ -177,15 +179,30 @@
 
     
 
-    let loginId=sessionStorage.getItem("users");
+    let count = 0; // count 받아옴
 
 
     document.addEventListener('DOMContentLoaded', function () {
     // 타이머 설정
-    let totalTime = sessionStorage.getItem("totalTime");
+    const loginId = JSON.parse(sessionStorage.getItem("loggedInUser"));
+    // 아이디 받아오기
+    if(loginId){
+      function updateloginId(){
+      const idelement = document.getElementById('id'); //아이디
+      idelement.textContent = 'ID:'+loginId.id;
+
+    }
+    updateloginId();
+
+    }
+    
+    
+
+
+    let totalTime = 0;
     totalTime = totalTime ? parseInt(totalTime, 10) : 0; // totalTime 초기화
 
-    // loginId를 세션 스토리지에서 가져옴
+    
 
     if (window.location.pathname.endsWith('project.html')) {
             // 세션 스토리지에서 textarea 데이터 제거
@@ -253,6 +270,17 @@
       menu.style.display = menu.style.display === 'none' ? 'flex' : 'none';
       
     });
+
+
+    // 데이터를 세션 스토리지에 저장하는 함수
+    function saveSessionData() {
+        const sessionData = {
+            loginId,
+            totalTime,
+            count
+        };
+        sessionStorage.setItem("sessionData", JSON.stringify(sessionData));
+    }
   });
 
     

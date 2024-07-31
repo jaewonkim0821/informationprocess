@@ -9,6 +9,8 @@
 
 </head>
 <body>
+  <div id="id"></div>
+
   <div id="timer2">제한시간:02:30:00</div>
 
   <div id="timer">02:30:00</div>
@@ -250,6 +252,30 @@
 
 
 document.addEventListener('DOMContentLoaded', function () {
+  const loginId = JSON.parse(sessionStorage.getItem("loggedInUser"));
+
+  if(loginId){
+      function updateloginId(){
+      const idelement = document.getElementById('id'); //아이디
+      idelement.textContent = 'ID:'+loginId.id;
+
+    }
+    updateloginId();
+
+    }
+    
+
+
+  // 페이지 로드 시 세션 데이터를 복원합니다.
+  const savedSessionData = sessionStorage.getItem("sessionData");
+    if (savedSessionData) {
+        const parsedSessionData = JSON.parse(savedSessionData);
+        loginId = parsedSessionData.loginId;
+        totalTime = parsedSessionData.totalTime;
+        count = parsedSessionData.count;
+    }
+
+    
 // 타이머 설정
 let totalTime = sessionStorage.getItem("totalTime");
 totalTime = totalTime ? parseInt(totalTime, 10) : 0; // totalTime 초기화
@@ -320,6 +346,16 @@ document.querySelectorAll('#menu a').forEach(link => { //메뉴이동 스크립�
   menu.style.display = menu.style.display === 'none' ? 'flex' : 'none';
   
 });
+
+// 데이터를 세션 스토리지에 저장하는 함수
+function saveSessionData() {
+        const sessionData = {
+            loginId,
+            totalTime,
+            count
+        };
+        sessionStorage.setItem("sessionData", JSON.stringify(sessionData));
+    }
 });
 
 

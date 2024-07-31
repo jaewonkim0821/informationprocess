@@ -9,6 +9,8 @@
 
 </head>
 <body>
+  <div id="id"></div>
+
   <div id="timer2">제한시간:02:30:00</div>
 
   <div id="timer">02:30:00</div>
@@ -226,6 +228,39 @@
 
 
     document.addEventListener('DOMContentLoaded', function () {
+      const loginId = JSON.parse(sessionStorage.getItem("loggedInUser"));
+
+  if(loginId){
+      function updateloginId(){
+      const idelement = document.getElementById('id'); //아이디
+      idelement.textContent = 'ID:'+loginId.id;
+
+    }
+    updateloginId();
+
+    }
+
+      // 페이지 로드 시 세션 데이터를 복원합니다.
+    const savedSessionData = sessionStorage.getItem("sessionData");
+    if (savedSessionData) {
+        const parsedSessionData = JSON.parse(savedSessionData);
+        loginId = parsedSessionData.loginId;
+        totalTime = parsedSessionData.totalTime;
+        score = parsedSessionData.score;
+
+        // 테이블에 데이터 추가
+        const rows = document.querySelectorAll('tbody tr');
+        rows.forEach(row => {
+            const solvTimeCell = row.querySelector('.solv_time');
+            const scoreCell = row.querySelector('.score');
+            if (solvTimeCell && scoreCell) {
+                solvTimeCell.innerHTML = totalTime;
+                scoreCell.innerHTML = score;
+            }
+        });
+      
+    }
+
     // 타이머 설정
     let totalTime = sessionStorage.getItem("totalTime");
     totalTime = totalTime ? parseInt(totalTime, 10) : 0; // totalTime 초기화
@@ -275,9 +310,15 @@
     updateTimer();
 
     document.getElementById('submit').addEventListener('click', function() {
-        sessionStorage.setItem('${loginId}_totalTime', totalTime);
-        sessionStorage.setItem('${loginId}_score', count*5);
-        if(count*5>=60){
+      const score = count * 5;
+    const sessionData = {
+        loginId: loginId,
+        totalTime: totalTime,
+        score: score
+    };
+    sessionStorage.setItem('sessionData', JSON.stringify(sessionData));
+        
+        if(score>=60){
             alert('제출 완료! 남은 시간이 저장되었습니다. '+ count*5+'점 입니다. 합격입니다. 축하드립니다.');
 
         }
@@ -285,13 +326,17 @@
             alert('제출 완료! 남은 시간이 저장되었습니다. '+ count*5+'점 입니다. 불합격입니다.');
 
         }
+        // 텍스트 영역 초기화
         const textareas = document.querySelectorAll('textarea');
         textareas.forEach(textarea => {
         textarea.value = '';
     });
+    // 메인 페이지로 이동
+    window.location.href = 'project.html';
+});
 
         
-    });
+    
 
 
     
@@ -309,6 +354,16 @@
       menu.style.display = menu.style.display === 'none' ? 'flex' : 'none';
       menu.display='flex';
     });
+
+    // 데이터를 세션 스토리지에 저장하는 함수
+    function saveSessionData() {
+        const sessionData = {
+            loginId,
+            totalTime,
+            count
+        };
+        sessionStorage.setItem("sessionData", JSON.stringify(sessionData));
+    }
   });
 
   

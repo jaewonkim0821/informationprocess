@@ -117,33 +117,12 @@
   
       <div id="question6">
         <p>문제 6: 다음 <사원> 테이블과 <동아리> 테이블을 조인(Join)한 <결과>를 확인하여 <SQL문>의 괄호(①, ②)에 들어갈 알맞은 답을 쓰시오.</p>
-        SELECT COUNT(*) FROM [TABLE] WHERE EMPNO > 100 AND SAL >= 3000 OR ENPNO =200[TABLE]
+        SELECT ... FROM 학생정보 a JOIN 학과 정보 b (1) a.학과=b.(2)
     </head>
     <body>
     
     
-    <table border="1">
-        <thead>
-            <tr>
-                <th>EMPNO</th>
-                <th>SAL</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td>100</td>
-                <td>1000</td>
-            </tr>
-            <tr>
-                <td>200</td>
-                <td>3000</td>
-            </tr>
-            <tr>
-                <td>300</td>
-                <td>1500</td>
-            </tr>
-        </tbody>
-    </table>
+    
     
     </body>
     </html>
@@ -238,7 +217,7 @@
     });
 
     document.getElementById('checkAnswer6').addEventListener('click', function() {
-      checkAnswer_exact(6, '정답 5: ①ON ②코드', ['ON 코드']);
+      checkAnswer_exact(6, '정답 5: 1.ON 2.학과', ['ON 학']);
     });
     document.getElementById('eraseAnswer6').addEventListener('click', function() {
       eraseAnswer(6);

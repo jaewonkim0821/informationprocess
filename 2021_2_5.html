@@ -115,22 +115,19 @@
         <p>문제 18: 다음 C 언어로 구현된 프로그램을 분석하여 그 실행 결과를 쓰시오. (단, 출력문의 출력 서식을 준수하시오.)</p>
         <div class="rounded-rectangle-box">
           <p>
-            public class ssoTest {</p>
-              public static void main(String[] args) {</p>
-                  int j, i;</p>
-                  for (j = 0, i = 0; i &lt;= 5; i++) {</p>
-                      j += i;</p>
-                      System.out.print(i);</p>
-                      if (i == 5) {</p>
-                          System.out.print("=");</p>
-                          System.out.print(j);</p>
-                      } else {</p>
-                          System.out.print("+");</p>
-                      }</p>
-                  }</p>
-              }</p>
-          }
-
+            int main(){</p>
+          int ary[3];</p>
+          int s = 0;</p>
+          *(ary+0)=1;</p>
+          ary[1]=*(ary+0)+2;</p>
+          ary[2]=*ary+3;</p>
+          for(int i=0;i<3;i++){</p>
+            s=s+ary[i];</p>
+            }</p>
+            printf("%d",s);</p>
+            }</p>
+          
+            
           </p>
         </div>
               
@@ -149,13 +146,35 @@
       <div id="question19">
         <p>문제 19: 다음 Java로 구현된 프로그램을 분석하여 그 실행 결과를 쓰시오. (단, 출력문의 출력 서식을 준수하시오.)</p>  
           <div class="rounded-rectangle-box">
-          (1) 모듈간 데이터, 지역변수를 직접 참조하는 경우의 결합도</p>
-          
-          (2) 모듈간의 인터페이스로 배열이나 객체 등 자료구조가 전달되는 경우의 결합도</p>
-          
-          (3) 파라미터가 아닌 모듈 밖에 선언되어 있는 전역 변수를 참조하고 전역변소를 갱신하는 식으로 상호 작용을 하는 경우의 결합도</p>
-          
-          [ 보기 ] ㄱ. 자료 결합도 ㄴ. 스탬프 결합도 ㄷ. 제어 결합도 ㄹ. 공통 결합도 ㅁ. 내용 결합도 ㅂ. 외부 결합도</p>
+          public class ovr1 {</p>
+
+	public static void main(String[] args) {</p>
+
+		ovr1 a1 = new ovr1();</p>
+
+		ovr2 a2 = new ovr2();</p>
+
+		System.out.println(a1.sun(3,2) + a2.sun(3,2));</p>
+
+	}</p>
+
+	int sun(int x, int y) {</p>
+
+		return x + y;</p>
+
+	}</p>
+
+}</p>
+
+class ovr2 extends ovr1 {</p>
+
+	int sun(int x, int y) {</p>
+
+		return x - y + super.sun(x, y);</p>
+
+	}</p>
+
+}</p>
           </div>
         
         
@@ -169,11 +188,9 @@
       </div>
   
       <div id="question20">
-        <p>문제 20: 통합 테스트에 관련된 다음 설명에서 괄호에 들어갈 알맞은 답을 쓰시오.</p>
+        <p>문제 20:  괄호 (ㄱ)에 들어갈 알맞은 답을 쓰시오.</p>
           <div class="rounded-rectangle-box">
-          1. ( ) 은/는 '세션을 가로채다'라는 의미로, 정상적 연결을 RST 패킷을 통해 종료시킨 후 재연결 시 희생자가 아닌 공격자에게 연결한다.</p>
-          
-          2. TCP ()은 ~ [TCP 하이재킹의 원리에 대한 설명]
+          테스트 하네스, 상향식은 테스트 드라이버, 하향식은 테스트( ㄱ )
           </div>
        
         <textarea id="answer20" rows="3" cols="50"></textarea>

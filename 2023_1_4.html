@@ -311,7 +311,7 @@ print(a)`,</p>
     });
 
     document.getElementById('checkAnswer16').addEventListener('click', function() {
-      checkAnswer_exact(16, '정답: select 과목이름 ,min(점수) as 최소점수 , max(점수) as 최대점수 from 성적 group by 과목이름 having avg(점수)>=90', ['select 과목이름' ,'min(점수) as 최소점수' , 'max(점수) as 최대점수', 'from 성적' ,'group by 과목이름', 'having avg(점수)>=90']);
+      checkAnswer_and(16, '정답: select 과목이름 ,min(점수) as 최소점수 , max(점수) as 최대점수 from 성적 group by 과목이름 having avg(점수)>=90', ['select 과목이름' ,'min(점수) as 최소점수' , 'max(점수) as 최대점수', 'from 성적' ,'group by 과목이름', 'having avg(점수)>=90']);
     });
     document.getElementById('eraseAnswer16').addEventListener('click', function() {
       eraseAnswer(16);

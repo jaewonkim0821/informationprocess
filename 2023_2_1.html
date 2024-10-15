@@ -248,7 +248,7 @@
     });
 
     document.getElementById('checkAnswer4').addEventListener('click', function() {
-      checkAnswer(4, "정답: 4. INSTER INTO 학생(학번,이름,학년,전공,전화번호)VALUES(9830287,'뉴진스',3,'경영학개론','010-1234-1234');", ["INSTER INTO 학생(학번,이름,학년,전공,전화번호)VALUES(9830287,'뉴진스',3,'경영학개론','010-1234-1234');"]);
+      checkAnswer(4, "정답: 4. INSTER INTO 학생(학번,이름,학년,전공,전화번호)VALUES(9830287,'뉴진스',3,'경영학개론','010-1234-1234');", ['insert into 학생(학번,이름,학년,전공,전화번호)','values(9830287,'뉴진스',3,'경영학개론','010-1234-1234');']);
     });
     document.getElementById('eraseAnswer4').addEventListener('click', function() {
       eraseAnswer(4);

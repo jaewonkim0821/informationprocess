@@ -221,7 +221,7 @@
 
 
     document.getElementById('checkAnswer5').addEventListener('click', function() {
-      checkAnswer_and(5, '정답: 5. 1. n > 0 or n >=1 or i < 8 or i <= 7   2. n%2 or n&1', ['n > 0', 'n%2']);
+      checkAnswer(5, '정답: 5. 1. n > 0 or n >=1 or i < 8 or i <= 7   2. n%2 or n&1', ['n>0 n%2','n>0 n&1','n>=1 n%2','n>=1 n&1']);
     });
     document.getElementById('eraseAnswer5').addEventListener('click', function() {
       eraseAnswer(5);
